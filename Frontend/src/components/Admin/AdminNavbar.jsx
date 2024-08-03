@@ -238,7 +238,7 @@ const Sidebar = () => {
                                         onClick={() => handleContentChange('Notecontentform')}
                                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                     >
-                                        Upload problem
+                                        Upload content
                                     </button>
                                 </li>
                                 <li>
@@ -246,7 +246,7 @@ const Sidebar = () => {
                                         onClick={() => handleContentChange('Notecontentshowdata')}
                                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                     >
-                                        Manage problem
+                                        Manage content
                                     </button>
                                 </li>
                             </ul>
@@ -384,7 +384,7 @@ const Sidebar = () => {
                                 >
                                     <path d="M15 8a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 0H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 13a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15ZM6 15a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm8 1a1 1 0 1 1 1-1 1 1 0 0 1-1 1Z" />
                                 </svg>
-                                <span className="ms-3">Inbox</span>
+                                <span className="ms-3">Queries</span>
                             </button>
                         </li>
 
