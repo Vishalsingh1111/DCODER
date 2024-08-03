@@ -230,8 +230,8 @@ const ProjectDetail = () => {
                             )
                         ))}
                         <div className='mt-10 text-center flex justify-between'>
-                            <Link to={item.link1} className='p-3 bg-blue-500 rounded group hover:bg-blue-900 hover:text-white'>Click to Download from GitHub</Link>
-                            <Link to={item.link2} className='p-3 bg-red-500 rounded group hover:bg-red-900 hover:text-white'>Watch Live Project</Link>
+                            <Link to={item.link1} className='p-3 bg-blue-500 rounded group hover:bg-blue-900 text-white'>Click to Download from GitHub</Link>
+                            <Link to={item.link2} className='p-3 bg-red-500 rounded group hover:bg-red-900 text-white'>Watch Live Project</Link>
                         </div>
                     </div>
 
@@ -259,7 +259,7 @@ const ProjectDetail = () => {
 
             </div>
             <div className='text-center my-20'>
-                <a href='/Project'><button className="btn bg-red-500 text-xl text-white hover:bg-red-800">More Project</button></a>
+                <a href='/Project'><button className="btn bg-red-500 text-lg text-white hover:bg-red-800">More Project</button></a>
             </div>
 
             <Footer />

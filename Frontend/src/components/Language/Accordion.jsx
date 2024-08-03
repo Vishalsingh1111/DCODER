@@ -64,7 +64,7 @@ const Accordion = ({ item }) => {
     };
 
     return (
-        <div className="p-4 border-b-2 dark:bg-slate-800 dark:text-white sm:p-4 lg:px-6 xl:px-8 dark:border-b">
+        <div className="p-4 dark:bg-slate-800 dark:text-white sm:p-4 lg:px-6 xl:px-8 dark:border-b">
             <button className="faq-btn flex w-full text-left" onClick={handleToggle}>
                 <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-red-500/5 text-red dark:bg-white/5">
                     <svg

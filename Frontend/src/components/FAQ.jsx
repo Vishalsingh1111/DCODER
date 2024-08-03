@@ -16,7 +16,7 @@ const Accordion = () => {
                 </div>
 
                 <div className="mx-auto text-left">
-                    <div className="w-full px-4 max-w-[920px] mx-auto">
+                    <div className="w-full px-4 max-w-[1050px] mx-auto">
                         <AccordionItem
                             header="What types of programming languages do you cover?"
                             text="We cover a wide range of programming languages including but not limited to Python, Java, C, C++, DSA etc. Our notes are designed to cater to both beginners and advanced users, providing comprehensive insights and practical examples."
@@ -30,7 +30,7 @@ const Accordion = () => {
                             text="Absolutely! We value our community’s feedback and are always open to suggestions. If there’s a specific topic or a programming language you want us to cover, feel free to reach out to us via our contact page. We’ll do our best to accommodate your request in our upcoming content schedule."
                         />
                     </div>
-                    <div className="w-full px-4 max-w-[920px] mx-auto">
+                    <div className="w-full px-4 max-w-[1050px] mx-auto">
                         <AccordionItem
                             header="What is included in the DSA sheets?"
                             text="Our Data Structures and Algorithms (DSA) sheets include detailed explanations, sample code, and a variety of problems to solve. Each sheet is designed to help you understand fundamental concepts and apply them to solve real-world problems. We also provide solutions and explanations for each problem to enhance your learning experience."
