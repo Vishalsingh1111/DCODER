@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../../Baseurl';
 
 const Showusersdetail = () => {
     const [notes, setNotes] = useState([]);
@@ -9,7 +10,7 @@ const Showusersdetail = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/user');
+                const response = await axios.get(`${baseUrl}/user`);
                 setNotes(response.data);
             } catch (error) {
                 console.error('Error fetching notes:', error);
@@ -21,7 +22,7 @@ const Showusersdetail = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:4001/user/${id}`);
+            await axios.delete(`${baseUrl}/user/${id}`);
             setNotes(notes.filter(note => note._id !== id));
             console.log('Deleted note with id:', id);
         } catch (error) {

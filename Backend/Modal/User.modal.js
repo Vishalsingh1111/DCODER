@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
     phone: { type: String, required: false },
     password: { type: String, required: false },
     googleId: { type: String },
-    // displayName: { type: String },
     photo: { type: String }
 
 });
