@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { baseUrl } from '../../Baseurl';
 
 const Subscribers = () => {
     const [subscribers, setSubscribers] = useState([]);
@@ -9,7 +10,7 @@ const Subscribers = () => {
     useEffect(() => {
         const fetchSubscribers = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/newslatter');
+                const response = await axios.get(`${baseUrl}/newslatter`);
                 setSubscribers(response.data);
             } catch (error) {
                 console.error('Error fetching subscribers:', error);
@@ -21,7 +22,7 @@ const Subscribers = () => {
 
     const handleDelete = async (email) => {
         try {
-            await axios.delete(`http://localhost:4001/newslatter/id?`, { data: { email } });
+            await axios.delete(`${baseUrl}/newslatter/id?`, { data: { email } });
             setSubscribers(subscribers.filter(subscriber => subscriber.email !== email));
             toast.success(`Deleted subscriber with email: ${email}`);
         } catch (error) {

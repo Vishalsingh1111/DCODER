@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import UpdateNoteForm from './Noteupdatebuttoncom';
+import { baseUrl } from '../../../Baseurl';
 
 const NoteList = () => {
     const [notes, setNotes] = useState([]);
@@ -11,7 +12,7 @@ const NoteList = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/note');
+                const response = await axios.get(`${baseUrl}/note`);
                 setNotes(response.data); // Assuming API response is an array of notes
             } catch (error) {
                 console.error('Error fetching notes:', error);
@@ -35,7 +36,7 @@ const NoteList = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:4001/note/${id}`);
+            await axios.delete(`${baseUrl}/note/${id}`);
             setNotes(notes.filter(note => note._id !== id)); // Remove the deleted note from the local state
             console.log('Deleted note with id:', id);
         } catch (error) {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../../Baseurl';
 
 const UpdateNoteForm = ({ note, onUpdateSuccess, onClose }) => {
     const [updatedNoteData, setUpdatedNoteData] = useState({
@@ -21,7 +22,7 @@ const UpdateNoteForm = ({ note, onUpdateSuccess, onClose }) => {
     const handleSaveUpdate = async (e) => {
         e.preventDefault(); // Prevent form submission
         try {
-            await axios.put(`http://localhost:4001/sheet/${note._id}`, updatedNoteData);
+            await axios.put(`${baseUrl}/sheet/${note._id}`, updatedNoteData);
             onUpdateSuccess(updatedNoteData); // Notify parent component of successful update
             console.log('Note updated successfully!');
         } catch (error) {

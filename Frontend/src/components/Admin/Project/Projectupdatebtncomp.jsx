@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../../Baseurl';
 
 const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
     const [updatedNoteData, setUpdatedNoteData] = useState({
@@ -39,7 +40,7 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
     const handleSaveUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:4001/project/${note._id}`, updatedNoteData);
+            await axios.put(`${baseUrl}/project/${note._id}`, updatedNoteData);
             onUpdateSuccess(updatedNoteData);
             console.log('Note updated successfully!');
         } catch (error) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../../Baseurl';
 
 const ShowAdminDetail = () => {
     const [admins, setAdmins] = useState([]);
@@ -8,7 +9,7 @@ const ShowAdminDetail = () => {
     useEffect(() => {
         const fetchAdmins = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/admin');
+                const response = await axios.get(`${baseUrl}/admin`);
                 setAdmins(response.data); // Assuming API response is an array of admins
             } catch (error) {
                 console.error('Error fetching admins:', error);
@@ -20,7 +21,7 @@ const ShowAdminDetail = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:4001/admin/${id}`);
+            await axios.delete(`${baseUrl}/admin/${id}`);
             setAdmins(admins.filter(admin => admin._id !== id)); // Remove the deleted admin from the local state
             console.log('Deleted admin with id:', id);
         } catch (error) {

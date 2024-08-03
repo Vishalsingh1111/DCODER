@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { baseUrl } from "../../../Baseurl";
 
 const FormElementInput = () => {
     const [formData, setFormData] = useState({
@@ -39,7 +40,7 @@ const FormElementInput = () => {
         }
 
         try {
-            await axios.post("http://localhost:4001/note", formData, {
+            await axios.post(`${baseUrl}/note`, formData, {
                 headers: { "Content-Type": "application/json" }
             });
             alert("Card Craeted Successfully!");

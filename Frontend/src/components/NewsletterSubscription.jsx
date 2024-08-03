@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import { baseUrl } from '../Baseurl';
 
 function NewsletterSection() {
     const { register, handleSubmit, reset } = useForm();
@@ -10,7 +11,7 @@ function NewsletterSection() {
         const userInfo = {
             email: data.email,
         };
-        await axios.post("http://localhost:4001/newslatter/subscribe", userInfo)
+        await axios.post(`${baseUrl}/newslatter/subscribe`, userInfo)
             .then((res) => {
                 console.log(res.data);
                 if (res.data) {

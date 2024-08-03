@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Techblogupdatebtncomp from './Techblogupdatebtncomp';
+import { baseUrl } from '../../../Baseurl';
 
 const NoteList = () => {
     const [notes, setNotes] = useState([]);
@@ -11,7 +12,7 @@ const NoteList = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/blog');
+                const response = await axios.get(`${baseUrl}/blog`);
                 setNotes(response.data); // Assuming API response is an array of notes
             } catch (error) {
                 console.error('Error fetching notes:', error);

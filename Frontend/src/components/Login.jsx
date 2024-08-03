@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons
+import { baseUrl } from '../Baseurl';
 
 const LoginPage = () => {
     const [isEmail, setIsEmail] = useState(true);
@@ -37,7 +38,7 @@ const LoginPage = () => {
             : { phone, password };
 
         try {
-            const res = await axios.post('http://localhost:4001/user/login', userInfo);
+            const res = await axios.post(`${baseUrl}/user/login`, userInfo);
             if (res.data) {
                 toast.success('Login Successfully');
                 if (rememberMe) {
@@ -64,7 +65,7 @@ const LoginPage = () => {
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = 'http://localhost:4001/auth/google';
+        window.location.href = `${baseUrl}/auth/google`;
         toast.success('Login with google successfully');
 
     };

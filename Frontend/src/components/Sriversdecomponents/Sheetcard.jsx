@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sheetproblems from '../Sriversdecomponents/Sheetproblems';
 import Sheetheading from '../Sriversdecomponents/Sheetheading';
+import { baseUrl } from '../../Baseurl';
 
 function Sheetcard({ item }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ function Sheetcard({ item }) {
         if (isOpen) {
             const fetchSheetProblems = async () => {
                 try {
-                    const res = await axios.get("http://localhost:4001/sheetproblem");
+                    const res = await axios.get(`${baseUrl}/sheetproblem`);
                     const filteredProblems = res.data.filter(data => data.topic === item.Topic);
                     setAllSheetProblems(filteredProblems);
                     setFilteredSheetProblems(filteredProblems);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../Baseurl';
 
 function Commentbox() {
     const [comments, setComments] = useState([]);
@@ -9,7 +10,7 @@ function Commentbox() {
     // Fetch comments from the API
     const fetchComments = async () => {
         try {
-            const response = await axios.get('http://localhost:4001/comment');
+            const response = await axios.get(`${baseUrl}/comment`);
             setComments(response.data.data);
         } catch (error) {
             console.error('Error fetching comments:', error);
@@ -22,7 +23,7 @@ function Commentbox() {
         if (newComment.trim() && name.trim()) {
             try {
                 const commentData = { name, comment: newComment };
-                await axios.post('http://localhost:4001/comment', commentData);
+                await axios.post(`${baseUrl}/comment`, commentData);
                 setNewComment('');
                 setName('');
                 fetchComments(); // Refresh comments after posting

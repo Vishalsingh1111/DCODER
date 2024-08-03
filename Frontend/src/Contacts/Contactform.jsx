@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import { baseUrl } from '../Baseurl';
 
 export default function Example() {
     const { register, handleSubmit, reset } = useForm();
@@ -14,7 +15,7 @@ export default function Example() {
             phonenumber: data.phonenumber,
             message: data.message,
         };
-        await axios.post("http://localhost:4001/contact/contactInfo", userInfo)
+        await axios.post(`${baseUrl}/contact/contactInfo`, userInfo)
             .then((res) => {
                 console.log(res.data);
                 if (res.data) {

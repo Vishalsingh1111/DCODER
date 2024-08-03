@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../Baseurl';
 
 function SearchForm() {
     const [query, setQuery] = useState('');
@@ -10,7 +11,7 @@ function SearchForm() {
         if (query.length > 0) {
             const fetchSuggestions = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:4001/search/suggestions`, {
+                    const response = await axios.get(`${baseUrl}/search/suggestions`, {
                         params: { q: query },
                     });
                     setSuggestions(response.data);
@@ -28,7 +29,7 @@ function SearchForm() {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:4001/search`, {
+            const response = await axios.get(`${baseUrl}/search`, {
                 params: { q: query },
             });
             setResults(response.data);
@@ -40,7 +41,7 @@ function SearchForm() {
     const handleSuggestionClick = async (suggestion) => {
         setQuery(suggestion.header);
         try {
-            const response = await axios.get(`http://localhost:4001/search`, {
+            const response = await axios.get(`${baseUrl}/search`, {
                 params: { q: suggestion.header },
             });
             setResults(response.data);

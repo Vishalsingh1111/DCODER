@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Blogcard from './Blogscard';
 import Breadcrumb from '../Breadcrumb';
+import { baseUrl } from "../../Baseurl";
 
 const Techblog = () => {
     const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const Techblog = () => {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/blog");
+                const res = await axios.get(`${baseUrl}/blog`);
                 const filteredData = res.data.filter(item => item.category === "dsaeasyprob");
                 setData(filteredData);
                 setLoading(false);

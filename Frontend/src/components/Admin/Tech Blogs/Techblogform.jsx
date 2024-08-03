@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { baseUrl } from "../../../Baseurl";
 
 const FormElementInput = () => {
     const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ const FormElementInput = () => {
         }
 
         try {
-            await axios.post("http://localhost:4001/blog", formData, {
+            await axios.post(`${baseUrl}/blog`, formData, {
                 headers: { "Content-Type": "application/json" }
             });
             alert("Content uploaded successfully!");

@@ -7,6 +7,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Breadcrumb from '../Breadcrumb';
 import SearchForm from '../Searchbar';
+import { baseUrl } from '../../Baseurl';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -20,7 +21,7 @@ const ProjectDetail = () => {
     useEffect(() => {
         const getProjectData = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/project");
+                const res = await axios.get(`${baseUrl}/project`);
                 const foundItem = res.data.find(item => item.id.toString() === id);
                 setItem(foundItem);
                 setItems(res.data);

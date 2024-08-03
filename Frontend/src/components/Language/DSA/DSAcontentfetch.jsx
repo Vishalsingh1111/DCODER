@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Searchbar from '../../Searchbar'
 import DSAaccordion from "../Accordion";
+import { baseUrl } from "../../../Baseurl";
 
 const DSAcontentfetch = () => {
     const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ const DSAcontentfetch = () => {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/notecontent");
+                const res = await axios.get(`${baseUrl}/notecontent`);
                 const filteredData = res.data.filter(item => item.category === "dsa");
                 setData(filteredData);
                 setLoading(false);

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import Card from './Card'
+import { baseUrl } from '../../Baseurl';
+
 function Content() {
 
     //calling Api
@@ -9,7 +11,7 @@ function Content() {
     useEffect(() => {
         const getNote = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/note");
+                const res = await axios.get(`${baseUrl}/note`);
                 console.log("res.data");
                 setNote(res.data);
             } catch (error) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../../Baseurl';
 
 const ShowContactMsg = () => {
     const [messages, setMessages] = useState([]);
@@ -7,7 +8,7 @@ const ShowContactMsg = () => {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get('http://localhost:4001/contact');
+                const response = await axios.get(`${baseUrl}/contact`);
                 setMessages(response.data); // Assuming API response is an array of messages
             } catch (error) {
                 console.error('Error fetching messages:', error);

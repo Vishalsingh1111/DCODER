@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Projectcard from './Projectcard';
 import Breadcrumb from '../Breadcrumb';
+import { baseUrl } from "../../Baseurl";
 
 const Projectpage = () => {
     const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const Projectpage = () => {
     useEffect(() => {
         const getProjects = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/project");
+                const res = await axios.get(`${baseUrl}/project`);
                 const filteredData = res.data.filter(item => item.category === "Frontend");
                 setData(filteredData);
                 setLoading(false);

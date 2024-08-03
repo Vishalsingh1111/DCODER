@@ -9,6 +9,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Breadcrumb from '../Breadcrumb';
 import SearchForm from '../Searchbar';
+import { baseUrl } from '../../Baseurl';
 
 const BlogDetail = () => {
     const { id } = useParams();
@@ -22,7 +23,7 @@ const BlogDetail = () => {
     useEffect(() => {
         const getBlogData = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/blog");
+                const res = await axios.get(`${baseUrl}/blog`);
                 const foundItem = res.data.find(item => item.id.toString() === id);
                 setItem(foundItem);
                 setItems(res.data);

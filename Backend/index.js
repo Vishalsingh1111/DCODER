@@ -45,10 +45,7 @@ app.get("/auth/google", googleLogin);
 app.get("/auth/google/callback", googleCallback, googleCallbackRedirect);
 
 // Connect to MongoDB
-mongoose.connect(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(URI)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => console.error("MongoDB connection error:", error));
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons
+import { baseUrl } from '../Baseurl';
 
 const AdminloginPage = () => {
     const [username, setUsername] = useState('');
@@ -37,7 +38,7 @@ const AdminloginPage = () => {
         const userInfo = { username, password };
 
         try {
-            const res = await axios.post('http://localhost:4001/admin/login', userInfo);
+            const res = await axios.post(`${baseUrl}/admin/login`, userInfo);
             if (res.data) {
                 toast.success('Login Successfully');
                 if (rememberMe) {

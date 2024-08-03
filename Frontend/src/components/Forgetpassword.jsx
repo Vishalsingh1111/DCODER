@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import { baseUrl } from '../Baseurl';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const ForgotPassword = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:4001/reset-password', {
+            const response = await axios.post(`${baseUrl}/reset-password`, {
                 email,
                 password: newPassword
             });
