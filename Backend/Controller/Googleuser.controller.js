@@ -12,7 +12,7 @@
 // passport.use(new GoogleStrategy({
 //     clientID: GOOGLE_CLIENT_ID,
 //     clientSecret: GOOGLE_CLIENT_SECRET,
-//     callbackURL: "/auth/google/callback",
+//     callbackURL: "http://dcoder-backend.onrender.com/auth/google/callback", // Production callback URL
 //     passReqToCallback: true
 // },
 //     async (request, accessToken, refreshToken, profile, done) => {
@@ -52,12 +52,12 @@
 // export const googleLogin = passport.authenticate("google", { scope: ["profile", "email"] });
 
 // // Google login callback route handler
-// export const googleCallback = passport.authenticate("google", { failureRedirect: "http://localhost:5173/login" });
+// export const googleCallback = passport.authenticate("google", { failureRedirect: "https://dcoder-frontend.onrender.com/login" });
 
 // export const googleCallbackRedirect = (req, res) => {
 //     console.log('Google login successful!');
 //     // Redirect to the frontend root URL with user details
-//     res.redirect(`http://localhost:5173/?user=${encodeURIComponent(JSON.stringify(req.user))}`);
+//     res.redirect(`https://dcoder-frontend.onrender.com/?user=${encodeURIComponent(JSON.stringify(req.user))}`);
 // };
 
 import passport from "passport";
@@ -82,20 +82,32 @@ passport.use(new GoogleStrategy({
             let user = await User.findOne({ email: profile.emails[0].value });
 
             if (!user) {
+                // Create new user if it doesn't exist
                 user = new User({
                     googleId: profile.id,
-                    firstName: profile.displayName,
+                    firstName: profile.displayName || null,
+                    lastName: null,
                     email: profile.emails[0].value,
-                    photo: profile.photos[0].value
+                    phone: null,
+                    password: null,
+                    photo: profile.photos[0].value || null
                 });
-                await user.save();
+            } else {
+                // Update existing user with new data
+                user.firstName = profile.displayName || user.firstName;
+                user.lastName = user.lastName; // No update from Google
+                user.photo = profile.photos[0].value || user.photo;
+                user.googleId = profile.id; // Update Google ID if necessary
             }
+
+            await user.save();
             return done(null, user);
         } catch (error) {
             return done(error, null);
         }
     }
 ));
+
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
