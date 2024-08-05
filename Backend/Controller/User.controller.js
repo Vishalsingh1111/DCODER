@@ -42,70 +42,16 @@ export const signup = async (req, res) => {
 
 //Login function
 
-// export const login = async (req, res) => {
-//     try {
-//         const { email, phone, password } = req.body;
-
-//         const user = await User.findOne({
-//             $or: [{ email }, { phone }]
-//         });
-
-
-//         if (!user || !(await bcryptjs.compare(password, user.password))) {
-//             return res.status(400).json({ message: "Invalid username or password" });
-//         }
-
-//         res.status(200).json({
-//             message: "Login Successful",
-//             user: {
-//                 _id: user._id,
-//                 firstName: user.firstName,
-//                 email: user.email,
-//                 phone: user.phone
-//             }
-//         });
-
-//     } catch (error) {
-//         console.error("Error: " + error.message);
-//         res.status(500).json({ message: "Internal server error" });
-//     }
-// };
-
-
-//get user deatils
-export const userdetails = async (req, res) => {
-    try {
-        const users = await User.find();
-        res.status(200).json(users);
-    } catch (error) {
-        console.error("Error fetching users:", error);
-        res.status(500).json({ error: "Error fetching users" });
-    }
-};
-
-
-
 export const login = async (req, res) => {
     try {
         const { email, phone, password } = req.body;
-
-        if (!email && !phone) {
-            return res.status(400).json({ message: "Email or phone is required" });
-        }
-
-        if (!password) {
-            return res.status(400).json({ message: "Password is required" });
-        }
 
         const user = await User.findOne({
             $or: [{ email }, { phone }]
         });
 
-        if (!user) {
-            return res.status(400).json({ message: "Invalid username or password" });
-        }
 
-        if (!(await bcryptjs.compare(password, user.password))) {
+        if (!user || !(await bcryptjs.compare(password, user.password))) {
             return res.status(400).json({ message: "Invalid username or password" });
         }
 
@@ -124,6 +70,20 @@ export const login = async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+
+
+//get user deatils
+export const userdetails = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ error: "Error fetching users" });
+    }
+};
+
 
 //delete a user
 export const deleteUser = async (req, res) => {
