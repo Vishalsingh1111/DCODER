@@ -126,13 +126,13 @@ export const signup = async (req, res) => {
         const hashpassword = await bcryptjs.hash(password, 10);
 
         const createdUser = new User({
-            firstName: firstName || null,
-            lastName: lastName || null,
+            firstName: firstName || "null",
+            lastName: lastName || "null",
             email: email,
-            phone: phone || null,
+            phone: phone || "null",
             password: hashpassword,
-            googleId: null,
-            photo: null
+            googleId: "null",
+            photo: "null"
         });
 
         await createdUser.save();
