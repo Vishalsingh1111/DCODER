@@ -20,15 +20,16 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    firstName: { type: String, default: null },
-    lastName: { type: String, default: null },
+    firstName: { type: String, required: false, default: "null" },
+    lastName: { type: String, required: false, default: "null" },
     email: { type: String, required: true, unique: true },
-    phone: { type: String, default: null },
-    password: { type: String, default: null },
-    googleId: { type: String, default: null },
-    photo: { type: String, default: null }
+    phone: { type: String, required: false, default: "null" },
+    password: { type: String, required: false, default: "null" },
+    googleId: { type: String, required: false, default: "null" },
+    photo: { type: String, required: false, default: "null" }
 });
 
 const User = mongoose.model('User', userSchema);
 
 export default User;
+
