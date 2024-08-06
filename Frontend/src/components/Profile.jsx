@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 function App() {
     const [isModalOpen, setModalOpen] = useState(true); // Modal opens by default
     const [authUser, setAuthUser] = useState(null);
@@ -34,7 +33,7 @@ function App() {
                     <div className="p-4">
                         <h2 className="text-2xl font-bold mb-4">Profile</h2>
                         <div className="flex items-center mb-4">
-                            {authUser && authUser.photo ? (
+                            {authUser && authUser.photo && authUser.photo !== "null" ? (
                                 <img
                                     src={authUser.photo}
                                     alt="Profile"
@@ -42,7 +41,7 @@ function App() {
                                 />
                             ) : (
                                 <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center text-2xl mr-4">
-                                    {authUser && authUser.firstName ? authUser.firstName.charAt(0) : 'G'}
+                                    {authUser && authUser.firstName ? authUser.firstName.charAt(0).toUpperCase() : 'G'}
                                 </div>
                             )}
                             <div>
@@ -53,12 +52,12 @@ function App() {
                         <div className="bg-gray-100 p-4 rounded-lg shadow-md">
                             <p><strong>Google ID:</strong> {authUser?.googleId}</p>
                             <p><strong>First Name:</strong> {authUser?.firstName}</p>
+                            <p><strong>Last Name:</strong> {authUser?.lastName}</p>
                             <p><strong>Email:</strong> {authUser?.email}</p>
                             <p><strong>Contact:</strong> {authUser?.phone}</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     };
