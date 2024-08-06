@@ -86,11 +86,13 @@ const Navbar = () => {
                     )}
                     <a href='/Adminlogin' className="bg-blue-500 text-white px-3.5 py-2 rounded-md hover:bg-blue-800 duration-300 cursor-pointer dark:bg-blue-800">Admin</a>
                 </div>
+
+
                 <div>
                     {authUser ? (
                         <div className='md:ml-2 lg:md:ml-10 ml-2 w-[50px]'>
                             <a href='/Profile'>
-                                {authUser.photo ? (
+                                {authUser.photo && authUser.photo !== "null" ? (
                                     <img
                                         src={authUser.photo}
                                         alt="Profile"
@@ -105,7 +107,6 @@ const Navbar = () => {
                         </div>
                     ) : null}
                 </div>
-
 
 
             </div>
