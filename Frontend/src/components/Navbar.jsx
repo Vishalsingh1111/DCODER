@@ -90,7 +90,7 @@ const Navbar = () => {
                     {authUser ? (
                         <div className='md:ml-2 lg:md:ml-10 ml-2 w-[50px]'>
                             <a href='/Profile'>
-                                {authUser && authUser.photo ? (
+                                {authUser.photo ? (
                                     <img
                                         src={authUser.photo}
                                         alt="Profile"
@@ -98,12 +98,14 @@ const Navbar = () => {
                                     />
                                 ) : (
                                     <h1 className='text-black text-2xl text-center py-2 bg-gray-300 cursor-pointer rounded-full'>
-                                        {authUser && authUser.firstName ? authUser.firstName.charAt(0) : '0'}</h1>
+                                        {authUser.firstName ? authUser.firstName.charAt(0).toUpperCase() : '0'}
+                                    </h1>
                                 )}
                             </a>
                         </div>
                     ) : null}
                 </div>
+
 
 
             </div>
