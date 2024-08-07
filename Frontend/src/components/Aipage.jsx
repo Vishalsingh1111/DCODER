@@ -78,33 +78,33 @@ const Chat = () => {
                 </div>
                 <div className=" w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols gap-4">
                     <button
-                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Outline a way to home routine: organizing my closet')}
                     >
                         Outline a way to home routine: organizing my closet
                     </button>
                     <button
-                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Help me incorporate more plant-based options in my diet')}
                     >
                         Help me incorporate more plant-based options in my diet
                     </button>
                     <button
-                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Come up with a recipe for an upcoming event')}
                     >
                         Come up with a recipe for an upcoming event
                     </button>
                     <button
-                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Create a 12-week study plan for learning a new language')}
                     >
                         Create a 12-week study plan for learning a new language
                     </button>
                 </div>
-                <div className='w-full max-w-4xl mx-auto my-10 pb-10 text-justify justify-start p-8 rounded '>
+                <div className='w-full max-w-4xl mx-auto pb-10 text-justify justify-start mt-32 rounded  dark-text-white rounded-xl'>
                     {loading ? (
-                        <div className="text-center">
+                        <div className="text-center text-2xl text-purple-500">
                             Getting Your Response Ready ....
                             <Skeleton1 />
                         </div>
@@ -115,14 +115,14 @@ const Chat = () => {
 
                 </div>
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2">
+            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Enter a prompt here"
-                    className="w-full px-5 p-2 border-none outline-none "
+                    className="w-full px-5 p-2 border-none outline-none dark:bg-slate-800 dark-text-white "
                 />
                 {query && (
                     <button onClick={() => handleQuery(query)}>
@@ -135,3 +135,4 @@ const Chat = () => {
 };
 
 export default Chat;
+
