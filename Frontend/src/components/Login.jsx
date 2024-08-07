@@ -178,16 +178,24 @@ const LoginPage = () => {
                     </button>
                 </div>
                 <div className="mt-4 flex justify-between">
-                    <a
-                        className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline"
-                        href="/"
-                        onClick={handleClose}
-                    >
-                        Cancel
-                    </a>
-                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Signup">
-                        New user? Register
-                    </a>
+                    <div>
+                        <a
+                            className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline"
+                            href="/"
+                            onClick={handleClose}
+                        >
+                            Cancel
+                        </a>
+                    </div>
+                    <div className='flex space-x-5'>
+                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Adminlogin">
+                            Admin
+                        </a>
+                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Signup">
+                            New user? Register
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>

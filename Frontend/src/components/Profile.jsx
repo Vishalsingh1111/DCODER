@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Logout from './Logout';
 
 function App() {
     const [isModalOpen, setModalOpen] = useState(true); // Modal opens by default
@@ -56,6 +57,7 @@ function App() {
                             <p><strong>Email:</strong> {authUser?.email}</p>
                             <p><strong>Contact:</strong> {authUser?.phone}</p>
                         </div>
+                        <div className='my-5'><Logout /></div>
                     </div>
                 </div>
             </div>

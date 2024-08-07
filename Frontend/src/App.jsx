@@ -23,7 +23,8 @@ import Projectpage from './components/Projects/Projectpage';
 import DashBoard from './components/Admin/Dashboard';
 import Contactform from './Contacts/Contactform';
 import { useAuth } from './Context/AuthProvider';
-import Profile from './components/Profile'
+import Profile from './components/Profile';
+import Ai from './components/Aipage';
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>
           <Route path='/Dashboard' element={<DashBoard />} />
           <Route path='/Profile' element={<Profile />} />
+          <Route path='/Ai' element={<Ai />} />
 
         </Routes>
         <Toaster />
