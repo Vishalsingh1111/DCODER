@@ -67,7 +67,7 @@ const Chat = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-32 dark:bg-none dark:text-white pb-24"> {/* Adjusted padding */}
+            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen py-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
                 <div className="mb-20 max-w-4xl text-left mx-auto">
                     <h1 className="text-5xl font-bold mb-2">
                         Hello, <span className="text-purple-600">{authUser?.firstName || 'Guest'}</span>
@@ -76,43 +76,46 @@ const Chat = () => {
                         How can I help you today?
                     </h2>
                 </div>
-                <div className=" w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4  lg:grid-cols gap-4 mb-18">
+                <div className=" w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols gap-4">
                     <button
-                        className="p-8 bg-white rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
                         onClick={() => handleQuery('Outline a way to home routine: organizing my closet')}
                     >
                         Outline a way to home routine: organizing my closet
                     </button>
                     <button
-                        className="p-8 bg-white rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
                         onClick={() => handleQuery('Help me incorporate more plant-based options in my diet')}
                     >
                         Help me incorporate more plant-based options in my diet
                     </button>
                     <button
-                        className="p-8 bg-white rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
                         onClick={() => handleQuery('Come up with a recipe for an upcoming event')}
                     >
                         Come up with a recipe for an upcoming event
                     </button>
                     <button
-                        className="p-8 bg-white rounded-lg justify-start flex text-left text-sm"
+                        className="p-8 bg-gray-300 rounded-lg justify-start flex text-left text-sm"
                         onClick={() => handleQuery('Create a 12-week study plan for learning a new language')}
                     >
                         Create a 12-week study plan for learning a new language
                     </button>
                 </div>
-                <div className='w-full max-w-4xl mx-auto my-10 pb-10 text-justify justify-start'> {/* Adjusted padding */}
+                <div className='w-full max-w-4xl mx-auto my-10 pb-10 text-justify justify-start p-8 rounded '>
                     {loading ? (
                         <div className="text-center">
+                            Getting Your Response Ready ....
                             <Skeleton1 />
                         </div>
                     ) : (
                         <div ref={responseRef} dangerouslySetInnerHTML={{ __html: response }} />
+
                     )}
+
                 </div>
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2">
+            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2">
                 <input
                     type="text"
                     value={query}
