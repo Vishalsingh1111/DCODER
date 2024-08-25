@@ -42,12 +42,13 @@ const Navbar = () => {
                     <ul className="bg-base-100 w-48 rounded-t-none p-2 dark:bg-slate-900 dark:text-white">
                         <li><a href='/Sheet'>DSA Sheet</a></li>
                         <li><a href='/Languages'>Rivision Notes</a></li>
+                        <li><a href='/Technicalblog'>Tech Blog</a></li>
                         <li><a href='/Project'>Project</a></li>
                     </ul>
                 </details>
             </li>
             <li><a href='/'>Practice</a></li>
-            <li><a href='/Technicalblog'>Tech Blog</a></li>
+
             <li><a href='/Contact'>Contact</a></li>
         </>
     );
