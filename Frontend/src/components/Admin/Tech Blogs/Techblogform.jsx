@@ -8,6 +8,7 @@ const FormElementInput = () => {
         header: "",
         code: "",
         explanation: "",
+        image: "",
         category: ""
     });
 
@@ -19,7 +20,7 @@ const FormElementInput = () => {
     };
 
     const validateForm = () => {
-        const requiredFields = ["id", "header", "code", "category"];
+        const requiredFields = ["id", "header", "code", "image", "category"];
         let errors = {};
         for (let field of requiredFields) {
             if (!formData[field]) {
@@ -47,6 +48,7 @@ const FormElementInput = () => {
                 header: "",
                 code: "",
                 explanation: "",
+                image: "",
                 category: ""
             });
             setValidationErrors({});
@@ -96,6 +98,14 @@ const FormElementInput = () => {
                             value={formData.category}
                             onChange={handleChange}
                             error={validationErrors.category}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput6
+                            value={formData.image}
+                            onChange={handleChange}
+                            error={validationErrors.image}
                         />
                     </DefaultColumn>
 
@@ -209,6 +219,26 @@ const DefaultInput5 = ({ value, onChange, error }) => {
                 value={value}
                 onChange={onChange}
                 placeholder="Enter category"
+                rows={4}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+            />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </>
+    );
+};
+
+const DefaultInput6 = ({ value, onChange, error }) => {
+    return (
+        <>
+            <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Enter Image Link
+                <span className="text-red-500">*</span>
+            </label>
+            <textarea
+                name="image"
+                value={value}
+                onChange={onChange}
+                placeholder="Enter image link"
                 rows={4}
                 className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
             />

@@ -67,6 +67,7 @@ const NoteList = () => {
                                 <th className="border border-gray-300 px-4 py-2">Code</th>
                                 <th className="border border-gray-300 px-4 py-2">Explanation</th>
                                 <th className="border border-gray-300 px-4 py-2">Category</th>
+                                <th className="border border-gray-300 px-4 py-2">Image</th>
                                 <th className="border border-gray-300 px-4 py-2">Action</th>
 
                             </tr>
@@ -79,6 +80,7 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.code}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.category}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.image}</td>
 
                                     <td className="border-t border-gray-300 px-4 py-2 flex">
                                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>
