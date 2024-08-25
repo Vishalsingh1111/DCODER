@@ -22,8 +22,6 @@ const notecontentSchema = mongoose.Schema({
     figtitle: { type: String, required: false }
 });
 
-notecontentSchema.index({ header: 'text', text: 'text', category: 'text' });
-
 const NoteContent = mongoose.model("NoteContent", notecontentSchema);
 export default NoteContent;
 
