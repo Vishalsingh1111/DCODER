@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  color: rgba(66, 66, 66, 0.809); */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.h-screen-minus-5 {
+  height: calc(100vh - 2.25rem);
+  /* 1.25rem is the equivalent of Tailwind's mb-5 */
+}
