@@ -25,7 +25,7 @@ const Blogcard = ({ item, onClick }) => {
                         className="text-gray-700 inline-block border p-2 rounded-lg border-gray-500 group-hover:bg-gray-700 group-hover:text-white group-hover:border-gray-700 transition-all duration-300"
                         href="#"
                     >
-                        Click to open vishal
+                        Click to open
                     </a>
                 </div>
             </div>
