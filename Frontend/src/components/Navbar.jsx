@@ -43,12 +43,11 @@ const Navbar = () => {
                         <li><a href='/Sheet'>DSA Sheet</a></li>
                         <li><a href='/Languages'>Rivision Notes</a></li>
                         <li><a href='/Project'>Project</a></li>
-                        <li><a href='/Technicalblog'>Tech Blog</a></li>
                     </ul>
                 </details>
             </li>
             <li><a href='/'>Practice</a></li>
-
+            <li><a href='/Technicalblog'>Tech Blog</a></li>
             <li><a href='/Contact'>Contact</a></li>
         </>
     );
