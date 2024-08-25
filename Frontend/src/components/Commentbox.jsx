@@ -6,6 +6,8 @@ function Commentbox() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
     const [name, setName] = useState('');
+    const [visibleComments, setVisibleComments] = useState(2);
+    const [showMore, setShowMore] = useState(true);
 
     // Fetch comments from the API
     const fetchComments = async () => {
@@ -47,17 +49,23 @@ function Commentbox() {
         fetchComments();
     }, []);
 
+    // Toggle between showing more and fewer comments
+    const toggleShowMore = () => {
+        setShowMore(!showMore);
+        setVisibleComments(showMore ? comments.length : 2);
+    };
+
     return (
         <>
-            <div className='flex flex-col w-full mx-auto items-center'>
-                <div className="w-full md:w-7/12 lg:w-7/12 px-10 rounded-xl my-10 dark:bg-slate-800 bg-white">
+            <div className='flex flex-col w-full mx-auto items-center mb-20 '>
+                <div className="w-full md:w-7/12 lg:w-7/12 px-10 mx-10 rounded-lg my-10 dark:bg-slate-800 border border-gray-300">
                     <form onSubmit={handleCommentSubmit}>
                         <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-5 mt-10 text-2xl">Comment</label>
                         <div className="mb-4">
                             <input
                                 type="text"
                                 id="name"
-                                className="w-full p-2 border rounded dark:bg-slate-900 dark:text-white"
+                                className="w-full p-2 border rounded bg-transparent border border-gray-300 dark:bg-slate-900 dark:text-white"
                                 placeholder="Enter your name here"
                                 value={name}
                                 onChange={handleNameChange}
@@ -66,31 +74,40 @@ function Commentbox() {
                         <div className="mb-4">
                             <textarea
                                 id="comment"
-                                className="w-full p-2 border rounded dark:bg-slate-900 dark:text-white"
+                                className="w-full p-2 border rounded bg-transparent border border-gray-300 dark:bg-slate-900 dark:text-white"
                                 rows="4"
                                 placeholder="Enter your comment here"
                                 value={newComment}
                                 onChange={handleCommentChange}
                             ></textarea>
                         </div>
-                        <button type="submit" className="bg-blue-500 text-white py-2 px-4 mb-8 rounded-md">Post Comment</button>
+                        <button type="submit" className="bg-gray-500 text-white py-2 px-4 mb-8 rounded-md">Post Comment</button>
                     </form>
                 </div>
 
                 <div className="w-full md:w-7/12 lg:w-7/12 px-10 rounded-xl my-3 dark:bg-none">
-                    {comments.map((comment) => (
+                    {comments.slice(0, visibleComments).map((comment) => (
                         <div key={comment._id} className="flex items-start space-x-4 mb-9">
                             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white">
                                 {comment.name.charAt(0).toUpperCase()}
                             </div>
 
                             <div className="flex flex-col items-start space-y-1 ">
-                                <p className="font-semibold dark:text-gray-300 bg-gray-300 px-2 rounded">{comment.name}</p>
+                                <p className="font-semibold dark:text-white dark:bg-transparent bg-gray-300 px-2 rounded">{comment.name}</p>
                                 <p className="text-gray-500 text-sm">{new Date(comment.time).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
                                 <p className="text-gray-700 dark:text-gray-300">{comment.comment}</p>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="w-full md:w-7/12 lg:w-7/12 px-10 text-center">
+                    <button
+                        onClick={toggleShowMore}
+                        className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
+                    >
+                        {showMore ? 'More Comments' : 'Close'}
+                    </button>
                 </div>
             </div>
         </>
