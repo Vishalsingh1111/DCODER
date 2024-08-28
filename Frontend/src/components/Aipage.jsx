@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 import { baseUrl } from '../Baseurl';
-import Skeleton1 from './Skeleton';
 
 const formatResponse = (response) => {
     let formattedResponse = response
@@ -106,7 +105,6 @@ const Chat = () => {
                     {loading ? (
                         <div className="text-center text-2xl text-purple-500">
                             Getting Your Response Ready ....
-                            <Skeleton1 />
                         </div>
                     ) : (
                         <div ref={responseRef} dangerouslySetInnerHTML={{ __html: response }} />
