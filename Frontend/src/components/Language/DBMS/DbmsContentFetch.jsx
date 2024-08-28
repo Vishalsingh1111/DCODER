@@ -51,7 +51,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -64,7 +64,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -82,7 +82,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={currentPage}
-                        className="px-4 py-2 mx-1 bg-blue-700 text-white rounded"
+                        className="px-4 py-2 mx-1 bg-purple-700 text-white rounded"
                         onClick={() => handlePageChange(currentPage)}
                     >
                         {currentPage}
@@ -101,7 +101,7 @@ const DbmsContentFetch = () => {
                     pageNumbers.push(
                         <button
                             key={i}
-                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                             onClick={() => handlePageChange(i)}
                         >
                             {i}
@@ -136,7 +136,7 @@ const DbmsContentFetch = () => {
             {/* Pagination Controls */}
             <div className="flex justify-center mt-10">
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-purple-500 rounded hover:bg-purple-700"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
@@ -146,7 +146,7 @@ const DbmsContentFetch = () => {
                 {renderPageNumbers()}
 
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-purple-500 rounded hover:bg-purple-700"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >

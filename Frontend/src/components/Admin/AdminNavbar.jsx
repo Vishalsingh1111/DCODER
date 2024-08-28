@@ -77,7 +77,7 @@ const Sidebar = () => {
             >
                 <div className="h-full px-3 py-4 overflow-y-auto bg-white rounded-xl h-screen-minus-5 border border-gray-300 dark:bg-gray-800">
                     <ul className="space-y-2 font-medium">
-                        <li className=' pl-3 text-red-500 text-center'>
+                        <li className=' pl-3 text-purple-500 text-left'>
                             <span>DCODER</span>
                         </li>
                         <li>
