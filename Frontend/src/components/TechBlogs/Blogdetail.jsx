@@ -19,7 +19,7 @@ const BlogDetail = () => {
     const [loading, setLoading] = useState(true);
     const [thumbsUpCount, setThumbsUpCount] = useState(0);
     const [thumbsDownCount, setThumbsDownCount] = useState(0);
-    const [visibleCount, setVisibleCount] = useState(5);
+    const [visibleCount, setVisibleCount] = useState(3);
     const [showCode, setShowCode] = useState(false);
 
     useEffect(() => {
@@ -59,11 +59,11 @@ const BlogDetail = () => {
         if (visibleCount + 5 >= items.length) {
             setVisibleCount(items.length);
         } else {
-            setVisibleCount(visibleCount + 5);
+            setVisibleCount(visibleCount + 3);
         }
     };
 
-    const handleHide = () => setVisibleCount(5);
+    const handleHide = () => setVisibleCount(3);
 
     const truncateText = (text, maxLength) => {
         if (text.length <= maxLength) return text;
@@ -85,7 +85,7 @@ const BlogDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCode(!showCode)}
-                                className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                className="mb-4 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
                             >
                                 {showCode ? "Hide Code" : "Show Code"}
                             </button>
@@ -126,13 +126,9 @@ const BlogDetail = () => {
                                     <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-white dark:bg-slate-800 shadow rounded-lg p-4 md:p-14 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
                                             <h3 className="text-2xl">{blogItem.header}</h3>
-                                            <p className="text-lg text-gray-500 mt-2">{truncateText(blogItem.explanation, 100)}</p>
+                                            <p className="text-lg text-gray-500 mt-2">{truncateText(blogItem.explanation, 150)}</p>
+                                            <p className='text-red-500 mt-3'>Read more ..</p>
                                         </div>
-                                        <img
-                                            src={blogItem.image}
-                                            className="w-full lg:w-[180px] h-[130px] object-cover"
-                                            alt="Blog"
-                                        />
                                     </div>
                                 ))}
                         </div>

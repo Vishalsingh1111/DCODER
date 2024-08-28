@@ -1,5 +1,11 @@
 import React from 'react';
 
+// Truncate text function
+const truncateText = (text, length) => {
+    if (text.length <= length) return text;
+    return text.slice(0, length) + '...';
+};
+
 const Blogcard = ({ item, onClick }) => {
     return (
         <div
@@ -8,21 +14,16 @@ const Blogcard = ({ item, onClick }) => {
         >
             <div className="content flex-1 flex flex-col justify-between">
                 <div>
-                    <img
-                        src={item.image}
-                        className="w-full h-[180px] object-cover rounded-lg"
-                        alt="Blog"
-                    />
                     <h3 className="text-lg text-blue-900 mb-2 mt-4 dark:text-white">
                         {item.header}
                     </h3>
-                    <p className="text-purple-600 dark:text-gray-500">
-                        {item.category}
+                    <p className="text-sm text-gray-600 mb-2 dark:text-white">
+                        {truncateText(item.explanation, 80)}
                     </p>
                 </div>
                 <div className="flex justify-start mt-4">
                     <a
-                        className="text-gray-700 inline-block border p-2 rounded-lg border-gray-500 group-hover:bg-gray-700 group-hover:text-white group-hover:border-gray-700 transition-all duration-300"
+                        className="text-purple-700 inline-block border p-2 rounded-lg border-purple-500 group-hover:bg-purple-700 group-hover:text-white group-hover:border-purple-700 transition-all duration-300"
                         href="#"
                     >
                         Click to open
