@@ -170,7 +170,7 @@ const DefaultInput = ({ name, value, onChange, label, type, error }) => {
                 value={value}
                 onChange={onChange}
                 placeholder={`Enter ${label.toLowerCase()}`}
-                className="w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900"
+                className="w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900"
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>

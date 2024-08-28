@@ -66,7 +66,7 @@ const Navbar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <a href='/' className="text-xl font-bold text-red-500 cursor-pointer">DCODER</a>
+                    <a href='/' className="text-xl text-purple-500 cursor-pointer" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '900' }}>DCODER</a>
                 </div>
                 <div className="navbar-center hidden lg:flex space-x-4">
                     <ul className="menu menu-horizontal px-1 text-md">
@@ -81,7 +81,7 @@ const Navbar = () => {
                     </label>
                     <a href='/Ai'><div className='bg-purple-800 rounded-lg px-3 py-2 text-white text-sm hover:bg-purple-900'>Ask To AI</div></a>
                     {!authUser && (
-                        <a href="/Login" className="bg-red-500 text-white px-3.5 py-1.5 rounded-md hover:bg-red-800 duration-300 cursor-pointer dark:bg-red-800">
+                        <a href="/Login" className="bg-red-500 text-white px-3.5 py-1.5 rounded-md hover:bg-red-700 duration-300 cursor-pointer dark:bg-purple-800">
                             Login
                         </a>
                     )}

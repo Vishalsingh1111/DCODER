@@ -5,7 +5,7 @@ const Card = ({ icon, title, linkUrl }) => (
         <div className="p-4 sm:p-5 md:p-6 flex flex-cols rounded-2xl m-2 shadow bg-white dark:bg-slate-800 dark:text-white hover:shadow-lg transition-shadow">
             <div className="icon text-5xl mb-4 md:mb-0 md:mr-4">{icon}</div>
             <div className="content">
-                <h3 className="text-xl font-semibold p-2 mb-2">{title}</h3>
+                <h3 className="text-lg text-purple-500 font-semibold p-2 mb-2">{title}</h3>
             </div>
         </div>
     </a>

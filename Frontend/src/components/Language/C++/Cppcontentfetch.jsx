@@ -117,8 +117,8 @@ const Cppcontentfetch = () => {
     return (
         <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
-            <div className='text-3xl text-red-500 pb-10 text-center'>
-                <div className='text-3xl text-red-500 pb-10 text-center'><span>Basic Interview Questions – Object Oriented Programming</span></div>
+            <div className='text-3xl text-purple-500 pb-10 text-center'>
+                <div className='text-3xl text-purple-500 pb-10 text-center'><span>Basic Interview Questions – Object Oriented Programming</span></div>
             </div>
 
             <div className="mx-auto text-left">

@@ -17,7 +17,7 @@ const Projectcard = ({ item, onClick }) => {
                     <p className="mb-2 text-sm dark:text-dark-6">
                         {item.category}
                     </p>
-                    <a className="text-red-500 inline-block">{"Click for details"} &rarr;</a>
+                    <a className="text-purple-500 inline-block">{"Click for details"} &rarr;</a>
                 </div>
             </div>
         </div>

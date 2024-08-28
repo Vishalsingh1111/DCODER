@@ -26,7 +26,7 @@ function App() {
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                 <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md relative">
                     <button
-                        className="absolute px-2.5 py-1 rounded-full top-2 right-2 text-gray-500 hover:bg-red-700 text-white  bg-red-500"
+                        className="absolute px-2.5 py-1 rounded-full top-2 right-2 text-gray-500 hover:bg-purple-700 text-white  bg-purple-500"
                         onClick={onClose}
                     >
                         &times;

@@ -46,7 +46,7 @@ function Sheetcard({ item }) {
 
     return (
         <div className="w-full bg-white rounded-lg shadow dark:bg-slate-800 dark:text-white">
-            <div className="bg-red-500 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
+            <div className="bg-purple-500 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
             <div className="flex items-center justify-between py-4 lg:px-8 px-2 cursor-pointer" onClick={toggleAccordion}>
                 <div className="flex flex-col">
                     <h3 className="text-xl font-semibold text-gray-600 dark:text-white">{item.name}</h3>

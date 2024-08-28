@@ -171,7 +171,7 @@ const SignupPage = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-purple-500 hover:bg-purple-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Register
                         </button>
@@ -179,9 +179,9 @@ const SignupPage = () => {
                 </form>
 
                 <div className="my-4 flex items-center justify-center">
-                    <hr className="flex-grow border-blue-900" />
-                    <span className="px-2 text-blue-900">OR</span>
-                    <hr className="flex-grow border-blue-900" />
+                    <hr className="flex-grow border-purple-900" />
+                    <span className="px-2 text-purple-900">OR</span>
+                    <hr className="flex-grow border-purple-900" />
                 </div>
 
                 <div className="flex justify-center">
@@ -198,7 +198,7 @@ const SignupPage = () => {
                     >
                         Cancel
                     </a>
-                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Login">
+                    <a className="inline-block align-baseline font-bold text-sm text-purple-500 hover:underline" href="/Login">
                         Already a user? Login
                     </a>
                 </div>

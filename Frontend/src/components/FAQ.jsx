@@ -26,7 +26,7 @@ const Accordion = () => {
                             text="We update our site regularly with new content. You can expect new blog posts, notes, interview questions, and project ideas every week. Our team of experienced developers and educators work tirelessly to ensure you have the latest and most relevant information.."
                         />
                         <AccordionItem
-                            header="Can I request specific topics to be covered?"
+                            header="Can I request specific topics to be covepurple?"
                             text="Absolutely! We value our community’s feedback and are always open to suggestions. If there’s a specific topic or a programming language you want us to cover, feel free to reach out to us via our contact page. We’ll do our best to accommodate your request in our upcoming content schedule."
                         />
                     </div>
@@ -37,11 +37,11 @@ const Accordion = () => {
                         />
                         <AccordionItem
                             header="How can I use the projects listed on your site?"
-                            text="The projects listed on our site are categorized by difficulty level and are designed to help you apply the concepts you've learned. Each project includes a detailed description, required technologies, and step-by-step instructions. You can use these projects to build your portfolio, practice coding, or even as a base for your own unique projects."
+                            text="The projects listed on our site are categorized by difficulty level and are designed to help you apply the concepts you've learned. Each project includes a detailed description, requipurple technologies, and step-by-step instructions. You can use these projects to build your portfolio, practice coding, or even as a base for your own unique projects."
                         />
                         <AccordionItem
                             header="Any certification for completed projects?"
-                            text="While we do not offer formal certifications, we encourage you to share your completed projects with us. Our team will review your work and provide feedback. Exceptional projects may be featured on our site, giving you recognition and helping you build a stronger portfolio."
+                            text="While we do not offer formal certifications, we encourage you to share your completed projects with us. Our team will review your work and provide feedback. Exceptional projects may be featupurple on our site, giving you recognition and helping you build a stronger portfolio."
                         />
                     </div>
                 </div>
@@ -60,14 +60,14 @@ const AccordionItem = ({ header, text }) => {
         setActive(!active);
     };
     return (
-        <div className="mb-4 w-full bg-white shadow p-4 rounded-xl dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
+        <div className="mb-4 w-full bg-white border border-gray-300 p-4 rounded-xl dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
             <button
                 className={`faq-btn flex w-full text-left`}
                 onClick={() => handleToggle()}
             >
-                <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-[#EDE8F5] text-red dark:bg-white/5">
+                <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-[#EDE8F5] text-purple dark:bg-white/5">
                     <svg
-                        className={`fill-red-500 stroke-red-500 duration-200 ease-in-out ${active ? "rotate-180" : ""
+                        className={`fill-purple-500 stroke-purple-500 duration-200 ease-in-out ${active ? "rotate-180" : ""
                             }`}
                         width="17"
                         height="10"

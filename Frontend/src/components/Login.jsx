@@ -78,13 +78,13 @@ const LoginPage = () => {
                 <div className="relative flex justify-left space-x-5 mb-4">
                     <button
                         onClick={() => setIsEmail(true)}
-                        className={`relative px-4 py-2 z-10 ${isEmail ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
+                        className={`relative px-4 py-2 z-10 ${isEmail ? 'bg-purple-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
                     >
                         Email
                     </button>
                     <button
                         onClick={() => setIsEmail(false)}
-                        className={`relative px-4 py-2 z-10 ${!isEmail ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
+                        className={`relative px-4 py-2 z-10 ${!isEmail ? 'bg-purple-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
                     >
                         Phone
                     </button>
@@ -141,7 +141,7 @@ const LoginPage = () => {
                         </button>
                     </div>
                     <div className="flex items-center justify-between mb-4">
-                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/Forgetpassword">
+                        <a className="inline-block align-baseline font-bold text-sm text-purple-500 hover:text-purple-800" href="/Forgetpassword">
                             Forgot Password?
                         </a>
                     </div>
@@ -158,7 +158,7 @@ const LoginPage = () => {
                         </label>
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-purple-500 hover:bg-purple-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Log In
                         </button>
@@ -166,9 +166,9 @@ const LoginPage = () => {
                 </form>
 
                 <div className="my-4 flex items-center justify-center">
-                    <hr className="flex-grow border-blue-900" />
-                    <span className="px-2 text-blue-900">OR</span>
-                    <hr className="flex-grow border-blue-900" />
+                    <hr className="flex-grow border-purple-900" />
+                    <span className="px-2 text-purple-900">OR</span>
+                    <hr className="flex-grow border-purple-900" />
                 </div>
 
                 <div className="flex justify-center">
@@ -188,10 +188,10 @@ const LoginPage = () => {
                         </a>
                     </div>
                     <div className='flex space-x-5'>
-                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Adminlogin">
+                        <a className="inline-block align-baseline font-bold text-sm text-purple-500 hover:underline" href="/Adminlogin">
                             Admin
                         </a>
-                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:underline" href="/Signup">
+                        <a className="inline-block align-baseline font-bold text-sm text-purple-500 hover:underline" href="/Signup">
                             New user? Register
                         </a>
                     </div>

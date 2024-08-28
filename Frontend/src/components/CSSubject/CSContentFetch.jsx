@@ -57,7 +57,7 @@ const CScontentfetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -70,7 +70,7 @@ const CScontentfetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -87,7 +87,7 @@ const CScontentfetch = () => {
                 pageNumbers.push(
                     <button
                         key={currentPage}
-                        className="px-4 py-2 mx-1 bg-blue-700 text-white rounded"
+                        className="px-4 py-2 mx-1 bg-purple-700 text-white rounded"
                         onClick={() => handlePageChange(currentPage)}
                     >
                         {currentPage}
@@ -106,7 +106,7 @@ const CScontentfetch = () => {
                     pageNumbers.push(
                         <button
                             key={i}
-                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-purple-700 text-white" : "bg-gray-200 text-black"}`}
                             onClick={() => handlePageChange(i)}
                         >
                             {i}
@@ -123,21 +123,21 @@ const CScontentfetch = () => {
         <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
             <div className="flex justify-center mb-10">
                 <button
-                    className={`text-lg p-2 ${activeSection === "os" ? "text-blue-500 border-2 border-blue-500" : "text-gray-500 border-2 border-gray-500"}`}
+                    className={`text-lg p-2 ${activeSection === "os" ? "text-purple-500 border-2 border-purple-500" : "text-gray-500 border-2 border-gray-500"}`}
                     onClick={() => handleSectionChange("os")}
                 >
                     Operating System
                 </button>
                 <button
-                    className={`text-lg ml-4 p-2 ${activeSection === "cn" ? "text-blue-500 border-2 border-blue-500" : "text-gray-500 border-2 border-gray-500"}`}
+                    className={`text-lg ml-4 p-2 ${activeSection === "cn" ? "text-purple-500 border-2 border-purple-500" : "text-gray-500 border-2 border-gray-500"}`}
                     onClick={() => handleSectionChange("cn")}
                 >
                     Computer Network
                 </button>
             </div>
 
-            <div className='text-3xl text-red-500 pb-10 text-center'>
-                <div className='text-3xl text-red-500 pb-10 text-center'><span>Basic Interview Questions</span></div>
+            <div className='text-3xl text-purple-500 pb-10 text-center'>
+                <div className='text-3xl text-purple-500 pb-10 text-center'><span>Basic Interview Questions</span></div>
             </div>
 
             <div className="mx-auto text-left">
@@ -155,7 +155,7 @@ const CScontentfetch = () => {
             {/* Pagination Controls */}
             <div className="flex justify-center mt-10">
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-purple-500 rounded hover:bg-purple-700"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
@@ -165,7 +165,7 @@ const CScontentfetch = () => {
                 {renderPageNumbers()}
 
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-purple-500 rounded hover:bg-purple-700"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >

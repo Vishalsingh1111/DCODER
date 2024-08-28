@@ -30,7 +30,7 @@ const NoteModal = ({ isOpen, onRequestClose, noteKey }) => {
             <div className="flex justify-between items-center py-2 mb-4 border-b">
                 <h2 className="text-xl font-bold">Save Notes</h2>
                 <button
-                    className="text-white bg-red-500 px-2 py-1 rounded hover:bg-red-800"
+                    className="text-white bg-purple-500 px-2 py-1 rounded hover:bg-purple-800"
                     onClick={onRequestClose}>
                     Close
                 </button>

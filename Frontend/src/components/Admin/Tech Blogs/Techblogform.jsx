@@ -141,7 +141,7 @@ const DefaultInput1 = ({ value, onChange, error }) => {
                 value={value}
                 onChange={onChange}
                 placeholder="Enter ID"
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>
@@ -161,7 +161,7 @@ const DefaultInput2 = ({ value, onChange, error }) => {
                 onChange={onChange}
                 placeholder="Enter header"
                 rows={4}
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 resize-none ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>
@@ -181,7 +181,7 @@ const DefaultInput3 = ({ value, onChange, error }) => {
                 onChange={onChange}
                 placeholder="Enter code"
                 rows={4}
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 resize-none ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>
@@ -200,7 +200,7 @@ const DefaultInput4 = ({ value, onChange, error }) => {
                 onChange={onChange}
                 placeholder="Enter explanation"
                 rows={4}
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 resize-none ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>
@@ -220,7 +220,7 @@ const DefaultInput5 = ({ value, onChange, error }) => {
                 onChange={onChange}
                 placeholder="Enter category"
                 rows={4}
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 resize-none ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>
@@ -240,7 +240,7 @@ const DefaultInput6 = ({ value, onChange, error }) => {
                 onChange={onChange}
                 placeholder="Enter image link"
                 rows={4}
-                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-blue-500 dark:focus:border-blue-400 focus:ring focus:ring-blue-200 dark:focus:ring-blue-900 resize-none ${error ? 'border-red-500' : ''}`}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-purple-500 dark:focus:border-purple-400 focus:ring focus:ring-purple-200 dark:focus:ring-purple-900 resize-none ${error ? 'border-red-500' : ''}`}
             />
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </>

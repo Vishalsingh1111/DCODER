@@ -16,7 +16,7 @@ const Blogcard = ({ item, onClick }) => {
                     <h3 className="text-lg text-blue-900 mb-2 mt-4 dark:text-white">
                         {item.header}
                     </h3>
-                    <p className="text-red-600 dark:text-gray-500">
+                    <p className="text-purple-600 dark:text-gray-500">
                         {item.category}
                     </p>
                 </div>

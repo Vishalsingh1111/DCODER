@@ -33,7 +33,7 @@ function AdminHeader() {
                     <a className="btn btn-ghost text-xl">DCODER</a>
                 </div>
                 <div>
-                    <a href='/AddAdmin'><button className='p-2 bg-blue-500 text-white rounded mr-5'>Add Admin</button></a>
+                    <a href='/AddAdmin'><button className='p-2 bg-purple-500 text-white rounded mr-5'>Add Admin</button></a>
                 </div>
                 <div>
                     <button

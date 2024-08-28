@@ -81,7 +81,7 @@ const Service = () => {
                     />
                     <ServiceCard
                         title="Programming Languages"
-                        details="Dive deep into structured notes covering various programming languages. Our resources are crafted to simplify complex concepts and enhance your understanding."
+                        details="Dive deep into structupurple notes covering various programming languages. Our resources are crafted to simplify complex concepts and enhance your understanding."
                         icon={
                             <svg
                                 width="36"
@@ -131,8 +131,8 @@ const ServiceCard = ({ icon, title, details }) => {
     return (
         <>
             <div className="w-full px-4 md:w-1/2 lg:w-1/3 mb-8">
-                <div className="cursor-pointer shadow rounded-xl p-10 h-full shadow-2 hover:shadow-lg bg-white dark:bg-slate-800 dark:text-white md:px-7 xl:px-10">
-                    <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-red-500">
+                <div className="cursor-pointer border border-gray-300 rounded-xl dark:border-none p-10 h-full shadow-2 group hover:shadow-lg group hover:border-transparent bg-white dark:bg-slate-800 dark:text-white md:px-7 xl:px-10">
+                    <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-purple-500">
                         {icon}
                     </div>
                     <h4 className="mb-[14px] text-xl text-blue-900 font-semibold text-dark dark:text-white">
