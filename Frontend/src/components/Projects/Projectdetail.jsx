@@ -148,7 +148,7 @@ const ProjectDetail = () => {
                             </div>
                         </div>
                     )}
-                    <div className="flex py-5 md:px-10 text-center justify-center space-x-4 bg-base-100 overflow-auto rounded">
+                    <div className="flex py-5 md:px-10 text-center justify-center space-x-4 bg-base-100 dark:bg-transparent overflow-auto rounded">
                         {item.image1 && <img src={item.image1} alt="Description of image 1" className="max-w-[25%] flex-1 cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => setMainImage(item.image1)} />}
                         {item.image2 && <img src={item.image2} alt="Description of image 2" className="max-w-[25%] flex-1 cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => setMainImage(item.image2)} />}
                         {item.image3 && <img src={item.image3} alt="Description of image 3" className="max-w-[25%] flex-1 cursor-pointer transform transition-transform duration-300 hover:scale-110" onClick={() => setMainImage(item.image3)} />}
@@ -181,7 +181,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
-                                className="mb-2 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
                             >
                                 {showHtmlCode ? "Hide Code" : "Show HTML Code"}
                             </button>
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCssCode(!showCssCode)}
-                                className="mb-2 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
                             >
                                 {showCssCode ? "Hide Code" : "Show CSS Code"}
                             </button>
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowJsCode(!showJsCode)}
-                                className="mb-2 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
                             >
                                 {showJsCode ? "Hide Code" : "Show JavaScript Code"}
                             </button>
@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowOtherCode(!showOtherCode)}
-                                className="mb-4 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="mb-4 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
                             >
                                 {showOtherCode ? "Hide Code" : "Show Other Code"}
                             </button>
@@ -274,7 +274,7 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white shadow-md rounded-lg p-5 cursor-pointer hover:shadow-lg space-y-2"
+                                    className="bg-white shadow-md rounded-lg p-5 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full h-48 object-cover rounded-t" />
