@@ -95,7 +95,7 @@ const BlogDetail = () => {
 
                     {item.explanation && (
                         <div className="mt-4">
-                            <span className="text-2xl font-bold text-purple-500">Explanation:</span>
+                            <span className="text-2xl font-semibold text-gray-500">Explanation:</span>
                             <ul className="py-2 list-disc ml-4">
                                 {item.explanation.split('\n').map((line, index) => (
                                     <li className="py-1 text-xl" key={index}>{line.trim()}</li>
