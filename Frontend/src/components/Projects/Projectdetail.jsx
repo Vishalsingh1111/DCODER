@@ -86,7 +86,7 @@ const ProjectDetail = () => {
                 return <br key={index} />;
             } else {
                 const content = (
-                    <span key={index} className={isred ? "text-red-500" : ""}>
+                    <span key={index} className={isred ? "text-black text-xl dark:text-white" : ""}>
                         {part.trim()}
                     </span>
                 );
@@ -137,8 +137,8 @@ const ProjectDetail = () => {
             <Navbar />
             <Breadcrumb />
             <SearchForm />
-            <div className="mx-auto max-w-screen-xl text-lg md:px-20 px-4 py-5" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
-                <div className="w-full max-w-screen-lg shadow mx-auto p-10 bg-white rounded-2xl dark:bg-slate-800 dark:border-none">
+            <div className="mx-auto max-w-screen-xl text-gray-600 dark:text-white md:px-20 px-4 py-5" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
+                <div className="w-full max-w-4xl shadow mx-auto content-justify p-3 sm:p-2 md:p-10 bg-white rounded-2xl dark:bg-slate-800 dark:border-none ">
                     <h2 className="text-3xl text-center font-semibold mb-4">{item.header}</h2>
                     {mainImage && (
                         <div className="py-5 md:px-10 text-center">
@@ -157,28 +157,28 @@ const ProjectDetail = () => {
 
                     {['text'].map((key, index) => (
                         item[key] && (
-                            <div key={index} className="py-3 text-base text-justify mt-5 leading-relaxed text-body-color dark:text-dark-6">
-                                <h1 className="font-bold text-2xl mb-2">Introduction:</h1>
+                            <div key={index} className="py-3 text-lg text-justify mt-5 leading-relaxed text-body-color dark:text-dark-6">
+                                <h1 className="text-black text-xl mb-2">Introduction:</h1>
                                 {renderText(item[key])}
                             </div>
                         )
                     ))}
                     {['statement'].map((key, index) => (
                         item[key] && (
-                            <div key={index} className="py-3 text-xl mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <div key={index} className="py-3 text-lg mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </div>
                         )
                     ))}
                     {['substatement1'].map((key, index) => (
                         item[key] && (
-                            <div key={index} className="py-3 text-base mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <div key={index} className="py-3 text-lg mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </div>
                         )
                     ))}
                     {item.code1 && (
-                        <div className="my-5 mx-auto text-left">
+                        <div className="my-5 mx-auto text-left ">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
                                 className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
@@ -224,21 +224,21 @@ const ProjectDetail = () => {
 
                     {['statement2'].map((key, index) => (
                         item[key] && (
-                            <p key={index} className="pt-3 text-xl mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <p key={index} className="pt-3 text-lg mt-5 text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </p>
                         )
                     ))}
                     {['feature'].map((key, index) => (
                         item[key] && (
-                            <p key={index} className="text-base text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <p key={index} className="text-lg text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </p>
                         )
                     ))}
                     {['substatement2'].map((key, index) => (
                         item[key] && (
-                            <p key={index} className="py-3 text-xl text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <p key={index} className="py-3 text-lg text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </p>
                         )
@@ -246,7 +246,7 @@ const ProjectDetail = () => {
 
                     {['explain'].map((key, index) => (
                         item[key] && (
-                            <p key={index} className=" text-base text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <p key={index} className=" text-lg text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </p>
                         )
@@ -254,7 +254,7 @@ const ProjectDetail = () => {
 
                     {['note'].map((key, index) => (
                         item[key] && (
-                            <p key={index} className=" text-base text-justify leading-relaxed text-body-color dark:text-dark-6">
+                            <p key={index} className=" text-lg text-justify leading-relaxed text-body-color dark:text-dark-6">
                                 {renderText(item[key])}
                             </p>
                         )
@@ -265,8 +265,8 @@ const ProjectDetail = () => {
                     </div>
                 </div>
 
-                <div className="mt-20 mx-auto max-w-screen-lg">
-                    <h2 className="text-4xl font-bold text-center mb-8 text-red-500">Recent Projects</h2>
+                <div className="my-20 mx-auto max-w-screen-lg ">
+                    <h2 className="text-4xl font-semibold text-center mb-8 text-red-500">Recent Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
                         {items
                             .filter(item => item.id !== parseInt(id))
@@ -274,7 +274,7 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white shadow-md rounded-lg p-5 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
+                                    className="bg-white shadow-md rounded-lg p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full h-48 object-cover rounded-t" />

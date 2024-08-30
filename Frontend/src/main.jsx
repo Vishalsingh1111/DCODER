@@ -9,10 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
       <div
-        className='dark:bg-slate-900 dark:text-white'
-        style={{ background: 'linear-gradient(0deg, #e7eaf6 0%, #fff 100%)' }}
-
-      >
+        className='dark:bg-slate-900 dark:text-white bg-[#F7F7F7]'>
         <App />
       </div>
     </AuthProvider>

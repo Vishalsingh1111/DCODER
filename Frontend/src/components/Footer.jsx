@@ -4,7 +4,7 @@ import ScrollToTopButton from './Scrolltotop'
 function Footer() {
     return (
         <>
-            <div className='border-t border-gray-400'>
+            <div className='border-t border-gray-200 dark:border-slate-800'>
                 <ScrollToTopButton />
                 <footer className="footer footer-center p-10 text-base-content rounded dark:bg-slate-900 dark:text-white">
                     <nav className="grid grid-flow-col gap-4">

@@ -49,7 +49,7 @@ const resources = [
 const ResourceCard = ({ title, description, buttonText, icon, link }) => (
     <a href={link} className="block group" >
         <div className="p-6 bg-white border border-gray-300 rounded-xl hover:border-red-500 transition-colors group dark:bg-slate-800 dark:text-white dark:border-none">
-            <div className="w-20 h-20 flex items-center justify-center bg-[#EDE8F5] rounded-xl text-5xl text-red-500 dark:bg-slate-700">
+            <div className="w-20 h-20 flex items-center border border-gray-300 justify-center bg-[#F7F7F7] rounded-xl text-5xl text-red-500 dark:bg-slate-700">
                 <i className={`fas ${icon}`}></i>
             </div>
             <h2 className="mt-4 text-xl text-blue-900 font-semibold dark:text-white">{title}</h2>

@@ -14,11 +14,11 @@ const Blogcard = ({ item, onClick }) => {
         >
             <div className="content flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 className="text-lg text-blue-900 mb-2 mt-4 dark:text-white">
+                    <h3 className="text-lg text-gray-900 mb-2 mt-4 dark:text-white">
                         {item.header}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-2 dark:text-white">
-                        {truncateText(item.explanation, 80)}
+                    <p className="text-md text-gray-600 mb-2 dark:text-white">
+                        {truncateText(item.explanation, 60)}
                     </p>
                 </div>
                 <div className="flex justify-start mt-4">

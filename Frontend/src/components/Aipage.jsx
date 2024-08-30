@@ -66,36 +66,37 @@ const Chat = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen py-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
-                <div className="mb-20 max-w-4xl text-left mx-auto">
-                    <h1 className="text-5xl font-bold mb-2">
-                        Hello, <span className="text-red-600">{authUser?.firstName || 'Guest'}</span>
+            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
+                <div className="mb-20 max-w-4xl text-left mx-auto space-y-3 ">
+                    <span className=' md:text-5xl text-xl text-blue-900 dark:text-white'> I'm TechAI</span>
+                    <h1 className="md:text-5xl text-xl mb-2">
+                        Hello, <span className="text-red-500">{authUser?.firstName || 'Guest'}</span>
                     </h1>
-                    <h2 className="text-5xl text-gray-400 mb-8">
+                    <h2 className="md:text-5xl text-xl text-gray-500 mb-20">
                         How can I help you today?
                     </h2>
                 </div>
                 <div className=" w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols gap-4">
                     <button
-                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
+                        className="p-8 border rounded-2xl border-gray-300 justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Outline a way to home routine: organizing my closet')}
                     >
                         Outline a way to home routine: organizing my closet
                     </button>
                     <button
-                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
+                        className="p-8 border rounded-2xl border-gray-300 justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Help me incorporate more plant-based options in my diet')}
                     >
                         Help me incorporate more plant-based options in my diet
                     </button>
                     <button
-                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
+                        className="p-8 border rounded-2xl border-gray-300 justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Come up with a recipe for an upcoming event')}
                     >
                         Come up with a recipe for an upcoming event
                     </button>
                     <button
-                        className="p-8 bg-gray-200 rounded-lg justify-start flex text-left dark:bg-slate-800 dark-text-white"
+                        className="p-8 border rounded-2xl border-gray-300 justify-start flex text-left dark:bg-slate-800 dark-text-white"
                         onClick={() => handleQuery('Create a 12-week study plan for learning a new language')}
                     >
                         Create a 12-week study plan for learning a new language
@@ -113,14 +114,14 @@ const Chat = () => {
 
                 </div>
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
+            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-20 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Enter a prompt here"
-                    className="w-full px-5 p-2 border-none outline-none dark:bg-slate-800 dark-text-white "
+                    className="w-full px-5 p-1 border-none outline-none dark:bg-slate-800 dark-text-white "
                 />
                 {query && (
                     <button onClick={() => handleQuery(query)}>

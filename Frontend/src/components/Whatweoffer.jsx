@@ -138,7 +138,7 @@ const ServiceCard = ({ icon, title, details }) => {
                     <h4 className="mb-[14px] text-xl text-blue-900 font-semibold text-dark dark:text-white">
                         {title}
                     </h4>
-                    <p className="text-body-color dark:text-dark-6">{details}</p>
+                    <p className="text-gray-500 text-md dark:text-dark-6">{details}</p>
                 </div>
             </div>
         </>
