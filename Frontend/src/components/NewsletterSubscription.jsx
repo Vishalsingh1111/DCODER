@@ -59,7 +59,7 @@ function NewsletterSection() {
                                     </svg>
                                 </div>
                                 <input
-                                    {...register('email', { requipurple: true })}
+                                    {...register('email', { required: true })}
                                     className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Enter your email"
                                     type="email"
@@ -69,7 +69,7 @@ function NewsletterSection() {
                             <div className="w-full sm:w-auto">
                                 <button
                                     type="submit"
-                                    className="py-3 px-5 w-full text-sm font-medium text-center rounded-lg sm:rounded-none sm:rounded-r-lg border cursor-pointer text-white bg-purple-500 border-purple-500 hover:bg-purple-600 dark:bg-purple-600 dark:border-purple-600 dark:hover:bg-purple-700"
+                                    className="py-3 px-5 w-full text-sm font-medium text-center rounded-lg sm:rounded-none sm:rounded-r-lg border cursor-pointer text-white bg-red-500 border-red-500 hover:bg-red-600 dark:bg-red-600 dark:border-red-600 dark:hover:bg-red-700"
                                 >
                                     Subscribe
                                 </button>
@@ -79,7 +79,7 @@ function NewsletterSection() {
                             We care about the protection of your data.{" "}
                             <a
                                 href="#"
-                                className="font-medium text-purple-500 hover:underline"
+                                className="font-medium text-red-500 hover:underline"
                             >
                                 Read our Privacy Policy
                             </a>.

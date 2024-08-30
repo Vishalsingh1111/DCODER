@@ -16,7 +16,7 @@ function Card({ item }) {
                             <p>{item.title}</p>
                             <div className="card-actions justify-between">
                                 <div className="badge rounded-lg border-none  badge-outline dark:bg-slate-800 dark:text-white  p-3.5 bg-gray-700 text-white">Price: ${item.price}</div>
-                                <div className="badge rounded-lg bg-purple-500 p-3.5 text-white border-none">{item.category}</div>
+                                <div className="badge rounded-lg bg-red-500 p-3.5 text-white border-none">{item.category}</div>
                             </div>
                         </div>
                     </div></a>

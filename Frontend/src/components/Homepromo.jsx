@@ -28,7 +28,7 @@ const ContactSection = () => {
                 </div>
                 <h2 className="text-xl font-semibold text-blue-900 dark:text-white mb-2">Still have questions?</h2>
                 <p className="text-gray-500 dark:text-gray-400 mb-6">Can't find the answer you're looking for? Please chat to our friendly team.</p>
-                <a href="/Contactform" className="inline-block bg-purple-500 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition duration-300">
+                <a href="/Contactform" className="inline-block bg-red-500 text-white px-6 py-3 rounded-md hover:bg-red-700 transition duration-300">
                     Get in Touch
                 </a>
             </div>

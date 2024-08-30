@@ -83,7 +83,7 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.image}</td>
 
                                     <td className="border-t border-gray-300 px-4 py-2 flex">
-                                        <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>
+                                        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>
                                         <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded" onClick={() => openDeleteModal(note._id)}>Delete</button>
                                     </td>
                                 </tr>

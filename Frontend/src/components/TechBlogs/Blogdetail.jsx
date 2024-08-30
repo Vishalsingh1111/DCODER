@@ -85,7 +85,7 @@ const BlogDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCode(!showCode)}
-                                className="mb-4 bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="mb-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
                             >
                                 {showCode ? "Hide Code" : "Show Code"}
                             </button>
@@ -109,14 +109,14 @@ const BlogDetail = () => {
                             <FaThumbsUp className="mr-1 text-blue-500" /> {thumbsUpCount}
                         </button>
                         <button onClick={increaseThumbsDown} className="flex items-center text-gray-700 dark:text-gray-300">
-                            <FaThumbsDown className="mr-1 text-purple-500" /> {thumbsDownCount}
+                            <FaThumbsDown className="mr-1 text-red-500" /> {thumbsDownCount}
                         </button>
                     </div>
                 </div>
 
                 <div className="pt-[80px] mx-auto max-w-[1080px] md:px-20 px-4 py-5">
                     <div className="md:sticky md:top-20">
-                        <h1 className="text-purple-500 mb-8 text-4xl font-bold text-center">Recent Uploaded Blogs</h1>
+                        <h1 className="text-red-500 mb-8 text-4xl font-bold text-center">Recent Uploaded Blogs</h1>
                         <div className="grid grid-cols-1 gap-4">
                             {items
                                 .filter(blogItem => blogItem.id.toString() !== id)
@@ -137,7 +137,7 @@ const BlogDetail = () => {
                             {visibleCount < items.length ? (
                                 <button onClick={handleShowMore} className="bg-blue-500 text-lg text-white hover:bg-blue-600 py-2 px-4 rounded">Show More</button>
                             ) : (
-                                <button onClick={handleHide} className="bg-purple-500 text-lg text-white hover:bg-purple-600 py-2 px-4 rounded">Close</button>
+                                <button onClick={handleHide} className="bg-red-500 text-lg text-white hover:bg-red-600 py-2 px-4 rounded">Close</button>
                             )}
                         </div>
                     </div>

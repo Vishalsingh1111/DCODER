@@ -51,7 +51,7 @@ const ProjectDetail = () => {
 
     const renderText = (text) => {
         const parts = text.split(/(<red>|<\/red>|<br\s*\/?>|<bg>|<\/bg>|<li>|<\/li>)/g).filter(Boolean);
-        let ispurple = false;
+        let isred = false;
         let isBg = false;
         let isLi = false;
         let bgContent = [];
@@ -59,10 +59,10 @@ const ProjectDetail = () => {
 
         return parts.map((part, index) => {
             if (part === '<red>') {
-                ispurple = true;
+                isred = true;
                 return null;
             } else if (part === '</red>') {
-                ispurple = false;
+                isred = false;
                 return null;
             } else if (part === '<bg>') {
                 isBg = true;
@@ -86,7 +86,7 @@ const ProjectDetail = () => {
                 return <br key={index} />;
             } else {
                 const content = (
-                    <span key={index} className={ispurple ? "text-purple-500" : ""}>
+                    <span key={index} className={isred ? "text-red-500" : ""}>
                         {part.trim()}
                     </span>
                 );
@@ -144,7 +144,7 @@ const ProjectDetail = () => {
                         <div className="py-5 md:px-10 text-center">
                             <img src={mainImage} alt="Description of main image" className="max-w-full mx-auto" />
                             <div className="mt-5">
-                                <span className="text-2xl text-purple-600">Title: {item.figtitle}</span>
+                                <span className="text-2xl text-red-600">Title: {item.figtitle}</span>
                             </div>
                         </div>
                     )}
@@ -181,7 +181,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
-                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
                             >
                                 {showHtmlCode ? "Hide Code" : "Show HTML Code"}
                             </button>
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCssCode(!showCssCode)}
-                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
                             >
                                 {showCssCode ? "Hide Code" : "Show CSS Code"}
                             </button>
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowJsCode(!showJsCode)}
-                                className="mb-2 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
+                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
                             >
                                 {showJsCode ? "Hide Code" : "Show JavaScript Code"}
                             </button>
@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowOtherCode(!showOtherCode)}
-                                className="mb-4 text-sm bg-purple-500 text-white py-2 px-2 rounded hover:bg-purple-600"
+                                className="mb-4 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
                             >
                                 {showOtherCode ? "Hide Code" : "Show Other Code"}
                             </button>
@@ -260,13 +260,13 @@ const ProjectDetail = () => {
                         )
                     ))}
                     <div className='mt-10 text-center flex justify-start space-x-5'>
-                        <Link to={item.link1} className='px-2 py-2 bg-purple-500 text-sm rounded group hover:bg-purple-900 text-white'>Click to Download from GitHub</Link>
-                        <Link to={item.link2} className='px-2 py-2 bg-purple-500 text-sm rounded group hover:bg-purple-900 text-white'>Watch Live Project</Link>
+                        <Link to={item.link1} className='px-2 py-2 bg-red-500 text-sm rounded group hover:bg-red-900 text-white'>Click to Download from GitHub</Link>
+                        <Link to={item.link2} className='px-2 py-2 bg-red-500 text-sm rounded group hover:bg-red-900 text-white'>Watch Live Project</Link>
                     </div>
                 </div>
 
                 <div className="mt-20 mx-auto max-w-screen-lg">
-                    <h2 className="text-4xl font-bold text-center mb-8 text-purple-500">Recent Projects</h2>
+                    <h2 className="text-4xl font-bold text-center mb-8 text-red-500">Recent Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
                         {items
                             .filter(item => item.id !== parseInt(id))
@@ -288,7 +288,7 @@ const ProjectDetail = () => {
                         <div className="text-center my-5">
                             <button
                                 onClick={() => setVisibleCount(visibleCount + 3)}
-                                className="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+                                className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
                             >
                                 Load More
                             </button>

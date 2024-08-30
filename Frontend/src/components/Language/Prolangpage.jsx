@@ -26,7 +26,7 @@ function Content() {
         <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
             <div className='pt-10 flex flex-col items-center justify-center text-center'>
                 <h1 className='text-2xl text-black dark:text-white  md:text-4xl'>
-                    We are providing the best content<span className='text-purple-500 font-bold'> Here!</span>
+                    We are providing the best content<span className='text-red-500 font-bold'> Here!</span>
                 </h1>
                 <p className='mt-5'>
                     Explore our platform for free access to a wide range of educational content, expertly curated just for you. Enhance your knowledge without any cost!

@@ -135,7 +135,7 @@ const AdminloginPage = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full bg-purple-500 hover:bg-purple-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-red-500 hover:bg-red-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Signup
                         </button>

@@ -69,7 +69,7 @@ const Chat = () => {
             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen py-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
                 <div className="mb-20 max-w-4xl text-left mx-auto">
                     <h1 className="text-5xl font-bold mb-2">
-                        Hello, <span className="text-purple-600">{authUser?.firstName || 'Guest'}</span>
+                        Hello, <span className="text-red-600">{authUser?.firstName || 'Guest'}</span>
                     </h1>
                     <h2 className="text-5xl text-gray-400 mb-8">
                         How can I help you today?
@@ -103,7 +103,7 @@ const Chat = () => {
                 </div>
                 <div className='w-full max-w-4xl mx-auto pb-10 text-justify justify-start mt-32 rounded  dark-text-white rounded-xl'>
                     {loading ? (
-                        <div className="text-center text-2xl text-purple-500">
+                        <div className="text-center text-2xl text-red-500">
                             Getting Your Response Ready ....
                         </div>
                     ) : (

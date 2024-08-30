@@ -30,10 +30,10 @@ function AdminHeader() {
                     </button>
                 </div>
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl text-purple-500">DCODER</a>
+                    <a className="btn btn-ghost text-xl text-red-500">DCODER</a>
                 </div>
                 <div>
-                    <a href='/AddAdmin'><button className='p-2 bg-purple-500 text-white rounded mr-5'>Add Admin</button></a>
+                    <a href='/AddAdmin'><button className='p-2 bg-red-500 text-white rounded mr-5'>Add Admin</button></a>
                 </div>
                 <div>
                     <button

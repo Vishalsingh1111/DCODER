@@ -100,7 +100,7 @@ const GetContent = ({ item }) => {
             {item.image && (
                 <div className="py-5 text-center">
                     <img src={item.image} alt="description of image" />
-                    <div className="mt-2 text-sm text-purple-600">
+                    <div className="mt-2 text-sm text-red-600">
                         Fig. {item.figtitle}
                     </div>
                 </div>
