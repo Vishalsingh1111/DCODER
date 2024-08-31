@@ -17,7 +17,8 @@ const CScontentfetch = () => {
             try {
                 const res = await axios.get(`${baseUrl}/notecontent`);
                 const filteredData = res.data.filter(item => item.category === activeSection);
-                setData(filteredData);
+                const sortedData = filteredData.sort((a, b) => a.id - b.id);
+                setData(sortedData);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching data:", error);
