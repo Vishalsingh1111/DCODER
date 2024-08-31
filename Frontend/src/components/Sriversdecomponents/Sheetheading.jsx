@@ -9,6 +9,7 @@ function Sheetheading() {
                 <th className='border-r-2 border-gray-400  text-[0.9rem]'>PROBLEM</th>
                 <th className='border-r-2 border-gray-400  text-[0.9rem]'>DIFFICULTY</th>
                 <th className='border-r-2 border-gray-400  text-[0.9rem]'>ARTICLE</th>
+                <th className='border-r-2 border-gray-400  text-[0.9rem]'>COMPANIES</th>
                 <th className='border-r-2 border-gray-400  text-[0.9rem]'>PRACTICE</th>
                 <th className='border-r-2 border-gray-400  text-[0.9rem]'>RIVISION</th>
                 <th className='text-[0.9rem]'>NOTE</th>

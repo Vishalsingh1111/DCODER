@@ -11,6 +11,7 @@ function Sheetproblems({ item }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentNoteKey, setCurrentNoteKey] = useState('');
     const [isStarred, setIsStarred] = useState(false);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     useEffect(() => {
         const storedCheckboxState = localStorage.getItem(`checkbox-${item.name}`);
@@ -54,6 +55,17 @@ function Sheetproblems({ item }) {
         setIsModalOpen(true);
     };
 
+    const handleShowClick = () => {
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsDialogOpen(false);
+    };
+
+    // Check if companies field exists and is a non-empty string, then split it into an array
+    const companiesArray = item.companies ? item.companies.split(',') : null;
+
     return (
         <>
             <tr className={`dark:bg-slate-900 dark:text-white border-t-2 border-gray-400 ${isChecked ? 'bg-gray-300' : ''}`}>
@@ -72,7 +84,23 @@ function Sheetproblems({ item }) {
                     <span className={`${getLevelClass(item.Level)} text-white px-2 py-1 w-16 rounded-lg`}>{item.Level}</span>
                 </td>
                 <td className='border-r-2 border-gray-400 text-center'><Link to={item.article}>Soon</Link></td>
-                <td className='text-center'><Link to={item.link} className="text-red-500 hover:underline"><img src={leetcodesvg} alt="LeetCode" className="mx-auto w-[23px]" /></Link></td>
+                <td className='border-r-2 border-gray-400 border-l-2'>
+                    {companiesArray ? (
+                        <button
+                            className="bg-blue-500 text-white rounded px-2 py-1 ml-2"
+                            onClick={handleShowClick}
+                        >
+                            Show
+                        </button>
+                    ) : (
+                        <span></span>
+                    )}
+                </td>
+                <td className='text-center'>
+                    <Link to={item.link} className="text-red-500 hover:underline">
+                        <img src={leetcodesvg} alt="LeetCode" className="mx-auto w-[23px]" />
+                    </Link>
+                </td>
                 <td className='border-l-2 border-gray-400 text-center'>
                     <img
                         src={isStarred ? filledStar : emptyStar}
@@ -90,6 +118,37 @@ function Sheetproblems({ item }) {
                     />
                 </td>
             </tr>
+
+            {isDialogOpen && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+                    onClick={handleCloseDialog}
+                >
+                    <div
+                        className="bg-white rounded-lg p-6  w-[300px] sl:w-[350px] md:w-[450px] h-[350px] overflow-auto"
+                        onClick={(e) => e.stopPropagation()} >
+                        <div className='flex justify-between mb-5'>
+                            <p className='text-blue-600 text-xl ml-2'>Companies</p>
+                            <button
+                                className="bg-red-500 text-white rounded-full px-2.5 py-1 mt-[-14]"
+                                onClick={handleCloseDialog}
+                            >
+                                X
+                            </button>
+                        </div>
+
+                        <div>
+                            {companiesArray.map((company, index) => (
+                                <div key={index} className="border border-gray-300 text-gray-500 text-sm rounded-lg text-sm p-1 px-2 m-1 inline-block">
+                                    {company.trim()}
+                                </div>
+                            ))}
+                        </div>
+
+                    </div>
+                </div>
+            )}
+
             <NoteModal
                 isOpen={isModalOpen}
                 onRequestClose={() => setIsModalOpen(false)}
