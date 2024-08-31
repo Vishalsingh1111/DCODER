@@ -31,7 +31,7 @@ function Sheetpage() {
                 </span>
             </div>
             <div className='flex justify-center'>
-                <div className='w-full m-3 md:w-4/5 lg:w-3/4 dark:bg-slate-900 dark:text-white bg-white lg:p-10 p-2 lg:border-2 border-gray-400 rounded-xl'>
+                <div className='w-full m-3 md:w-4/5 lg:w-4/4 dark:bg-slate-900 dark:text-white bg-white lg:p-10 p-2 lg:shadow border-gray-400 rounded-xl'>
                     {loading ? (
                         <Skeleton1 />
                     ) : (
