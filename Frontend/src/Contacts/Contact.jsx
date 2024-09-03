@@ -1,17 +1,14 @@
 import React from 'react'
 import Footer from '../components/Footer'
-import Contactsales from './Contactsales'
 import Navbar from '../components/Navbar'
+import ContactForm from './Contactform'
 
 function Contact() {
     return (
         <>
             <Navbar />
-            <div>
-                <Contactsales />
-            </div>
+            <ContactForm />
             <Footer />
-
         </>
     )
 }
