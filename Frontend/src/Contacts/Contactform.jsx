@@ -40,17 +40,16 @@ const ContactForm = () => {
                         <div>
                             <h2 className="text-4xl font-semibold text-gray-800 mb-4">Get In Touch</h2>
                             <p className="text-gray-600 mb-6">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed tincidunt velit.
-                                Donec bibendum turpis vitae maximus.
+                                If you have any query, You can contact us.
                             </p>
                             <ul className="space-y-4 text-gray-600">
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-map-marker-alt"></i></span>
-                                    <span>Patna, Bihar<br /> India</span>
+                                    <span>Patna, Bihar, India</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-envelope"></i></span>
-                                    <span>Dcoder@gmail.com</span>
+                                    <span>dcoder@gmail.com</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-phone"></i></span>
