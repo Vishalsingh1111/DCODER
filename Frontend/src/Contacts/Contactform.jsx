@@ -32,28 +32,28 @@ const ContactForm = () => {
 
     return (
         <>
-            <div className="py-16 px-8">
+            <div className="py-16 px-8 ">
                 <Toaster />
                 <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-32">
                         {/* Contact Info */}
                         <div>
-                            <h2 className="text-4xl font-semibold text-gray-800 mb-4">Get In Touch</h2>
-                            <p className="text-gray-600 mb-6">
+                            <h2 className="text-4xl font-semibold text-gray-800 mb-4 dark:text-white">Get In Touch</h2>
+                            <p className="text-gray-600 mb-6 dark:text-white">
                                 If you have any query, You can contact us.
                             </p>
                             <ul className="space-y-4 text-gray-600">
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-map-marker-alt"></i></span>
-                                    <span>Patna, Bihar, India</span>
+                                    <span className='dark:text-white'>Patna, Bihar, India</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-envelope"></i></span>
-                                    <span>dcoder@gmail.com</span>
+                                    <span className='dark:text-white'>dcoder@gmail.com</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <span className="text-blue-500"><i className="fas fa-phone"></i></span>
-                                    <span>+91 1020304050</span>
+                                    <span className='dark:text-white'>+91 1020304050</span>
                                 </li>
                             </ul>
                         </div>
@@ -67,7 +67,7 @@ const ContactForm = () => {
                                             type="text"
                                             placeholder="First Name"
                                             {...register("firstname", { required: "First name is required" })}
-                                            className="w-full p-3 border border-gray-300 rounded-md"
+                                            className="w-full p-3 border border-gray-300 rounded-md dark:text-white dark:bg-slate-800 dark:border-none"
                                         />
                                         {errors.firstname && <p className="text-red-600 text-sm">{errors.firstname.message}</p>}
                                     </div>
@@ -76,7 +76,7 @@ const ContactForm = () => {
                                             type="text"
                                             placeholder="Last Name"
                                             {...register("lastname", { required: "Last name is required" })}
-                                            className="w-full p-3 border border-gray-300 rounded-md"
+                                            className="w-full p-3 border border-gray-300 rounded-md dark:text-white dark:bg-slate-800 dark:border-none"
                                         />
                                         {errors.lastname && <p className="text-red-600 text-sm">{errors.lastname.message}</p>}
                                     </div>
@@ -86,7 +86,7 @@ const ContactForm = () => {
                                         type="email"
                                         placeholder="Email"
                                         {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } })}
-                                        className="w-full p-3 border border-gray-300 rounded-md"
+                                        className="w-full p-3 border border-gray-300 rounded-md dark:text-white dark:bg-slate-800 dark:border-none"
                                     />
                                     {errors.email && <p className="text-red-600 text-sm">{errors.email.message}</p>}
                                 </div>
@@ -95,7 +95,7 @@ const ContactForm = () => {
                                         type="tel"
                                         placeholder="Phone Number"
                                         {...register("phonenumber", { required: "Phone number is required" })}
-                                        className="w-full p-3 border border-gray-300 rounded-md"
+                                        className="w-full p-3 border border-gray-300 rounded-md dark:text-white dark:bg-slate-800 dark:border-none"
                                     />
                                     {errors.phonenumber && <p className="text-red-600 text-sm">{errors.phonenumber.message}</p>}
                                 </div>
@@ -103,13 +103,13 @@ const ContactForm = () => {
                                     <textarea
                                         placeholder="Message"
                                         {...register("message", { required: "Message is required" })}
-                                        className="w-full p-3 border border-gray-300 rounded-md h-32"
+                                        className="w-full p-3 border border-gray-300 rounded-md h-32 dark:text-white dark:bg-slate-800 dark:border-none"
                                     ></textarea>
                                     {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
+                                    className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition "
                                 >
                                     Send Message
                                 </button>
