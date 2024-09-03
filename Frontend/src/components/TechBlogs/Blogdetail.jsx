@@ -85,7 +85,7 @@ const BlogDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCode(!showCode)}
-                                className="mb-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+                                className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
                             >
                                 {showCode ? "Hide Code" : "Show Code"}
                             </button>

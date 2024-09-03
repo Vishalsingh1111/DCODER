@@ -23,7 +23,7 @@ const Blogcard = ({ item, onClick }) => {
                 </div>
                 <div className="flex justify-start mt-4">
                     <a
-                        className="text-red-700 inline-block border p-2 rounded-lg border-red-500 group-hover:bg-red-700 group-hover:text-white group-hover:border-red-700 transition-all duration-300"
+                        className="text-red-500 inline-block border p-2 rounded-lg border-red-500 group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 transition-all duration-300"
                         href="#"
                     >
                         Click to open

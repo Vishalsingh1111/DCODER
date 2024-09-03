@@ -15,8 +15,8 @@ const Projectpage = () => {
         const getProjects = async () => {
             try {
                 const res = await axios.get(`${baseUrl}/project`);
-                const filteredData = res.data.filter(item => item.category === "Frontend");
-                setData(filteredData);
+                // const filteredData = res.data.filter(item => item.category === "Frontend");
+                setData(res.data);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching data:", error);

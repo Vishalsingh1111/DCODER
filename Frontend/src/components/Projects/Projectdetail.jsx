@@ -181,7 +181,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left ">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
-                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
                             >
                                 {showHtmlCode ? "Hide Code" : "Show HTML Code"}
                             </button>
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCssCode(!showCssCode)}
-                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
                             >
                                 {showCssCode ? "Hide Code" : "Show CSS Code"}
                             </button>
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowJsCode(!showJsCode)}
-                                className="mb-2 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
                             >
                                 {showJsCode ? "Hide Code" : "Show JavaScript Code"}
                             </button>
@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowOtherCode(!showOtherCode)}
-                                className="mb-4 text-sm bg-red-500 text-white py-2 px-2 rounded hover:bg-red-600"
+                                className="mb-4 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
                             >
                                 {showOtherCode ? "Hide Code" : "Show Other Code"}
                             </button>

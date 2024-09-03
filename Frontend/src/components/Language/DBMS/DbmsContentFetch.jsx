@@ -16,7 +16,8 @@ const DbmsContentFetch = () => {
             try {
                 const res = await axios.get(`${baseUrl}/notecontent`);
                 const filteredData = res.data.filter(item => item.category === "dbms");
-                setData(filteredData);
+                const sortedData = filteredData.sort((a, b) => a.id - b.id);
+                setData(sortedData);
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -51,7 +52,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-red-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-600 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -64,7 +65,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-red-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -82,7 +83,7 @@ const DbmsContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={currentPage}
-                        className="px-4 py-2 mx-1 bg-red-700 text-white rounded"
+                        className="px-4 py-2 mx-1 bg-blue-700 text-white rounded"
                         onClick={() => handlePageChange(currentPage)}
                     >
                         {currentPage}
@@ -101,7 +102,7 @@ const DbmsContentFetch = () => {
                     pageNumbers.push(
                         <button
                             key={i}
-                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-red-700 text-white" : "bg-gray-200 text-black"}`}
+                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
                             onClick={() => handlePageChange(i)}
                         >
                             {i}
@@ -136,21 +137,21 @@ const DbmsContentFetch = () => {
             {/* Pagination Controls */}
             <div className="flex justify-center mt-10">
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-red-500 rounded hover:bg-red-700"
+                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
-                    Previous
+                    {"<<"}
                 </button>
 
                 {renderPageNumbers()}
 
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-red-500 rounded hover:bg-red-700"
+                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >
-                    Next
+                    {">>"}
                 </button>
             </div>
         </section>
