@@ -119,7 +119,6 @@ const ContactForm = () => {
                 </div>
             </div>
         </>
-
     );
 };
 

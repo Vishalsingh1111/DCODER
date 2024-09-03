@@ -7,7 +7,7 @@ const Accordion = () => {
                 <div className="-mx-4 flex flex-wrap justify-center">
                     <div className="w-full px-4">
                         <div className="mx-auto mb-8 max-w-[520px] text-center lg:mb-8">
-                            <h2 className="mb-4 text-black text-5xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
+                            <h2 className="mb-4 text-4xl font-[500] text-dark dark:text-white">
                                 Any Questions? Look Here
                             </h2>
                             <p>Most Frequent Asked Questions, Asked by most of users.</p>
@@ -83,7 +83,7 @@ const AccordionItem = ({ header, text }) => {
                 </div>
 
                 <div className="w-full">
-                    <h4 className="mt-1 text-lg text-blue-900 font-semibold text-dark dark:text-white">
+                    <h4 className="mt-1 text-xl text-blue-900 font-semibold text-dark dark:text-white">
                         {header}
                     </h4>
                 </div>
@@ -93,7 +93,7 @@ const AccordionItem = ({ header, text }) => {
                 className={`pl-[62px] duration-200 ease-in-out ${active ? "block" : "hidden"
                     }`}
             >
-                <p className="py-3 text-base leading-relaxed text-body-color dark:text-dark-6">
+                <p className="py-3 text-md leading-relaxed text-gray-700 dark:text-dark-6">
                     {text}
                 </p>
             </div>

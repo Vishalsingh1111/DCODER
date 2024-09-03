@@ -31,10 +31,10 @@ function NewsletterSection() {
         <section className="w-full lg:max-w-[81%] md:max-w-[85%] mx-auto">
             <div className="mx-5 my-[70px] p-[50px] rounded-xl bg-white border border-gray-300 dark:bg-slate-800 dark:border-none">
                 <div className="max-w-screen-md mx-auto text-center">
-                    <h2 className="mb-4 text-2xl sm:text-3xl tracking-tight font-semibold text-gray-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl sm:text-3xl tracking-tight font-semibold text-blue-900 dark:text-white">
                         Sign up for our newsletter
                     </h2>
-                    <p className="mb-8 text-gray-500 dark:text-gray-300">
+                    <p className="mb-8 text-md text-gray-700 dark:text-gray-300">
                         Do you want to get notified when a new content is added to DCODER?
                         Sign up for our newsletter and you'll be among the first to find out about new contents.
                     </p>

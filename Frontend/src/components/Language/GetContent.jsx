@@ -66,7 +66,7 @@ const GetContent = ({ item }) => {
                 return <br key={index} />;
             } else {
                 const content = (
-                    <span key={index} className={`${isH1 ? "text-black dark:text-white text-2xl mb-10" : isH2 ? "text-gray-700 dark:text-white text-xl" : ""} ${isBold ? "font-semibold dark:text-white text-gray-700 mr-1" : ""} ${isM ? "mt-8" : ""}`}>
+                    <span key={index} className={`${isH1 ? "text-gray-900 dark:text-white text-2xl mb-10" : isH2 ? "text-gray-700 dark:text-white text-xl" : ""} ${isBold ? "font-semibold dark:text-white text-gray-900 mr-1" : ""} ${isM ? "mt-8" : ""}`}>
                         {part.trim()}
                     </span>
                 );
@@ -84,8 +84,8 @@ const GetContent = ({ item }) => {
     };
 
     return (
-        <div className="p-4 bg-white dark:bg-slate-800 dark:text-white text-gray-500" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
-            <div className="text-lg text-black font-semibold mb-4">
+        <div className="p-4 bg-white dark:bg-slate-800 dark:text-white text-gray-700 text-md">
+            <div className="text-md font-[500] mb-4">
                 {renderText(item.header)}
             </div>
             <div className="text-[17px] leading-relaxed ">
@@ -129,7 +129,7 @@ const GetContent = ({ item }) => {
             {item.explanation && (
                 <div className="mt-4">
                     <div className="font-bold text-xl dark:text-white text-gray-500 mb-2">Explanation:</div>
-                    <ul className="list-disc ml-4 text-lg">
+                    <ul className="list-disc ml-4 text-md text-gray-500">
                         {item.explanation.split('\n').map((line, index) => (
                             <li key={index} className="py-1">{line.trim()}</li>
                         ))}

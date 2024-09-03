@@ -52,9 +52,9 @@ const ResourceCard = ({ title, description, buttonText, icon, link }) => (
             <div className="w-20 h-20 flex items-center border border-gray-300 justify-center bg-[#F7F7F7] rounded-xl text-5xl text-red-500 dark:bg-slate-700">
                 <i className={`fas ${icon}`}></i>
             </div>
-            <h2 className="mt-4 text-xl text-blue-900 font-semibold dark:text-white">{title}</h2>
-            <p className="mt-2 text-gray-600 dark:text-white">{description}</p>
-            <button className="mt-4 px-4 py-2 border text-blue-900 border-gray-300 text-gray-800 dark:border-white rounded-xl group-hover:border-red-500 group-hover:text-red-500 transition-colors dark:text-white">
+            <h2 className="mt-4 text-xl  font-semibold text-blue-900 dark:text-white">{title}</h2>
+            <p className="mt-2 text-gray-700 dark:text-white">{description}</p>
+            <button className="mt-4 px-4 py-2 border text-gray-700 border-gray-300 dark:border-white rounded-xl group-hover:bg-red-500 group-hover:text-white group-hover:border-red-500 transition-colors dark:text-white">
                 {buttonText} &rarr;
             </button>
         </div>
@@ -64,7 +64,7 @@ const ResourceCard = ({ title, description, buttonText, icon, link }) => (
 const ResourceGrid = () => (
     <div className="p-6 max-w-screen-xl container mx-auto md:px-20 px-4">
         <div className="pb-10 text-center ">
-            <h1 className="font-semi-bold text-black dark:text-white text-5xl pb-2" id='homecontentcard'>Free Offered Courses</h1>
+            <h1 className="font-[500] text-black dark:text-white text-4xl pb-2" id='homecontentcard'>Free Offered Courses</h1>
             <p >We cover a wide range of programming languages including but not limited to Python, Java, C, C++, DSA etc. Our notes are designed to cater to both beginners and advanced users.</p>
         </div>
         <div className="max-w-screen-xl container mx-auto">

@@ -7,8 +7,8 @@ const Service = () => {
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4 h-auto">
                         <div className="mx-auto mb-5 max-w-auto text-center lg:mb-8">
-                            <h2 className="mb-3 text-3xl text-black font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
-                                What'll You Get ?
+                            <h2 className="mb-3 text-4xl font-[500] text-dark dark:text-white sm:text-4xl md:text-[40px]">
+                                What will You Get ?
                             </h2>
                             <p className="text-base text-body-color dark:text-dark-6">
                                 There are many variations types of content which is going to help you to enhance your skill.
@@ -138,7 +138,7 @@ const ServiceCard = ({ icon, title, details }) => {
                     <h4 className="mb-[14px] text-xl text-blue-900 font-semibold text-dark dark:text-white">
                         {title}
                     </h4>
-                    <p className="text-gray-500 text-md dark:text-dark-6">{details}</p>
+                    <p className="text-gray-700 text-md dark:text-dark-6">{details}</p>
                 </div>
             </div>
         </>
