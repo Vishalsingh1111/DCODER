@@ -71,7 +71,7 @@ const AdminloginPage = () => {
                 <h2 className="text-2xl font-semibold mb-6 text-center">Admin Login</h2>
                 <form onSubmit={handleLogin}>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="username">
                             Username
                         </label>
                         <input
@@ -84,7 +84,7 @@ const AdminloginPage = () => {
                         />
                     </div>
                     <div className="mb-4 relative"> {/* Relative positioning for the eye icon */}
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
@@ -116,7 +116,7 @@ const AdminloginPage = () => {
                         </label>
                         <button
                             type="submit"
-                            className="w-full bg-red-500 hover:bg-red-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-blue-500 hover:bg-blue-700 text-white  mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Log In
                         </button>
@@ -124,7 +124,7 @@ const AdminloginPage = () => {
                 </form>
                 <div className="mt-4 flex justify-between">
                     <a
-                        className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline"
+                        className="inline-block align-baseline  text-sm text-red-500 hover:underline"
                         href="/"
                         onClick={handleClose}
                     >

@@ -77,7 +77,7 @@ const BlogDetail = () => {
             <SearchForm />
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-row gap-10 '>
-                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto shadow bg-white rounded-2xl dark:bg-slate-800 dark:border-none mt-3">
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto shadow bg-[rgb(255,255,255)] rounded-2xl dark:bg-slate-800 dark:border-none mt-3">
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
@@ -123,7 +123,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-4 bg-white shadow-md rounded'
+                            className='p-4 bg-[rgb(255,255,255)] shadow-md rounded'
                         ></iframe>
 
                         <iframe
@@ -133,7 +133,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-4 bg-white shadow-md rounded'
+                            className='p-4 bg-[rgb(255,255,255)] shadow-md rounded'
                         ></iframe>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ const BlogDetail = () => {
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center group justify-between bg-white shadow dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
+                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center group justify-between bg-[rgb(255,255,255)] shadow dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
                                             <h3 className="text-xl font-[500]">{blogItem.header}</h3>
                                             <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 150)}</p>

@@ -142,7 +142,7 @@ const CScontentfetch = () => {
             </div>
 
             <div className="mx-auto text-left">
-                <div className="w-full lg:px-20 max-w-screen-lg mx-auto shadow bg-white rounded-2xl dark:bg-slate-800 py-5 mb-10">
+                <div className="w-full lg:px-20 max-w-screen-lg mx-auto shadow bg-[rgb(255,255,255)] rounded-2xl dark:bg-slate-800 py-5 mb-10">
                     {loading ? (
                         <Skeleton1 />
                     ) : (

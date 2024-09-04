@@ -96,7 +96,7 @@ function SearchForm() {
             </div>
 
             {results.length > 0 && (
-                <div className="w-full bg-white shadow-md rounded-lg p-5 mt-2 dark:bg-slate-800">
+                <div className="w-full bg-[rgb(255,255,255)] shadow-md rounded-lg p-5 mt-2 dark:bg-slate-800">
                     {results.map((result) => (
                         <div key={result._id} className="bg-white shadow-md rounded-lg p-5 mb-4 dark:bg-slate-800">
                             <h3 className="text-lg font-bold mb-2 dark:text-white">{result.header}</h3>

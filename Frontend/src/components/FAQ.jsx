@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Accordion = () => {
     return (
-        <section className="max-w-screen-2xl container mx-auto md:px-20 px-4 relative z-20 overflow-hidden bg-transparent pb-4 dark:bg-slate-900 dark:text-white lg:pb-[30px] lg:pt-[50px] text-center">
+        <section className="max-w-5xl container mx-auto md:px-20 px-4 relative z-20 overflow-hidden bg-transparent pb-4 dark:bg-slate-900 dark:text-white lg:pb-[30px] lg:pt-[50px] text-center">
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap justify-center">
                     <div className="w-full px-4">
@@ -39,10 +39,7 @@ const Accordion = () => {
                             header="How can I use the projects listed on your site?"
                             text="The projects listed on our site are categorized by difficulty level and are designed to help you apply the concepts you've learned. Each project includes a detailed description, required technologies, and step-by-step instructions. You can use these projects to build your portfolio, practice coding, or even as a base for your own unique projects."
                         />
-                        <AccordionItem
-                            header="Any certification for completed projects?"
-                            text="While we do not offer formal certifications, we encourage you to share your completed projects with us. Our team will review your work and provide feedback. Exceptional projects may be featured on our site, giving you recognition and helping you build a stronger portfolio."
-                        />
+
                     </div>
                 </div>
             </div>
@@ -60,14 +57,20 @@ const AccordionItem = ({ header, text }) => {
         setActive(!active);
     };
     return (
-        <div className="mb-4 w-full bg-white border border-gray-300 px-4 py-2 rounded-xl dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
+        <div className=" w-full border-b-2 border-gray-300 px-4 py-3 dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
             <button
                 className={`faq-btn flex w-full text-left`}
                 onClick={() => handleToggle()}
             >
-                <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-[#f3f4f4] text-red dark:bg-white/5">
+                <div className="w-full">
+                    <h4 className="mt-1 sm:text-md lg:text-xl text-blue-900 font-[500] text-dark dark:text-white">
+                        {header}
+                    </h4>
+                </div>
+
+                <div className=" flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-gray-400 dark:bg-white/5">
                     <svg
-                        className={`fill-red-500 stroke-red-500 duration-200 ease-in-out ${active ? "rotate-180" : ""
+                        className={`fill-white stroke-white duration-200 ease-in-out ${active ? "rotate-180" : ""
                             }`}
                         width="17"
                         height="10"
@@ -82,15 +85,11 @@ const AccordionItem = ({ header, text }) => {
                     </svg>
                 </div>
 
-                <div className="w-full">
-                    <h4 className="mt-1 text-xl text-blue-900 font-[500] text-dark dark:text-white">
-                        {header}
-                    </h4>
-                </div>
+
             </button>
 
             <div
-                className={`pl-[62px] duration-200 ease-in-out ${active ? "block" : "hidden"
+                className={` duration-200 ease-in-out ${active ? "block" : "hidden"
                     }`}
             >
                 <p className="py-3 text-md leading-relaxed text-gray-700 dark:text-dark-6">

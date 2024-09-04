@@ -45,9 +45,9 @@ function Sheetcard({ item }) {
     };
 
     return (
-        <div className="w-full bg-white rounded-lg shadow dark:bg-slate-800 dark:text-white">
+        <div className="w-full bg-[rgb(255,255,255)] rounded-lg shadow dark:bg-slate-800 dark:text-white">
             <div className="bg-gray-600 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
-            <div className="flex  bg-[#F3F3F9] dark:bg-slate-800 mb-4 rounded items-center justify-between py-4 lg:px-8 px-2 cursor-pointer" onClick={toggleAccordion}>
+            <div className="flex  bg-[#F3F3F4] dark:bg-slate-800 mb-4 rounded items-center justify-between py-4 lg:px-8 px-2 cursor-pointer" onClick={toggleAccordion}>
                 <div className="flex flex-col">
                     <h3 className="text-xl font-semibold text-gray-600 dark:text-white">{item.name}</h3>
                 </div>
@@ -71,7 +71,7 @@ function Sheetcard({ item }) {
                         <button className="bg-red-500 hover:text-black text-white dark:bg-slate-800 dark:text-white  px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
                     </div>
                     <div className='lg:mx-8 mx-2 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
-                        <table className="table bg-white  dark:bg-slate-900 dark:text-white dark:border ">
+                        <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border ">
                             <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
                                 <Sheetheading />
                             </thead>

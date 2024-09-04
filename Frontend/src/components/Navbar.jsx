@@ -53,7 +53,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className={`max-w-screen-2xl container font-[600] mx-auto md:px-20 px-4 dark:bg-none dark:text-white z-50 fixed top-0 left-0 ${sticky ? "sticky-navbar shadow-md bg-base-100 dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out" : ""}`} >
+        <div className={`max-w-screen-2xl container font-[600] mx-auto md:px-20 px-4 dark:bg-none dark:text-white z-50 fixed top-0 left-0 ${sticky ? "sticky-navbar shadow-md bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white duration-300 transition-all ease-in-out" : ""}`} >
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">

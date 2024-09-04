@@ -10,7 +10,7 @@ const Blogcard = ({ item, onClick }) => {
     return (
         <div
             onClick={onClick}
-            className="relative p-5 border border-gray-300 bg-white min-h-[180px] m-5 flex flex-col md:flex-row w-full md:w-[350px] group  rounded-xl dark:border-none dark:bg-slate-800 dark:text-white cursor-pointer"
+            className="relative p-5 border border-gray-300 bg-[rgb(255,255,255)] min-h-[180px] m-5 flex flex-col md:flex-row w-full md:w-[350px] group  rounded-xl dark:border-none dark:bg-slate-800 dark:text-white cursor-pointer"
         >
             <div className="content flex-1 flex flex-col justify-between">
                 <div>

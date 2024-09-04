@@ -5,8 +5,8 @@ function Card({ item }) {
         <>
             <div>
                 <a href={item.link}>
-                    <div className="card w-72 h-92 rounded-xl bg-white border border-gray-400 m-5 hover:shadow-lg cursor-pointer transition-transform duration-300 group dark:bg-slate-900 dark:text-white dark:border " >
-                        <figure className='dark:bg-slate-800 dark:text-white bg-[#F3F3F9]'>
+                    <div className="card w-72 h-92 rounded-xl bg-[rgb(255,255,255)] border border-gray-400 m-5 hover:shadow-lg cursor-pointer transition-transform duration-300 group dark:bg-slate-900 dark:text-white dark:border " >
+                        <figure className='dark:bg-slate-800 dark:text-white bg-[#F3F3F4]'>
                             <img src={item.image} alt="Course Img" className='px-10 py-4 w-64' />
                         </figure>
                         <div className="card-body pt-4 px-8">

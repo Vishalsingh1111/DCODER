@@ -78,13 +78,13 @@ const LoginPage = () => {
                 <div className="relative flex justify-left space-x-5 mb-4">
                     <button
                         onClick={() => setIsEmail(true)}
-                        className={`relative px-4 py-2 z-10 ${isEmail ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
+                        className={`relative px-4 py-2 z-10 ${isEmail ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
                     >
                         Email
                     </button>
                     <button
                         onClick={() => setIsEmail(false)}
-                        className={`relative px-4 py-2 z-10 ${!isEmail ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
+                        className={`relative px-4 py-2 z-10 ${!isEmail ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} rounded-md`}
                     >
                         Phone
                     </button>
@@ -93,7 +93,7 @@ const LoginPage = () => {
                 <form onSubmit={handleLogin}>
                     {isEmail ? (
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                            <label className="block text-gray-700 text-sm  mb-2" htmlFor="email">
                                 Email
                             </label>
                             <input
@@ -107,7 +107,7 @@ const LoginPage = () => {
                         </div>
                     ) : (
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                            <label className="block text-gray-700 text-sm  mb-2" htmlFor="phone">
                                 Phone
                             </label>
                             <input
@@ -121,7 +121,7 @@ const LoginPage = () => {
                         </div>
                     )}
                     <div className="mb-4 relative"> {/* Relative positioning for the eye icon */}
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
@@ -141,7 +141,7 @@ const LoginPage = () => {
                         </button>
                     </div>
                     <div className="flex items-center justify-between mb-4">
-                        <a className="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800" href="/Forgetpassword">
+                        <a className="inline-block align-baseline  text-sm text-blue-500 hover:text-blue-800" href="/Forgetpassword">
                             Forgot Password?
                         </a>
                     </div>
@@ -158,7 +158,7 @@ const LoginPage = () => {
                         </label>
                         <button
                             type="submit"
-                            className="w-full bg-red-500 hover:bg-red-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-blue-500 hover:bg-blue-700 text-white  mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Log In
                         </button>
@@ -166,13 +166,13 @@ const LoginPage = () => {
                 </form>
 
                 <div className="my-4 flex items-center justify-center">
-                    <hr className="flex-grow border-red-900" />
-                    <span className="px-2 text-red-900">OR</span>
-                    <hr className="flex-grow border-red-900" />
+                    <hr className="flex-grow border-blue-900" />
+                    <span className="px-2 text-blue-900">OR</span>
+                    <hr className="flex-grow border-blue-900" />
                 </div>
 
                 <div className="flex justify-center">
-                    <button onClick={handleGoogleLogin} className="flex items-center justify-center bg-white border border-gray-300 text-gray-700 font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline">
+                    <button onClick={handleGoogleLogin} className="flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline">
                         <img src="./images/google.png" alt="Google" className="h-5 w-5 mr-2" />
                         Login with Google
                     </button>
@@ -180,7 +180,7 @@ const LoginPage = () => {
                 <div className="mt-4 flex justify-between">
                     <div>
                         <a
-                            className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline"
+                            className="inline-block align-baseline text-sm text-red-500 hover:underline"
                             href="/"
                             onClick={handleClose}
                         >
@@ -188,10 +188,10 @@ const LoginPage = () => {
                         </a>
                     </div>
                     <div className='flex space-x-5'>
-                        <a className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline" href="/Adminlogin">
+                        <a className="inline-block align-baseline text-sm text-blue-500 hover:underline" href="/Adminlogin">
                             Admin
                         </a>
-                        <a className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline" href="/Signup">
+                        <a className="inline-block align-baseline text-sm text-blue-500 hover:underline" href="/Signup">
                             New user? Register
                         </a>
                     </div>

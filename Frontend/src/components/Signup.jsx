@@ -67,7 +67,7 @@ const SignupPage = () => {
                 <form onSubmit={handleRegister}>
                     <div className="mb-4 flex justify-between space-x-4">
                         <div className='w-full'>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">
+                            <label className="block text-gray-700 text-sm  mb-2" htmlFor="firstName">
                                 First Name
                             </label>
                             <input
@@ -80,7 +80,7 @@ const SignupPage = () => {
                             />
                         </div>
                         <div className='w-full'>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">
+                            <label className="block text-gray-700 text-sm  mb-2" htmlFor="lastName">
                                 Last Name
                             </label>
                             <input
@@ -94,7 +94,7 @@ const SignupPage = () => {
                         </div>
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
@@ -107,7 +107,7 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="phone">
                             Phone
                         </label>
                         <input
@@ -120,7 +120,7 @@ const SignupPage = () => {
                         />
                     </div>
                     <div className="mb-4 relative">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
@@ -144,7 +144,7 @@ const SignupPage = () => {
                         </button>
                     </div>
                     <div className="mb-4 relative">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="confirmPassword">
                             Confirm Password
                         </label>
                         <input
@@ -171,7 +171,7 @@ const SignupPage = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full bg-red-500 hover:bg-red-700 text-white font-bold mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-blue-500 hover:bg-blue-700 text-white  mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Register
                         </button>
@@ -179,26 +179,26 @@ const SignupPage = () => {
                 </form>
 
                 <div className="my-4 flex items-center justify-center">
-                    <hr className="flex-grow border-red-900" />
-                    <span className="px-2 text-red-900">OR</span>
-                    <hr className="flex-grow border-red-900" />
+                    <hr className="flex-grow border-blue-900" />
+                    <span className="px-2 text-blue-900">OR</span>
+                    <hr className="flex-grow border-blue-900" />
                 </div>
 
                 <div className="flex justify-center">
-                    <button onClick={handleGoogleLogin} className="flex items-center justify-center bg-white border border-gray-300 text-gray-700 font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline">
+                    <button onClick={handleGoogleLogin} className="flex items-center justify-center bg-white border border-gray-300 text-gray-700  py-2 px-10 rounded focus:outline-none focus:shadow-outline">
                         <img src="./images/google.png" alt="Google" className="h-5 w-5 mr-2" />
                         Login with Google
                     </button>
                 </div>
                 <div className="mt-4 flex justify-between">
                     <a
-                        className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline"
+                        className="inline-block align-baseline  text-sm text-red-500 hover:underline"
                         href="/"
                         onClick={handleClose}
                     >
                         Cancel
                     </a>
-                    <a className="inline-block align-baseline font-bold text-sm text-red-500 hover:underline" href="/Login">
+                    <a className="inline-block align-baseline  text-sm text-blue-500 hover:underline" href="/Login">
                         Already a user? Login
                     </a>
                 </div>

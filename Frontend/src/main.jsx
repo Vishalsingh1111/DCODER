@@ -9,8 +9,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
       <div
-        className='dark:bg-slate-900 dark:text-white bg-[#FBFBFB]'>
+        className='dark:bg-slate-900 dark:text-white'>
         {/* [#F3F3F2] */}
+        {/* bg-[#FBFBFB] */}
         <App />
       </div>
     </AuthProvider>
