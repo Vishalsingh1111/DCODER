@@ -26,7 +26,7 @@ function Sheetpage() {
     return (
         <div className='max-w-screen-xl container mx-auto lg:my-10 sm:my-3 dark:bg-slate-900 dark:text-white'>
             <div className='mx-auto text-center lg:mb-10 max-w-screen-md'>
-                <span className='font-bold text-xl md:text-3xl lg:text-4xl text-gray-800 dark:text-white leading-tight tracking-wide'>
+                <span className='font-semibold text-xl md:text-3xl lg:text-4xl text-gray-800 dark:text-white leading-tight tracking-wide'>
                     Updated SDE Sheet : Top Coding Interview Problems
                 </span>
             </div>

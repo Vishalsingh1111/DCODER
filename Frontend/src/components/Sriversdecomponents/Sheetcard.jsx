@@ -72,7 +72,7 @@ function Sheetcard({ item }) {
                     </div>
                     <div className='lg:mx-8 mx-2 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
                         <table className="table bg-white  dark:bg-slate-900 dark:text-white dark:border ">
-                            <thead className='font-bold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
+                            <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
                                 <Sheetheading />
                             </thead>
                             <tbody>

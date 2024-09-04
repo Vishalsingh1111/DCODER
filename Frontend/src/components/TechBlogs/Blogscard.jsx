@@ -14,16 +14,16 @@ const Blogcard = ({ item, onClick }) => {
         >
             <div className="content flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 className="text-xl text-gray-700 font-semibold mb-2 mt-4 dark:text-white">
+                    <h3 className="text-xl font-[500] text-gray-900 mb-2 mt-4 dark:text-white">
                         {item.header}
                     </h3>
                     <p className="text-md text-gray-500 mb-2 dark:text-white">
-                        {truncateText(item.explanation, 35)}
+                        {truncateText(item.explanation, 60)}
                     </p>
                 </div>
                 <div className="flex justify-start mt-4">
                     <a
-                        className="text-red-500 dark:text-white inline-block border p-2 rounded-lg border-red-500 font-semibold group-hover:text-white group-hover:bg-red-500 transition-all duration-300"
+                        className="text-red-500 dark:text-white inline-block border p-2 rounded-lg border-red-500 group-hover:text-white group-hover:bg-red-500 transition-all duration-300"
                         href="#"
                     >
                         Click to open

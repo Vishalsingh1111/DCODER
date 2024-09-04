@@ -112,8 +112,6 @@ const Navbar = () => {
                         </div>
                     ) : null}
                 </div>
-
-
             </div>
         </div>
     );
