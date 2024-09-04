@@ -29,12 +29,12 @@ function NewsletterSection() {
 
     return (
         <section className="w-full lg:max-w-[81%] md:max-w-[85%] mx-auto">
-            <div className="mx-5 my-[70px] p-[50px] rounded-xl bg-white border border-gray-300 dark:bg-slate-800 dark:border-none">
+            <div className="mx-5 my-[70px] p-[50px] sm:border border rounded-xl bg-[#f8f8f8] dark:bg-slate-800 dark:border-none">
                 <div className="max-w-screen-md mx-auto text-center">
-                    <h2 className="mb-4 text-2xl sm:text-3xl text-blue-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl sm:text-3xl text-gray-900 dark:text-white">
                         Sign up for our newsletter
                     </h2>
-                    <p className="mb-8 text-md text-gray-700 dark:text-gray-300">
+                    <p className="mb-8 text-md text-gray-600 dark:text-gray-300">
                         Do you want to get notified when a new content is added to DCODER?
                         Sign up for our newsletter and you'll be among the first to find out about new contents.
                     </p>
@@ -60,7 +60,7 @@ function NewsletterSection() {
                                 </div>
                                 <input
                                     {...register('email', { required: true })}
-                                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                                     placeholder="Enter your email"
                                     type="email"
                                     id="email"

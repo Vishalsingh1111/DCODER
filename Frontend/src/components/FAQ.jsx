@@ -7,7 +7,7 @@ const Accordion = () => {
                 <div className="-mx-4 flex flex-wrap justify-center">
                     <div className="w-full px-4">
                         <div className="mx-auto mb-8 max-w-[520px] text-center lg:mb-8">
-                            <h2 className="mb-4 text-4xl font-[500] text-dark dark:text-white">
+                            <h2 className="mb-4 text-4xl font-[600] text-dark dark:text-white">
                                 Any Questions? Look Here
                             </h2>
                             <p>Most Frequent Asked Questions, Asked by most of users.</p>
@@ -60,12 +60,12 @@ const AccordionItem = ({ header, text }) => {
         setActive(!active);
     };
     return (
-        <div className="mb-4 w-full bg-white border border-gray-300 p-4 rounded-xl dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
+        <div className="mb-4 w-full bg-white border border-gray-300 px-4 py-2 rounded-xl dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
             <button
                 className={`faq-btn flex w-full text-left`}
                 onClick={() => handleToggle()}
             >
-                <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-[#EDE8F5] text-red dark:bg-white/5">
+                <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-[#f3f4f4] text-red dark:bg-white/5">
                     <svg
                         className={`fill-red-500 stroke-red-500 duration-200 ease-in-out ${active ? "rotate-180" : ""
                             }`}
@@ -83,7 +83,7 @@ const AccordionItem = ({ header, text }) => {
                 </div>
 
                 <div className="w-full">
-                    <h4 className="mt-1 text-xl text-blue-900 font-semibold text-dark dark:text-white">
+                    <h4 className="mt-1 text-xl text-blue-900 font-[500] text-dark dark:text-white">
                         {header}
                     </h4>
                 </div>

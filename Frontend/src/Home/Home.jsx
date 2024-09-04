@@ -6,7 +6,6 @@ import NewsletterSubscription from '../components/NewsletterSubscription'
 import FAQ from '../components/FAQ'
 import Homecontentcard from '../components/Homecontentcard'
 import Homepromo from '../components/Homepromo'
-import Whatweoffer from '../components/Whatweoffer'
 
 
 function Home() {
@@ -16,7 +15,6 @@ function Home() {
             <Banner />
             <Homecontentcard />
             <NewsletterSubscription />
-            <Whatweoffer />
             <FAQ />
             <Homepromo />
             <Footer />

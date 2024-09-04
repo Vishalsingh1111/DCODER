@@ -48,7 +48,7 @@ const resources = [
 
 const ResourceCard = ({ title, description, buttonText, icon, link }) => (
     <a href={link} className="block group" >
-        <div className="p-6 bg-white border border-gray-300 rounded-xl hover:border-red-500 transition-colors group dark:bg-slate-800 dark:text-white dark:border-none">
+        <div className="p-6 bg-white border border-gray-300 rounded-xl transition-colors group dark:bg-slate-800 dark:text-white dark:border-none">
             <div className="w-20 h-20 flex items-center border border-gray-300 justify-center bg-[#F7F7F7] rounded-xl text-5xl text-red-500 dark:bg-slate-700">
                 <i className={`fas ${icon}`}></i>
             </div>
@@ -64,7 +64,7 @@ const ResourceCard = ({ title, description, buttonText, icon, link }) => (
 const ResourceGrid = () => (
     <div className="p-6 max-w-screen-xl container mx-auto md:px-20 px-4">
         <div className="pb-10 text-center ">
-            <h1 className="font-[500] text-black dark:text-white text-4xl pb-2" id='homecontentcard'>Free Offered Courses</h1>
+            <h1 className="font-[600] text-black dark:text-white text-4xl pb-2" id='homecontentcard'>Free Offered Courses</h1>
             <p >We cover a wide range of programming languages including but not limited to Python, Java, C, C++, DSA etc. Our notes are designed to cater to both beginners and advanced users.</p>
         </div>
         <div className="max-w-screen-xl container mx-auto">

@@ -38,7 +38,7 @@ const ContactForm = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-32">
                         {/* Contact Info */}
                         <div>
-                            <h2 className="text-4xl font-semibold text-gray-800 mb-4 dark:text-white">Get In Touch</h2>
+                            <h2 className="text-5xl font-semibold text-gray-800 mb-4 dark:text-white">Get In Touch</h2>
                             <p className="text-gray-600 mb-6 dark:text-white">
                                 If you have any query, You can contact us.
                             </p>
