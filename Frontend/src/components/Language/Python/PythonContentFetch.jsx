@@ -83,7 +83,7 @@ const PythonContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={currentPage}
-                        className="px-4 py-2 mx-1 bg-blue-700 text-white rounded"
+                        className="px-4 py-2 mx-1 bg-blue-500 text-white rounded"
                         onClick={() => handlePageChange(currentPage)}
                     >
                         {currentPage}
@@ -102,7 +102,7 @@ const PythonContentFetch = () => {
                     pageNumbers.push(
                         <button
                             key={i}
-                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                            className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
                             onClick={() => handlePageChange(i)}
                         >
                             {i}
@@ -123,7 +123,7 @@ const PythonContentFetch = () => {
             </div>
 
             <div className="mx-auto text-left">
-                <div className="w-full lg:px-20 max-w-screen-lg mx-auto shadow bg-white rounded-2xl dark:bg-slate-800 py-5 mb-10">
+                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     {loading ? (
                         <Skeleton1 />
                     ) : (
@@ -137,7 +137,7 @@ const PythonContentFetch = () => {
             {/* Pagination Controls */}
             <div className="flex justify-center mt-10">
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
@@ -147,7 +147,7 @@ const PythonContentFetch = () => {
                 {renderPageNumbers()}
 
                 <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >

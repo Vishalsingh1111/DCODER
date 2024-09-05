@@ -123,7 +123,7 @@ const JavaContentFetch = () => {
             </div>
 
             <div className="mx-auto text-left">
-                <div className="w-full lg:px-20 max-w-screen-lg mx-auto shadow bg-white rounded-2xl dark:bg-slate-800 py-5 mb-10">
+                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     {loading ? (
                         <Skeleton1 />
                     ) : (

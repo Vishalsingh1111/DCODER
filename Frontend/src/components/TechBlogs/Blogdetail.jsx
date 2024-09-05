@@ -77,7 +77,7 @@ const BlogDetail = () => {
             <SearchForm />
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-row gap-10 '>
-                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto shadow bg-[rgb(255,255,255)] rounded-2xl dark:bg-slate-800 dark:border-none mt-3">
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
@@ -115,7 +115,7 @@ const BlogDetail = () => {
                         </div>
                     </div>
 
-                    <div className='space-y-8 mt-5 mx-auto justify-center'>
+                    <div className='space-y-8 mt-5 mx-auto justify-center '>
                         <iframe
                             width="320"
                             height="200"
@@ -123,7 +123,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-4 bg-[rgb(255,255,255)] shadow-md rounded'
+                            className='p-5 bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
 
                         <iframe
@@ -133,7 +133,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-4 bg-[rgb(255,255,255)] shadow-md rounded'
+                            className='p-5 bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ const BlogDetail = () => {
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center group justify-between bg-[rgb(255,255,255)] shadow dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
+                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
                                             <h3 className="text-xl font-[500]">{blogItem.header}</h3>
                                             <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 150)}</p>
@@ -166,9 +166,9 @@ const BlogDetail = () => {
             </div>
             <div className="text-center mt-6">
                 {visibleCount < items.length ? (
-                    <button onClick={handleShowMore} className="bg-red-500 text-lg text-white hover:bg-red-600 py-2 px-4 rounded">Show More</button>
+                    <button onClick={handleShowMore} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Show More</button>
                 ) : (
-                    <button onClick={handleHide} className="bg-red-500 text-lg text-white hover:bg-red-600 py-2 px-4 rounded">Close</button>
+                    <button onClick={handleHide} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Close</button>
                 )}
             </div>
 

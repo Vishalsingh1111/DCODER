@@ -57,18 +57,18 @@ const AccordionItem = ({ header, text }) => {
         setActive(!active);
     };
     return (
-        <div className=" w-full border-b-2 border-gray-300 px-4 py-3 dark:bg-slate-800 dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-none">
+        <div className=" w-full border-b-2 border-gray-300 px-4 py-3  dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-white">
             <button
-                className={`faq-btn flex w-full text-left`}
+                className={`faq-btn flex w-full text-left group hover`}
                 onClick={() => handleToggle()}
             >
                 <div className="w-full">
-                    <h4 className="mt-1 sm:text-md lg:text-xl text-blue-900 font-[500] text-dark dark:text-white">
+                    <h4 className="mt-1 sm:text-md lg:text-xl text-black font-semibold text-dark dark:text-white">
                         {header}
                     </h4>
                 </div>
 
-                <div className=" flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-gray-400 dark:bg-white/5">
+                <div className=" flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-red-500 group-hover:shadow-lg group-hover:shadow-black/40 dark:bg-white/5">
                     <svg
                         className={`fill-white stroke-white duration-200 ease-in-out ${active ? "rotate-180" : ""
                             }`}
@@ -92,7 +92,7 @@ const AccordionItem = ({ header, text }) => {
                 className={` duration-200 ease-in-out ${active ? "block" : "hidden"
                     }`}
             >
-                <p className="py-3 text-md leading-relaxed text-gray-700 dark:text-dark-6">
+                <p className="py-3 text-md leading-relaxed text-gray-700  dark:text-white dark:text-dark-6">
                     {text}
                 </p>
             </div>

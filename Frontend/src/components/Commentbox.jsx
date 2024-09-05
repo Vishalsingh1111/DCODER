@@ -6,7 +6,7 @@ function Commentbox() {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');
     const [name, setName] = useState('');
-    const [visibleComments, setVisibleComments] = useState(2);
+    const [visibleComments, setVisibleComments] = useState(0);
     const [showMore, setShowMore] = useState(true);
 
     // Fetch comments from the API
@@ -58,7 +58,7 @@ function Commentbox() {
     return (
         <>
             <div className='flex flex-col w-full mx-auto items-center mb-20 '>
-                <div className="w-full md:w-7/12 lg:w-7/12 px-10 mx-10 rounded-lg my-10 dark:bg-slate-800 border border-gray-300">
+                <div className="w-full md:w-7/12 lg:w-7/12 px-10 mx-10 rounded-lg my-10 dark:bg-slate-800 shadow border-t shadow-black/30 py-2 px-4 rounded-lg border-gray-300">
                     <form onSubmit={handleCommentSubmit}>
                         <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-5 mt-10 text-2xl">Comment</label>
                         <div className="mb-4">
@@ -81,7 +81,7 @@ function Commentbox() {
                                 onChange={handleCommentChange}
                             ></textarea>
                         </div>
-                        <button type="submit" className="bg-gray-500 text-white py-2 px-4 mb-8 rounded-md">Post Comment</button>
+                        <button type="submit" className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 py-2 px-4 rounded-lg text-white py-2 px-4 mb-8 rounded-md">Comment</button>
                     </form>
                 </div>
 
@@ -104,9 +104,9 @@ function Commentbox() {
                 <div className="w-full md:w-7/12 lg:w-7/12 px-10 text-center">
                     <button
                         onClick={toggleShowMore}
-                        className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
+                        className="bg-gray-500 text-white py-2 px-4 rounded-md shadow-lg hover:shadow-gray-500/30 shadow-black/30 py-2 px-4 rounded-lg0"
                     >
-                        {showMore ? 'More Comments' : 'Close'}
+                        {showMore ? 'Show Comment' : 'Hide'}
                     </button>
                 </div>
             </div>

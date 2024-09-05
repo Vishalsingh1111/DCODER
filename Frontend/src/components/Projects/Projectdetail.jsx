@@ -138,7 +138,7 @@ const ProjectDetail = () => {
             <Breadcrumb />
             <SearchForm />
             <div className="mx-auto max-w-screen-xl text-gray-600 dark:text-white md:px-20 px-4 py-5" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
-                <div className="w-full max-w-4xl shadow mx-auto content-justify p-3 sm:p-2 md:p-10 bg-[rgb(255,255,255)] rounded-2xl dark:bg-slate-800 dark:border-none ">
+                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     <h2 className="text-2xl text-center font-semibold mb-4">{item.header}</h2>
                     {mainImage && (
                         <div className="py-5 md:px-10 text-center">
@@ -181,7 +181,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left ">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
                             >
                                 {showHtmlCode ? "Hide Code" : "Show HTML Code"}
                             </button>
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCssCode(!showCssCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
                             >
                                 {showCssCode ? "Hide Code" : "Show CSS Code"}
                             </button>
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowJsCode(!showJsCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
                             >
                                 {showJsCode ? "Hide Code" : "Show JavaScript Code"}
                             </button>
@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowOtherCode(!showOtherCode)}
-                                className="mb-4 text-sm bg-blue-500 text-white py-2 px-2 rounded hover:bg-blue-600"
+                                className="mb-4 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
                             >
                                 {showOtherCode ? "Hide Code" : "Show Other Code"}
                             </button>
@@ -260,8 +260,8 @@ const ProjectDetail = () => {
                         )
                     ))}
                     <div className='mt-10 text-center flex justify-start space-x-5'>
-                        <Link to={item.link1} className='px-2 py-2 bg-red-500 text-sm rounded group hover:bg-red-900 text-white'>Click to Download from GitHub</Link>
-                        <Link to={item.link2} className='px-2 py-2 bg-red-500 text-sm rounded group hover:bg-red-900 text-white'>Watch Live Project</Link>
+                        <Link to={item.link1} className='px-2 py-2 bg-red-500 text-sm text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg'>Click to Download from GitHub</Link>
+                        <Link to={item.link2} className='px-2 py-2 bg-green-500 text-sm text-white shadow-lg hover:shadow-green-500/30 shadow-black/30 py-2 px-4 rounded-lg'>Watch Live Project</Link>
                     </div>
                 </div>
 
@@ -274,7 +274,7 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[rgb(255,255,255)] shadow-md rounded-lg p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
+                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full h-48 object-cover rounded-t" />
@@ -288,7 +288,7 @@ const ProjectDetail = () => {
                         <div className="text-center my-5">
                             <button
                                 onClick={() => setVisibleCount(visibleCount + 3)}
-                                className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+                                className="bg-red-500 text-white py-2 px-4 mt-5 text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg"
                             >
                                 Load More
                             </button>

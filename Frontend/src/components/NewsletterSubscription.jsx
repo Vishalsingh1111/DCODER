@@ -29,9 +29,9 @@ function NewsletterSection() {
 
     return (
         <section className="w-full lg:max-w-[81%] md:max-w-[85%] mx-auto">
-            <div className="mx-5 my-[70px] p-[50px] sm:border border rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none">
+            <div className="mx-5 my-[70px] p-[50px] bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none">
                 <div className="max-w-screen-md mx-auto text-center">
-                    <h2 className="mb-4 text-2xl sm:text-3xl text-blue-900 dark:text-white">
+                    <h2 className="mb-4 text-2xl font-semibold sm:text-3xl text-black dark:text-white">
                         Sign up for our newsletter
                     </h2>
                     <p className="mb-8 text-md text-gray-600 dark:text-gray-300">
@@ -39,7 +39,7 @@ function NewsletterSection() {
                         Sign up for our newsletter and you'll be among the first to find out about new contents.
                     </p>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="items-center mx-auto mb-3 space-y-4 sm:space-y-0 sm:flex sm:space-x-4">
+                        <div className="items-center mx-auto mb-3 space-y-4 sm:space-y-0 sm:flex sm:space-x-2">
                             <div className="relative w-full">
                                 <label
                                     htmlFor="email"
@@ -60,7 +60,7 @@ function NewsletterSection() {
                                 </div>
                                 <input
                                     {...register('email', { required: true })}
-                                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                                     placeholder="Enter your email"
                                     type="email"
                                     id="email"
@@ -69,7 +69,7 @@ function NewsletterSection() {
                             <div className="w-full sm:w-auto">
                                 <button
                                     type="submit"
-                                    className="py-3 px-5 w-full text-sm font-medium text-center rounded-lg sm:rounded-none sm:rounded-r-lg border cursor-pointer text-white bg-red-500 border-red-500 hover:bg-red-600 dark:bg-red-600 dark:border-red-600 dark:hover:bg-red-700"
+                                    className="py-3 px-5 w-full text-sm font-medium text-center rounded-lg border cursor-pointer text-white bg-red-500 border-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 dark:bg-red-600 dark:border-red-600 dark:hover:bg-red-700"
                                 >
                                     Subscribe
                                 </button>
