@@ -46,7 +46,7 @@ const Navbar = () => {
                     </ul>
                 </details>
             </li>
-            <li><a href='/Pagenotfound'>Practice</a></li>
+            <li><a href='/CSPage'>CS Fundamental</a></li>
             <li><a href='/Technicalblog'>Tech Blogs</a></li>
             <li><a href='/Contact'>Contact</a></li>
         </>

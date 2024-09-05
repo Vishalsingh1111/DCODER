@@ -122,27 +122,30 @@ const CScontentfetch = () => {
 
     return (
         <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
-            <div className="flex justify-center mb-10">
+
+            <div className='text-3xl text-red-500 mb-10 text-center'>
+                <div className='text-3xl text-red-500 text-center'><span>Basic Interview Questions</span></div>
+            </div>
+
+            <div className="flex justify-center">
                 <button
-                    className={`text-lg p-2 ${activeSection === "os" ? "text-red-500 border-2 border-red-500" : "text-gray-500 border-2 border-gray-500"}`}
+                    className={`text-lg p-2 ${activeSection === "os" ? "text-red-500 border-2 rounded-md  border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
                     onClick={() => handleSectionChange("os")}
                 >
                     Operating System
                 </button>
                 <button
-                    className={`text-lg ml-4 p-2 ${activeSection === "cn" ? "text-red-500 border-2 border-red-500" : "text-gray-500 border-2 border-gray-500"}`}
+                    className={`text-lg ml-4 p-2 ${activeSection === "cn" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
                     onClick={() => handleSectionChange("cn")}
                 >
                     Computer Network
                 </button>
             </div>
 
-            <div className='text-3xl text-red-500 pb-10 text-center'>
-                <div className='text-3xl text-red-500 text-center'><span>Basic Interview Questions</span></div>
-            </div>
+
 
             <div className="mx-auto text-left">
-                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     {loading ? (
                         <Skeleton1 />
                     ) : (
@@ -160,7 +163,7 @@ const CScontentfetch = () => {
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
                 >
-                    Previous
+                    {"<<"}
                 </button>
 
                 {renderPageNumbers()}
@@ -170,7 +173,7 @@ const CScontentfetch = () => {
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                 >
-                    Next
+                    {">>"}
                 </button>
             </div>
         </section>

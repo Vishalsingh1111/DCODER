@@ -87,7 +87,7 @@ const FormElementInput = () => {
     return (
         <section className="mx-5 dark:bg-gray-800">
             <div className="mb-10">
-                <h1 className="text-center text-3xl text-slate-500">Enter Required Details</h1>
+                <h1 className="text-center text-3xl text-black">Enter Required Details</h1>
             </div>
             <div className="container mx-auto">
                 <form onSubmit={handleSubmit} className="flex flex-wrap -mx-4">
@@ -97,7 +97,7 @@ const FormElementInput = () => {
                         </DefaultColumn>
                     ))}
                     <div className="w-full px-4 text-center">
-                        <button type="submit" className="bg-red-500 text-white py-3 px-10 rounded-md">
+                        <button type="submit" className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white py-3 px-10 rounded-md">
                             Submit
                         </button>
                     </div>

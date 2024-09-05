@@ -77,7 +77,7 @@ const Sidebar = () => {
             >
                 <div className="h-full px-3 py-4 overflow-y-auto bg-white rounded-xl h-screen-minus-5 border border-gray-300 dark:bg-gray-800">
                     <ul className="space-y-2 font-medium">
-                        <li className=' pl-3 text-red-500 text-left'>
+                        <li className=' pl-3 text-red-500 font-semibold text-left'>
                             <span>DCODER</span>
                         </li>
                         <li>
@@ -404,7 +404,7 @@ const Sidebar = () => {
                         <li>
                             <button
                                 onClick={handleLogout}
-                                className="fixed bottom-4 left-5 flex items-center p-2 mt-3 px-4 text-white rounded-lg bg-red-500 dark:text-white hover:bg-red-800 dark:hover:bg-gray-700 group"
+                                className="fixed bottom-4 left-5 flex items-center p-2 mt-3 px-4 text-white rounded-lg bg-red-500 dark:text-white shadow-lg hover:shadow-red-500/30 shadow-black/30  dark:hover:bg-gray-700 group"
                             >
                                 <svg class="flex-shrink-0 w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />

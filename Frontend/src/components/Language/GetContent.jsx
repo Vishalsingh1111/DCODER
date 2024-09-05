@@ -88,7 +88,7 @@ const GetContent = ({ item }) => {
             <div className="text-md font-[500] mb-4">
                 {renderText(item.header)}
             </div>
-            <div className="text-[17px] leading-relaxed ">
+            <div className="text-[17px] leading-relaxed text-justify ">
                 {['text', 'statement', 'substatement1', 'statement2', 'substatement2', 'statement3', 'substatement3', 'statement4', 'substatement4'].map((key, index) => (
                     item[key] && (
                         <p key={index} className="py-2">
@@ -129,7 +129,7 @@ const GetContent = ({ item }) => {
             {item.explanation && (
                 <div className="mt-4">
                     <div className="font-bold text-xl dark:text-white text-gray-500 mb-2">Explanation:</div>
-                    <ul className="list-disc ml-4 text-md text-gray-500">
+                    <ul className="list-disc ml-4 text-md text-gray-500 text-justify">
                         {item.explanation.split('\n').map((line, index) => (
                             <li key={index} className="py-1">{line.trim()}</li>
                         ))}
@@ -138,7 +138,7 @@ const GetContent = ({ item }) => {
             )}
             {['statement5', 'substatement5'].map((key, index) => (
                 item[key] && (
-                    <p key={index} className="py-3">
+                    <p key={index} className="py-3 text-justify">
                         {renderText(item[key])}
                     </p>
                 )

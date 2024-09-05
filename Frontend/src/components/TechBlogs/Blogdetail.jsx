@@ -77,7 +77,7 @@ const BlogDetail = () => {
             <SearchForm />
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-row gap-10 '>
-                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>

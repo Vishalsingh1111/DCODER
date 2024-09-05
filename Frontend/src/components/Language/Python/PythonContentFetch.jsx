@@ -52,7 +52,7 @@ const PythonContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -65,7 +65,7 @@ const PythonContentFetch = () => {
                 pageNumbers.push(
                     <button
                         key={i}
-                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-700 text-white" : "bg-gray-200 text-black"}`}
+                        className={`px-4 py-2 mx-1 rounded ${currentPage === i ? "bg-blue-500 text-white" : "bg-gray-200 text-black"}`}
                         onClick={() => handlePageChange(i)}
                     >
                         {i}
@@ -118,12 +118,12 @@ const PythonContentFetch = () => {
     return (
         <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
-            <div className='text-3xl text-red-500 pb-10 text-center'>
+            <div className='text-3xl text-red-500 text-center'>
                 <span>Basic Interview Questions – Python</span>
             </div>
 
             <div className="mx-auto text-left">
-                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-2xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     {loading ? (
                         <Skeleton1 />
                     ) : (
@@ -132,28 +132,32 @@ const PythonContentFetch = () => {
                         ))
                     )}
                 </div>
+
+
+                {/* Pagination Controls */}
+                <div className="flex justify-center mt-10">
+                    <button
+                        className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage === 1}
+                    >
+                        {"<<"}
+                    </button>
+
+                    {renderPageNumbers()}
+
+                    <button
+                        className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                    >
+                        {">>"}
+                    </button>
+                </div>
+
             </div>
 
-            {/* Pagination Controls */}
-            <div className="flex justify-center mt-10">
-                <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                >
-                    {"<<"}
-                </button>
 
-                {renderPageNumbers()}
-
-                <button
-                    className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                >
-                    {">>"}
-                </button>
-            </div>
         </section>
     );
 };

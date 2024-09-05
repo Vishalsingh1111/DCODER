@@ -138,7 +138,7 @@ const ProjectDetail = () => {
             <Breadcrumb />
             <SearchForm />
             <div className="mx-auto max-w-screen-xl text-gray-600 dark:text-white md:px-20 px-4 py-5" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
-                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     <h2 className="text-2xl text-center font-semibold mb-4">{item.header}</h2>
                     {mainImage && (
                         <div className="py-5 md:px-10 text-center">
