@@ -85,6 +85,7 @@ const GetContent = ({ item }) => {
 
     return (
         <div className="p-4 bg-[rgb(255,255,255)] dark:bg-slate-800 dark:text-white text-gray-700 text-md">
+
             <div className="text-md font-[500] mb-4">
                 {renderText(item.header)}
             </div>

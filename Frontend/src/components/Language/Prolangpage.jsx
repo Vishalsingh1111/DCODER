@@ -23,7 +23,7 @@ function Content() {
     }, []);
 
     return (
-        <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
+        <div className='max-w-screen-xl container mx-auto md:px-20 px-4'>
             <div className='pt-10 flex flex-col items-center justify-center text-center'>
                 <h1 className='text-2xl text-black dark:text-white  md:text-4xl'>
                     We are providing the best content<span className='text-red-500 font-bold'> Here!</span>
@@ -36,7 +36,7 @@ function Content() {
             {loading ? (
                 <Skeleton1 />
             ) : (
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-5 justify-items-center'>
+                <div className='max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 justify-items-center'>
                     {note.map((item) => (
                         <Card key={item.id} item={item} />
                     ))}

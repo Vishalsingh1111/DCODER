@@ -3,6 +3,7 @@ import axios from 'axios';
 import { baseUrl } from "../../../Baseurl";
 import GetContent from "../GetContent";
 import Skeleton1 from "../../Skeleton";
+import TechAICard from "../../TechAICard";
 
 const QUESTIONS_PER_PAGE = 10;
 
@@ -131,6 +132,9 @@ const DbmsContentFetch = () => {
                             <GetContent key={item.id} item={item} />
                         ))
                     )}
+                </div>
+                <div>
+                    <TechAICard />
                 </div>
             </div>
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { baseUrl } from "../../../Baseurl";
 import GetContent from "../GetContent";
 import Skeleton1 from "../../Skeleton";
+import TechAICard from "../../TechAICard";
 
 const QUESTIONS_PER_PAGE = 10;
 
@@ -132,7 +133,9 @@ const PythonContentFetch = () => {
                         ))
                     )}
                 </div>
-
+                <div>
+                    <TechAICard />
+                </div>
 
                 {/* Pagination Controls */}
                 <div className="flex justify-center mt-10">

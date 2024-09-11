@@ -3,6 +3,8 @@ import axios from 'axios';
 import { baseUrl } from "../../Baseurl";
 import GetContent from "../Language/GetContent";
 import Skeleton1 from "../../components/Skeleton";
+import TechAICard from "../TechAICard";
+
 
 const QUESTIONS_PER_PAGE = 10;
 
@@ -153,6 +155,9 @@ const CScontentfetch = () => {
                             <GetContent key={item.id} item={item} />
                         ))
                     )}
+                </div>
+                <div>
+                    <TechAICard />
                 </div>
             </div>
 

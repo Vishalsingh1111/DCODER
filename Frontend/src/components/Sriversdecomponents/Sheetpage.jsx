@@ -4,6 +4,7 @@ import axios from "axios";
 import { baseUrl } from '../../Baseurl';
 import Skeleton1 from '../Skeleton';
 
+
 function Sheetpage() {
     const [sheet, setSheet] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -23,15 +24,21 @@ function Sheetpage() {
         getSheet();
     }, []);
 
+    const handleNoteClick = (key) => {
+        setCurrentNoteKey(key);
+        setIsModalOpen(true);
+    };
+
     return (
-        <div className='max-w-screen-xl container mx-auto lg:my-10 sm:my-3 dark:bg-slate-900 dark:text-white'>
+        <div className='max-w-screen-2xl container mx-auto lg:my-10 sm:my-3 dark:bg-slate-900 dark:text-white'>
             <div className='mx-auto text-center lg:mb-10 max-w-screen-md'>
-                <span className='font-semibold text-xl md:text-3xl lg:text-4xl text-gray-800 dark:text-white leading-tight tracking-wide'>
-                    Updated SDE Sheet : Top Coding Interview Problems
-                </span>
+                <div className='text-3xl text-red-500 mb-10 text-center'>
+                    <span>Most Asked Problem For SDE Interview</span>
+                </div>
             </div>
             <div className='flex justify-center'>
-                <div className='w-full m-3 md:w-4/5 lg:w-4/4 dark:bg-slate-900 dark:text-white bg-[rgb(255,255,255)] lg:p-10 p-2 border-t shadow-md shadow-black/40  rounded-xl bg-[rgb(255,255,255)] border-gray-400 rounded-xl'>
+
+                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-full mx-auto bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none rounded-xl">
                     {loading ? (
                         <Skeleton1 />
                     ) : (

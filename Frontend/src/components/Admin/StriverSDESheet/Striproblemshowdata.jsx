@@ -62,21 +62,25 @@ const NoteList = () => {
                     <table className="table-auto border-collapse border border-gray-300 w-full">
                         <thead>
                             <tr className="bg-gray-100">
+                                <th className="border border-gray-300 px-4 py-2">ID</th>
                                 <th className="border border-gray-300 px-4 py-2">Name</th>
                                 <th className="border border-gray-300 px-4 py-2">Article</th>
                                 <th className="border border-gray-300 px-4 py-2">Level</th>
                                 <th className="border border-gray-300 px-4 py-2">Link</th>
+                                <th className="border border-gray-300 px-4 py-2">DS Type</th>
                                 <th className="border border-gray-300 px-4 py-2">Topic</th>
                                 <th className="border border-gray-300 px-4 py-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {notes.map(note => (
-                                <tr key={note._id} className="text-center">
+                                <tr key={note._id} className="text-center text-sm">
+                                    <td className="border border-gray-300 px-4 py-2">{note.id}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.name}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.article}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.Level}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.link}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.dsaType}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.topic}</td>
                                     <td className="border-t border-gray-300 px-4 py-2 flex">
                                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30  text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>

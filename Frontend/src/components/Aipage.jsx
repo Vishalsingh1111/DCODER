@@ -67,12 +67,14 @@ const Chat = () => {
         <>
             <Navbar />
             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
-                <div className="mb-20 max-w-4xl text-left mx-auto space-y-3 ">
-                    <span className=' md:text-5xl text-xl text-blue-900 dark:text-white'> I'm TechAI</span>
-                    <h1 className="md:text-5xl text-xl mb-2">
+                <div className='w-full sm:w-[100px] md:w-full mb-5'>
+                    <img src="/robot.jpg" alt="AI Illustration" className="md:w-[10%] sm:[1%] rounded-full border-2 mx-auto" />
+                </div>
+                <div className="mb-5 max-w-4xl text-left mx-auto space-y-3 ">
+                    <h1 className="md:text-5xl text-xl font-semibold mb-2">
                         Hello, <span className="text-red-500">{authUser?.firstName || 'Guest'}</span>
                     </h1>
-                    <h2 className="md:text-5xl text-xl text-gray-500 mb-20">
+                    <h2 className="md:text-5xl text-xl font-semibold text-gray-500 mb-20">
                         How can I help you today?
                     </h2>
                 </div>
@@ -114,13 +116,13 @@ const Chat = () => {
 
                 </div>
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-full flex items-center fixed bottom-20 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
+            <div className="w-full max-w-4xl p-4 bg-white shadow-md border-t rounded-full flex items-center fixed bottom-20 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Enter a prompt here"
+                    placeholder="Ask with TechAI"
                     className="w-full px-5 p-1 border-none outline-none dark:bg-slate-800 dark-text-white "
                 />
                 {query && (

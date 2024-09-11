@@ -46,26 +46,42 @@ const resources = [
     },
 ];
 
-const ResourceCard = ({ title, description, buttonText, icon, link }) => (
-    <a href={link} className="block group" >
-        <div className="p-6 border-t bg-[rgb(255,255,255)] shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl transition-colors dark:bg-slate-800 dark:text-white dark:border-none">
-            <div className="w-20 h-20 flex items-center border border-red-200 justify-center bg-red-100 rounded-xl text-5xl text-red-500 dark:bg-slate-700">
-                <i className={`fas ${icon}`}></i>
+// Define background colors for each icon
+const iconBackgroundColors = {
+    "fa-file-alt": "bg-blue-100 text-blue-500 border-blue-300",
+    "fa-laptop-code": "bg-green-100 text-green-500 border-green-400",
+    "fa-blog": "bg-red-100 text-red-500 border-red-300",
+    "fa-play-circle": "bg-purple-100 text-purple-500 border-purple-300",
+    "fa-book": "bg-orange-100 text-orange-500 border-orange-300",
+    "fa-pencil-alt": "bg-pink-100 text-pink-500 border-pink-300",
+    default: "bg-red-100"
+};
+
+const ResourceCard = ({ title, description, buttonText, icon, link }) => {
+    // Get the background color for the current icon
+    const bgColor = iconBackgroundColors[icon] || iconBackgroundColors.default;
+
+    return (
+        <a href={link} className="block group">
+            <div className="p-6 border-t bg-[rgb(255,255,255)] shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-2xl transition-colors dark:bg-slate-800 dark:text-white dark:border-none">
+                <div className={`w-[100px] h-[90px] flex items-center border justify-center ${bgColor} rounded-2xl text-5xl dark:bg-slate-700`}>
+                    <i className={`fas ${icon}`}></i>
+                </div>
+                <h2 className="mt-4 text-xl font-semibold text-black dark:text-white">{title}</h2>
+                <p className="mt-2 text-sm text-gray-600 dark:text-white">{description}</p>
+                <button className="mt-4 px-4 py-2 border text-red-500 border-red-400 dark:border-white rounded-xl group-hover:shadow-lg group-hover:bg-red-500 group-hover:text-white group-hover:shadow-black/30 group-hover:border-red-500 transition-colors dark:text-white">
+                    {buttonText} &rarr;
+                </button>
             </div>
-            <h2 className="mt-4 text-xl  font-semibold text-black dark:text-white">{title}</h2>
-            <p className="mt-2 text-gray-600 dark:text-white">{description}</p>
-            <button className="mt-4 px-4 py-2 border text-red-500 border-gray-400 dark:border-white rounded-xl group-hover:shadow-lg group-hover:bg-red-500 group-hover:text-white group-hover:shadow-black/30 group-hover:border-red-500 transition-colors dark:text-white">
-                {buttonText} &rarr;
-            </button>
-        </div>
-    </a>
-);
+        </a>
+    );
+};
 
 const ResourceGrid = () => (
-    <div className="p-6 max-w-screen-xl container mx-auto md:px-20 px-4">
-        <div className="pb-10 text-center ">
+    <div className="p-6 max-w-[1270px] container mx-auto md:px-20 px-4">
+        <div className="pb-10 text-center">
             <h1 className="font-[600] text-black dark:text-white text-4xl pb-2" id='homecontentcard'>Free Offered Courses</h1>
-            <p >We cover a wide range of programming languages including but not limited to Python, Java, C, C++, DSA etc. Our notes are designed to cater to both beginners and advanced users.</p>
+            <p>We cover a wide range of programming languages including but not limited to Python, Java, C, C++, DSA etc. Our notes are designed to cater to both beginners and advanced users.</p>
         </div>
         <div className="max-w-screen-xl container mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
