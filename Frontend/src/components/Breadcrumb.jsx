@@ -20,7 +20,7 @@ const Breadcrumb = () => {
                             <React.Fragment key={to}>
                                 <span className="mx-2 dark:text-white">{'／'}</span>
                                 {index === pathnames.length - 1 ? (
-                                    <span className=" px-2 dark:text-white">{value}</span>
+                                    <span className=" text-red-500 px-2 dark:text-white">{value}</span>
                                 ) : (
                                     <Link to={to} className='dark:text-white'>
                                         {value.charAt(0).toUpperCase() + value.slice(1)}

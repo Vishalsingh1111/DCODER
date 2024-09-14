@@ -51,7 +51,7 @@ const Projectcard = ({ item, onClick }) => {
                             <p className="mb-2 text-md text-gray-500 mt-1 dark:text-dark-6">
                                 {item.substatement3}
                             </p>
-                            <p className="mb-2 text-sm text-blue-500 bg-blue-100 py-1 px-2 rounded-lg border border-blue-300 dark:text-dark-6">
+                            <p className="mb-2 text-sm text-blue-500 bg-blue-100 py-1 px-2 rounded-lg border border-blue-300 dark:bg-slate-900 dark:text-white dark:border-white">
                                 {item.category}
                             </p>
                         </div>

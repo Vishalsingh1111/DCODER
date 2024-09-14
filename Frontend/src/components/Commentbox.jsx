@@ -58,7 +58,7 @@ function Commentbox() {
     return (
         <>
             <div className='flex flex-col w-full mx-auto items-center mb-20 '>
-                <div className="w-full md:w-7/12 lg:w-7/12 px-10 mx-10 rounded-lg my-10 dark:bg-slate-800 shadow border-t shadow-black/30 py-2 px-4 rounded-lg border-gray-300">
+                <div className="w-full md:w-7/12 lg:w-7/12 px-10 mx-10 rounded-lg my-10 dark:bg-slate-800 shadow border-t shadow-black/30 py-2 px-4 rounded-lg dark:border-none border-gray-300">
                     <form onSubmit={handleCommentSubmit}>
                         <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-5 mt-10 text-2xl">Comment</label>
                         <div className="mb-4">

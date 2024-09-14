@@ -14,7 +14,7 @@ const Blogcard = ({ item, onClick }) => {
         >
             <div className="content flex-1 flex flex-col justify-between">
                 <div>
-                    <h3 className="text-xl font-[500] text-black mb-2 mt-4 dark:text-white">
+                    <h3 className="text-xl font-[500] text-black mb-2 dark:text-white">
                         {item.header}
                     </h3>
                     <p className="text-md text-gray-600 mb-2 dark:text-white">

@@ -46,7 +46,7 @@ function Sheetcard({ item }) {
 
     // Define different background colors based on the `item.name` or other unique identifier
     const backgroundColors = {
-        "Basic dsa": "bg-blue-200",
+        "Basic dsa": "bg-blue-200 dark:bg-slate-800",
         "Arrays & Matrix": "bg-red-100",
         "String": "bg-green-100",
         "Linked List": "bg-purple-100",
@@ -65,12 +65,11 @@ function Sheetcard({ item }) {
     const cardBackground = backgroundColors[item.name] || backgroundColors.default;
 
     return (
-        <div className={`max-w-screen-2xl mx-2 md:mx-10 rounded-lg border-t shadow-md shadow-black/20 dark:bg-slate-800 dark:text-white`}>
+        <div className={`mx-2 md:mx-6 lg:mt-5 rounded-lg shadow-sm shadow-black/20 dark:bg-slate-900 dark:text-white`}>
             <div className="bg-gray-600 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
-
-            <div className={`flex mb-4 rounded items-center justify-between py-6 lg:px-8 px-2 cursor-pointer ${cardBackground}`} onClick={toggleAccordion}>
+            <div className={`flex rounded items-center dark:bg-slate-800 justify-between py-3 lg:px-10 px-5 cursor-pointer ${cardBackground}`} onClick={toggleAccordion}>
                 <div className="flex flex-col">
-                    <h3 className="text-2xl font-semibold text-black dark:text-white">{item.name}</h3>
+                    <h3 className="text-lg text-gray-800 dark:text-white">{item.name}</h3>
                 </div>
                 <div className='flex space-x-5'>
                     <div className='mt-2'>
@@ -85,14 +84,14 @@ function Sheetcard({ item }) {
             </div>
 
             {isOpen && (
-                <div className='w-full dark:bg-slate-800 pb-8 dark:text-white dark:border-none sm:px-0 py-5 md:px-10'>
-                    <div className='lg:mt-[-100px] lg:ml-[30%] lg:absolute border-gray-400 mb-2 lg:p-0 px-2 justify-center space-x-2'>
+                <div className={`w-full dark:bg-slate-800 dark:text-white dark:border-none sm:px-0 pb-5 md:px-4 ${cardBackground}`}>
+                    <div className='lg:mt-[-50px] lg:ml-[30%] lg:absolute border-gray-400 lg:p-0 px-2 justify-center space-x-2'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
                         <button className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
                     </div>
-                    <div className='lg:mx-8 mx-2 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto'>
+                    <div className='lg:mx-4 mx-2 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto'>
                         <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border">
                             <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
                                 <Sheetheading />

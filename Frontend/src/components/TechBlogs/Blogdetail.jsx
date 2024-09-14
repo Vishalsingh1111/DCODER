@@ -96,7 +96,7 @@ const BlogDetail = () => {
 
                         {item.explanation && (
                             <div className="mt-4">
-                                <span className="text-2xl font-semibold text-gray-600">Explanation:</span>
+                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
                                 <ul className="py-2 list-disc ml-4">
                                     {item.explanation.split('\n').map((line, index) => (
                                         <li className="py-1 text-xl" key={index}>{line.trim()}</li>
@@ -123,7 +123,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-5 bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                            className='p-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
 
                         <iframe
@@ -133,7 +133,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-5 bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                            className='p-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ const BlogDetail = () => {
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
+                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] border-t dark:border-none shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
                                             <h3 className="text-xl font-[500]">{blogItem.header}</h3>
                                             <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 150)}</p>

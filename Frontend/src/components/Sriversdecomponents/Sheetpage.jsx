@@ -30,15 +30,9 @@ function Sheetpage() {
     };
 
     return (
-        <div className='max-w-screen-2xl container mx-auto lg:my-10 sm:my-3 dark:bg-slate-900 dark:text-white'>
-            <div className='mx-auto text-center lg:mb-10 max-w-screen-md'>
-                <div className='text-3xl text-red-500 mb-10 text-center'>
-                    <span>Most Asked Problem For SDE Interview</span>
-                </div>
-            </div>
+        <div className='max-w-screen-2xl container mx-auto lg:mb-10 sm:mb-3 dark:bg-slate-900 dark:text-white'>
             <div className='flex justify-center'>
-
-                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-full mx-auto bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none rounded-xl">
+                <div className="w-full max-w-full mx-auto bg-[rgb(255,255,255)] dark:bg-slate-900 dark:border-none rounded-xl">
                     {loading ? (
                         <Skeleton1 />
                     ) : (

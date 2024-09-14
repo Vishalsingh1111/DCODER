@@ -56,7 +56,7 @@ const App = () => {
           <Route path='/CSPage' element={<CSPage />}></Route>
           <Route path='/DSA' element={authUser ? <DSA /> : <Navigate to="/Signup" />}></Route>
           <Route path='/Python' element={<Python />}></Route>
-          <Route path='/Dbms' element={<Dbms />}></Route>
+          <Route path='/Dbms' element={authUser ? <Dbms /> : <Navigate to="/Signup" />}></Route>
           <Route path='/Java' element={<Java />}></Route>
           <Route path='/Cpp' element={<Cpp />}></Route>
           <Route path='/C' element={<C />}></Route>

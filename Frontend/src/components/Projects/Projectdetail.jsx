@@ -158,7 +158,7 @@ const ProjectDetail = () => {
                     {['text'].map((key, index) => (
                         item[key] && (
                             <div key={index} className="py-3 text-lg text-justify mt-5 leading-relaxed text-body-color dark:text-dark-6">
-                                <h1 className="text-black text-xl mb-2">Introduction:</h1>
+                                <h1 className="text-black dark:text-white text-xl mb-2">Introduction:</h1>
                                 {renderText(item[key])}
                             </div>
                         )
@@ -274,12 +274,12 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
+                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group dark:border-none  hover:shadow-md hover:shadow-black/70 rounded-xl p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full h-48 object-cover rounded-t" />
                                     <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
-                                    <p className="text-gray-600">{truncateText(project.text, 60)}</p>
+                                    <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
                                     <p className='text-red-500'>Read More .. </p>
                                 </div>
                             ))}

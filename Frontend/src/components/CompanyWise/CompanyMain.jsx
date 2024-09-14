@@ -51,7 +51,7 @@ const CompanyMain = () => {
 
     const handleSectionChange = (section) => {
         setActiveSection(section);
-        setSelectedLevel(null); // Reset level filtering when changing section
+        setSelectedLevel(null);
     };
 
     const handleCheckboxChange = (id) => {
@@ -105,98 +105,100 @@ const CompanyMain = () => {
     };
 
     return (
-        <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
-            <div className='text-3xl text-red-500 mb-10 text-center'>
-                <span>Company Wise Sorted DSA Problems.</span>
-            </div>
+        <>
+            <div className="w-full  pb-1 mb-4">
 
-            {/* Section Buttons */}
-            <div className="flex justify-center mb-10">
-                <button
-                    className={`text-sm px-2 py-0.5 ${activeSection === "adobe" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
-                    onClick={() => handleSectionChange("adobe")}
-                >
-                    Adobe
-                </button>
-                <button
-                    className={`text-sm ml-2 px-2 py-0.5 ${activeSection === "airbnb" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
-                    onClick={() => handleSectionChange("airbnb")}
-                >
-                    Airbnb
-                </button>
-            </div>
-
-            {/* Data Table */}
-            <div className="mx-auto text-left shadow-lg rounded-xl mx-10">
-
-                {/* Level Buttons */}
-                <div className='flex px-2 justify-center space-x-2 py-5 bg-green-200 border-t-2 border-green-500 rounded-t-xl'>
-                    <button className="bg-gray-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
-                    <button className="bg-green-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
-                    <button className="bg-yellow-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
-                    <button className="bg-red-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
+                {/* Section Buttons */}
+                <div className="flex justify-center mb-4">
+                    <button
+                        className={`text-md px-2 py-1 ${activeSection === "adobe" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
+                        onClick={() => handleSectionChange("adobe")}
+                    >
+                        Adobe
+                    </button>
+                    <button
+                        className={`text-md ml-2 px-2 py-1 ${activeSection === "airbnb" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
+                        onClick={() => handleSectionChange("airbnb")}
+                    >
+                        Airbnb
+                    </button>
                 </div>
+            </div>
+            <section className="max-w-screen-2xl container mx-auto py-8 md:px-5 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
-                <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-full mx-auto bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none rounded-xl">
-                    {loading ? (
-                        <Skeleton1 />
-                    ) : (
-                        <div className='lg:mx-8 mx-2 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
-                            <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border ">
-                                <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
-                                    <Sheetheading />
-                                </thead>
-                                <tbody>
-                                    {filteredSheetProblems.map((item, index) => (
-                                        <tr key={index} className={`dark:bg-slate-900 dark:text-white border-t-2 border-gray-400 ${checkboxes[item.id] ? 'bg-gray-300' : ''}`}>
-                                            <td className='text-center'>
-                                                <label>
-                                                    <input
-                                                        type="checkbox"
-                                                        className="checkbox dark:bg-slate-700 dark:text-white"
-                                                        checked={checkboxes[item.id] || false}
-                                                        onChange={() => handleCheckboxChange(item.id)}
+
+                {/* Data Table */}
+                <div className="mx-auto text-left border dark:border-none  border-gray-200 rounded-xl">
+
+                    {/* Level Buttons */}
+                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gray-100 dark:bg-slate-800 rounded-t-lg'>
+                        <button className="bg-gray-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
+                        <button className="bg-green-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
+                        <button className="bg-yellow-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
+                        <button className="bg-red-500 shadow-lg text-white px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
+                    </div>
+
+                    <div className="w-full p-0 sm:p-0 md:p-4 lg:p-4 max-w-full mx-auto bg-gray-100 dark:bg-slate-800 dark:border-none">
+                        {loading ? (
+                            <Skeleton1 />
+                        ) : (
+                            <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
+                                <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border ">
+                                    <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
+                                        <Sheetheading />
+                                    </thead>
+                                    <tbody>
+                                        {filteredSheetProblems.map((item, index) => (
+                                            <tr key={index} className={`dark:bg-slate-900 dark:text-white border-t-2 border-gray-400 ${checkboxes[item.id] ? 'bg-gray-300' : ''}`}>
+                                                <td className='text-center'>
+                                                    <label>
+                                                        <input
+                                                            type="checkbox"
+                                                            className="checkbox dark:bg-slate-700 dark:text-white"
+                                                            checked={checkboxes[item.id] || false}
+                                                            onChange={() => handleCheckboxChange(item.id)}
+                                                        />
+                                                    </label>
+                                                </td>
+                                                <td className='border-r-2 border-gray-400 border-l-2'><span>{item.name}</span></td>
+                                                <td className='border-r-2 border-gray-400 text-left'>
+                                                    <span className={`${getLevelClass(item.Level)} text-white px-2 py-1 w-16 rounded-lg`}>{item.Level}</span>
+                                                </td>
+                                                <td className='border-r-2 border-gray-400 text-center'>Soon</td>
+                                                <td className='border-r-2 border-gray-400 border-l-2'>
+                                                    <button className="bg-blue-500 text-white rounded px-2 py-1 ml-2">Show</button>
+                                                </td>
+                                                <td className='text-center'>
+                                                    <a href={item.link} className="text-red-500 hover:underline">
+                                                        <img src={'leetcode.svg'} alt="LeetCode" className="mx-auto w-[23px]" />
+                                                    </a>
+                                                </td>
+                                                <td className='border-l-2 border-gray-400 text-center'>
+                                                    <img
+                                                        src={starredProblems[item.id] ? '/fill-star.svg' : '/empty-start.svg'}
+                                                        alt="Revision"
+                                                        className='cursor-pointer w-[26px] mx-auto'
+                                                        onClick={() => handleStarClick(item.id)}
                                                     />
-                                                </label>
-                                            </td>
-                                            <td className='border-r-2 border-gray-400 border-l-2'><span>{item.name}</span></td>
-                                            <td className='border-r-2 border-gray-400 text-left'>
-                                                <span className={`${getLevelClass(item.Level)} text-white px-2 py-1 w-16 rounded-lg`}>{item.Level}</span>
-                                            </td>
-                                            <td className='border-r-2 border-gray-400 text-center'>Soon</td>
-                                            <td className='border-r-2 border-gray-400 border-l-2'>
-                                                <button className="bg-blue-500 text-white rounded px-2 py-1 ml-2">Show</button>
-                                            </td>
-                                            <td className='text-center'>
-                                                <a href={item.link} className="text-red-500 hover:underline">
-                                                    <img src={'leetcode.svg'} alt="LeetCode" className="mx-auto w-[23px]" />
-                                                </a>
-                                            </td>
-                                            <td className='border-l-2 border-gray-400 text-center'>
-                                                <img
-                                                    src={starredProblems[item.id] ? '/fill-star.svg' : '/empty-start.svg'}
-                                                    alt="Revision"
-                                                    className='cursor-pointer w-[26px] mx-auto'
-                                                    onClick={() => handleStarClick(item.id)}
-                                                />
-                                            </td>
-                                            <td className='border-l-2 border-gray-400'>
-                                                <img
-                                                    src={'/note.svg'}
-                                                    alt="Note"
-                                                    className='cursor-pointer w-[26px] mx-auto'
-                                                    onClick={() => handleNoteClick(item.name)}
-                                                />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
+                                                </td>
+                                                <td className='border-l-2 border-gray-400'>
+                                                    <img
+                                                        src={'/note.svg'}
+                                                        alt="Note"
+                                                        className='cursor-pointer w-[26px] mx-auto'
+                                                        onClick={() => handleNoteClick(item.name)}
+                                                    />
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

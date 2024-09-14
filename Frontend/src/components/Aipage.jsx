@@ -68,7 +68,7 @@ const Chat = () => {
             <Navbar />
             <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
                 <div className='w-full sm:w-[100px] md:w-full mb-5'>
-                    <img src="/robot.jpg" alt="AI Illustration" className="md:w-[10%] sm:[1%] rounded-full border-2 mx-auto" />
+                    <img src="/robot.jpg" alt="AI Illustration" className="md:w-[10%] sm:w-[20px] rounded-full border-2 mx-auto" />
                 </div>
                 <div className="mb-5 max-w-4xl text-left mx-auto space-y-3 ">
                     <h1 className="md:text-5xl text-xl font-semibold mb-2">

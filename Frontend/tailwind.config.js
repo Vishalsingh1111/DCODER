@@ -18,6 +18,9 @@ export default {
       animation: {
         pulseOpacity: 'pulseOpacity 1.5s ease-in-out infinite',
       },
+      backgroundImage: {
+        'red-to-white': 'linear-gradient(to top, #f7eded, #fff)', // bottom red, top white
+      },
     },
   },
   plugins: [
