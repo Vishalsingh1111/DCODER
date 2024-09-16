@@ -46,19 +46,19 @@ function Sheetcard({ item }) {
 
     // Define different background colors based on the `item.name` or other unique identifier
     const backgroundColors = {
-        "Basic dsa": "bg-blue-200 dark:bg-slate-800",
-        "Arrays & Matrix": "bg-red-100",
-        "String": "bg-green-100",
-        "Linked List": "bg-purple-100",
-        "Stacks and Queues": "bg-orange-100",
-        "Binary Search": "bg-pink-100",
-        "Binary Trees": "bg-yellow-100",
-        "Binary Search Tree": "bg-blue-200",
-        "Heap": "bg-red-100",
-        "Trie": "bg-green-100",
-        "Graph": "bg-purple-100",
-        "Dynamic Programing": "bg-orange-100",
-        "default": "bg-gray-100"
+        "Basic dsa": "bg-gradient-to-t from-black  to-white  rounded-lg dark:from-slate-800",
+        "Arrays & Matrix": "bg-gradient-to-t from-red-100  to-white rounded-lg dark:from-slate-800",
+        "String": "bg-gradient-to-t from-green-100  to-white rounded-lg dark:from-slate-800",
+        "Linked List": "bg-gradient-to-t from-purple-100  to-white rounded-lg dark:from-slate-800",
+        "Stacks and Queues": "bg-gradient-to-t from-orange-100  to-white rounded-lg dark:from-slate-800",
+        "Binary Search": "bg-gradient-to-t from-pink-100  to-white rounded-lg dark:from-slate-800",
+        "Binary Trees": "bg-gradient-to-t from-yellow-100  to-white rounded-lg dark:from-slate-800",
+        "Binary Search Tree": "bg-gradient-to-t from-blue-100  to-white rounded-lg dark:from-slate-800",
+        "Heap": "bg-gradient-to-t from-red-100  to-white rounded-lg dark:from-slate-800",
+        "Trie": "bg-gradient-to-t from-green-100  to-white rounded-lg dark:from-slate-800",
+        "Graph": "bg-gradient-to-t from-purple-100  to-white rounded-lg dark:from-slate-800",
+        "Dynamic Programing": "bg-gradient-to-t from-yellow-100  to-white rounded-lg dark:from-slate-800",
+        "default": "bg-gradient-to-t from-blue-100  to-white rounded-lg dark:from-slate-800"
     };
 
     // Use the item's name to determine the background color, or fall back to a default color

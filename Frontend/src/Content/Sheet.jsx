@@ -47,21 +47,21 @@ function Sheet() {
             )}
 
             <div className="lg:flex justify-between lg:mx-1">
-                <div className="bg-[rgb(255,255,255)] dark:border-none dark:bg-slate-900 text-center lg:flex lg:flex-col lg:w-[17%] lg:border-t lg:mt-[15px] lg:shadow-md lg:rounded-xl lg:max-h-[500px] lg:sticky lg:top-20 lg:left-10 lg:mb-20">
+                <div className="lg:p-5 lg:shadow-md lg:border-t  dark:border-none dark:bg-slate-900 text-center lg:flex lg:flex-col lg:w-[17%] rounded-xl lg:mt-[16px] space-x-2 sm:space-x-2 md:space-x-0  lg:max-h-[500px] lg:sticky lg:top-20 lg:left-10 lg:mb-20">
                     <button
-                        className={`text-sm dark:text-white lg:border-b-2 dark:border-none text-black text-left pl-5 border-gray-200 py-4 ${view === 'Sheetpage' ? 'text-red-500 dark:text-red-500' : ''}`}
+                        className={`text-sm dark:text-white bg-gray-700 text-white mb-3 rounded-xl dark:border-none text-black text-left px-3 py-3.5 shadow-lg hover:shadow-red-300/30 shadow-black/30  ${view === 'Sheetpage' ? 'bg-red-500 dark:text-red-500' : ''}`}
                         onClick={() => handleButtonClick('Sheetpage')}
                     >
                         {"Updated DSA Sheet "} &rarr;
                     </button>
                     <button
-                        className={`text-sm dark:text-white  lg:border-b-2 dark:border-none  text-black text-left pl-5 border-gray-200 py-4 ${view === 'CompanyWise' ? 'text-red-500 dark:text-red-500' : ''}`}
+                        className={`text-sm dark:text-white  bg-gray-700 text-white mb-3 rounded-xl dark:border-none  text-black text-left px-3  py-3.5 shadow-lg hover:shadow-red-300/30 shadow-black/30 ${view === 'CompanyWise' ? 'bg-red-500 dark:text-red-500' : ''}`}
                         onClick={() => handleButtonClick('CompanyWise')}
                     >
                         {"Company Wise Sheet"} &rarr;
                     </button>
                     <button
-                        className={`text-sm dark:text-white  lg:border-b-2 dark:border-none text-black text-left pl-5 border-gray-200 py-4 ${view === 'Top60FANG' ? 'text-red-500 dark:text-red-500' : ''}`}
+                        className={`text-sm dark:text-white  bg-gray-700 text-white mb-3 rounded-xl dark:border-none text-black text-left px-3  py-3.5 shadow-lg hover:shadow-red-300/30 shadow-black/30 ${view === 'Top60FANG' ? 'bg-red-500 dark:text-red-500' : ''}`}
                         onClick={() => handleButtonClick('Top60FANG')}
                     >
                         {"Top-60 FANG"} &rarr;

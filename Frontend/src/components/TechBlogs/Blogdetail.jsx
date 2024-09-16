@@ -141,20 +141,21 @@ const BlogDetail = () => {
                 <div className="pt-[80px] mx-auto max-w-[1280px] md:px-20 px-4 py-5">
                     <h1 className="text-red-500 mb-8 text-4xl font-semibold text-center">Recent Uploaded</h1>
                     <div className="md:sticky md:top-20 ">
-                        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8 ">
                             {items
                                 .filter(blogItem => blogItem.id.toString() !== id)
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] border-t dark:border-none shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-800 rounded-lg p-4 md:p-8 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
+                                    <div key={blogItem.id} className="flex flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] border-t dark:border-gray-600 shadow shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-900 dark:border rounded-lg  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-8">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
-                                            <h3 className="text-xl font-[500]">{blogItem.header}</h3>
-                                            <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 150)}</p>
+                                            <h3 className="text-xl font-[500] p-8 pb-0">{blogItem.header}</h3>
+                                            <div className='bg-gradient-to-t from-[#fef3f3] to-white p-8 pt-0 rounded-xl dark:from-slate-800'>
+                                                <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 100)}</p>
 
-                                            <p className='inline-block rounded-md text-red-500 mt-3 border p-2 border-red-600 group-hover:bg-red-500 group-hover:text-white transition duration-200'>
-                                                Read more
-                                            </p>
+                                                <p className='inline-block rounded-md text-red-500 mt-3 border p-2 border-red-600 group-hover:bg-red-500 group-hover:text-white transition duration-200'>
+                                                    Read more
+                                                </p></div>
                                         </div>
                                     </div>
 

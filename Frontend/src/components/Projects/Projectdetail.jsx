@@ -274,13 +274,14 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 group dark:border-none  hover:shadow-md hover:shadow-black/70 rounded-xl p-6 cursor-pointer hover:shadow-lg space-y-2 dark:bg-slate-800 dark:text-white"
+                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 dark:border-gray-600 dark:border group hover:shadow-md hover:shadow-black/70 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
-                                    <img src={project.image1} alt="Project" className="w-full h-48 object-cover rounded-t" />
-                                    <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
-                                    <p className='text-red-500'>Read More .. </p>
+                                    <img src={project.image1} alt="Project" className="w-full h-48 object-cover p-6 pb-0 rounded-t" />
+                                    <div className='bg-gradient-to-t from-red-100 to-white p-6 pt-2 rounded-xl space-y-3 dark:from-slate-800 '>
+                                        <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
+                                        <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
+                                        <p className='text-red-500'>Read More .. </p></div>
                                 </div>
                             ))}
                     </div>
