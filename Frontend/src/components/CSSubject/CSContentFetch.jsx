@@ -124,14 +124,14 @@ const CScontentfetch = () => {
 
     return (
         <>
-            <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-[#fef3f3] to-white text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+            <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-[#dfe4f5] to-[#f2f4fb] text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                 <div className='flex flex-col space-y-4'>
                     <span>Basic Interview Questions.</span>
                     <span className='text-sm'>Last Updated: August 8, 2024</span>
                 </div>
                 <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
                     <a href="path-to-your-file.pdf" download>
-                        <button className='bg-white text-sm dark:bg-slate-900 text-red-500 border border-red-500 px-5 py-3 rounded-xl'>Download PDF</button>
+                        <button className='bg-[#ffffff] text-sm dark:bg-slate-900 text-red-500 border border-red-500 px-4 py-3 rounded-xl'>Download PDF</button>
                     </a>
                 </div>
             </div>
@@ -155,7 +155,7 @@ const CScontentfetch = () => {
 
 
                 <div className="mx-auto text-left">
-                    <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto bg-[rgb(255,255,255)] dark:bg-slate-900 dark:border-none mt-3">
+                    <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto dark:bg-slate-900 dark:border-none mt-3">
                         {loading ? (
                             <Skeleton1 />
                         ) : (

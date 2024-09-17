@@ -137,8 +137,8 @@ const ProjectDetail = () => {
             <Navbar />
             <Breadcrumb />
             <SearchForm />
-            <div className="mx-auto max-w-screen-xl text-gray-600 dark:text-white md:px-20 px-4 py-5" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '500' }}>
-                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+            <div className="mx-auto max-w-screen-xl text-gray-600 dark:text-white md:px-20 px-4 py-5">
+                <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1000px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                     <h2 className="text-2xl text-center font-semibold mb-4">{item.header}</h2>
                     {mainImage && (
                         <div className="py-5 md:px-10 text-center">
@@ -274,11 +274,11 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[rgb(255,255,255)] border-t shadow shadow-black/40 dark:border-gray-600 dark:border group hover:shadow-md hover:shadow-black/70 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
+                                    className="border-t bg-[#ffffff] shadow shadow-black/40 dark:border-gray-600 dark:border group hover:shadow-md hover:shadow-black/70 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full h-48 object-cover p-6 pb-0 rounded-t" />
-                                    <div className='bg-gradient-to-t from-red-100 to-white p-6 pt-2 rounded-xl space-y-3 dark:from-slate-800 '>
+                                    <div className='bg-gradient-to-t to-[#f2f4fb] from-[#ffffff] p-6 pt-2 rounded-b-xl space-y-3 dark:from-slate-800 '>
                                         <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
                                         <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
                                         <p className='text-red-500'>Read More .. </p></div>

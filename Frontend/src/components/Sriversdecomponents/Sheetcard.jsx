@@ -44,30 +44,10 @@ function Sheetcard({ item }) {
         }
     };
 
-    // Define different background colors based on the `item.name` or other unique identifier
-    const backgroundColors = {
-        "Basic dsa": "bg-gradient-to-t from-black  to-white  rounded-lg dark:from-slate-800",
-        "Arrays & Matrix": "bg-gradient-to-t from-red-100  to-white rounded-lg dark:from-slate-800",
-        "String": "bg-gradient-to-t from-green-100  to-white rounded-lg dark:from-slate-800",
-        "Linked List": "bg-gradient-to-t from-purple-100  to-white rounded-lg dark:from-slate-800",
-        "Stacks and Queues": "bg-gradient-to-t from-orange-100  to-white rounded-lg dark:from-slate-800",
-        "Binary Search": "bg-gradient-to-t from-pink-100  to-white rounded-lg dark:from-slate-800",
-        "Binary Trees": "bg-gradient-to-t from-yellow-100  to-white rounded-lg dark:from-slate-800",
-        "Binary Search Tree": "bg-gradient-to-t from-blue-100  to-white rounded-lg dark:from-slate-800",
-        "Heap": "bg-gradient-to-t from-red-100  to-white rounded-lg dark:from-slate-800",
-        "Trie": "bg-gradient-to-t from-green-100  to-white rounded-lg dark:from-slate-800",
-        "Graph": "bg-gradient-to-t from-purple-100  to-white rounded-lg dark:from-slate-800",
-        "Dynamic Programing": "bg-gradient-to-t from-yellow-100  to-white rounded-lg dark:from-slate-800",
-        "default": "bg-gradient-to-t from-blue-100  to-white rounded-lg dark:from-slate-800"
-    };
-
-    // Use the item's name to determine the background color, or fall back to a default color
-    const cardBackground = backgroundColors[item.name] || backgroundColors.default;
-
     return (
         <div className={`mx-2 md:mx-6 lg:mt-5 rounded-lg shadow-sm shadow-black/20 dark:bg-slate-900 dark:text-white`}>
             <div className="bg-gray-600 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
-            <div className={`flex rounded items-center dark:bg-slate-800 justify-between py-3 lg:px-10 px-5 cursor-pointer ${cardBackground}`} onClick={toggleAccordion}>
+            <div className={`flex rounded items-center dark:from-slate-800 justify-between py-3 lg:px-10 px-5 cursor-pointer bg-gradient-to-t from-[#f2f4fb] to-[#ffffff]`} onClick={toggleAccordion}>
                 <div className="flex flex-col">
                     <h3 className="text-lg text-gray-800 dark:text-white">{item.name}</h3>
                 </div>
@@ -84,7 +64,7 @@ function Sheetcard({ item }) {
             </div>
 
             {isOpen && (
-                <div className={`w-full dark:bg-slate-800 dark:text-white dark:border-none sm:px-0 pb-5 md:px-4 ${cardBackground}`}>
+                <div className={`w-full dark:bg-slate-800 dark:text-white dark:border-none sm:px-0 pb-5 md:px-4`}>
                     <div className='lg:mt-[-50px] lg:ml-[30%] lg:absolute border-gray-400 lg:p-0 px-2 justify-center space-x-2'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>

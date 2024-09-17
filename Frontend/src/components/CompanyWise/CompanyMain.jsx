@@ -128,10 +128,10 @@ const CompanyMain = () => {
 
 
                 {/* Data Table */}
-                <div className="mx-auto text-left border dark:border-none  border-gray-200 rounded-xl">
+                <div className="mx-auto text-left border dark:border-none dark:bg-slate-800 border-gray-200 rounded-xl">
 
                     {/* Level Buttons */}
-                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gray-100 dark:bg-slate-800 rounded-t-lg'>
+                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] dark:from-slate-800 rounded-t-lg'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
@@ -143,8 +143,8 @@ const CompanyMain = () => {
                             <Skeleton1 />
                         ) : (
                             <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
-                                <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border ">
-                                    <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
+                                <table className="table dark:bg-slate-900 dark:text-white dark:border ">
+                                    <thead className='font-semibold text-gray-600 shadow dark:bg-slate-900 dark:text-white'>
                                         <Sheetheading />
                                     </thead>
                                     <tbody>

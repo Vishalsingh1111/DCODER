@@ -1,38 +1,47 @@
 import React from 'react';
 
 function Card({ item }) {
-    const figureBackgroundColors = {
-        "DSA Notes": "text-blue-500 bg-gradient-to-t from-blue-100 to-white",
-        "Python Notes": "text-green-500 bg-gradient-to-t from-green-100 to-white",
-        "OOPS Notes": "text-red-500 bg-gradient-to-t from-red-100 to-white",
-        "DBMS Notes": "text-purple-500 bg-gradient-to-t from-purple-100 to-white",
-        "Java Notes": "text-orange-500 bg-gradient-to-t from-orange-100 to-white",
-        "C Notes": "text-pink-500 bg-gradient-to-t from-pink-100 to-white",
-        default: "text-gray-500 bg-gradient-to-t from-gray-100 to-white",
+    const iconBackgroundColors = {
+        // "OOPS Notes": "bg-blue-100 text-blue-500 border-blue-300",
+        // "Python Notes": "bg-green-100 text-green-500 border-green-400",
+        // "DSA Notes": "bg-red-100 text-red-500 border-red-300",
+        // "DBMS Notes": "bg-purple-100 text-purple-500 border-purple-300",
+        // "C Notes": "bg-orange-100 text-orange-500 border-orange-300",
+        // "Java Notes": "bg-pink-100 text-pink-500 border-pink-300",
+        default: "bg-gray-100"
     };
 
-    const figureBgClass = figureBackgroundColors[item.name] || figureBackgroundColors.default;
-    const categoryBgClass = item.category === "Free" ? "bg-green-500" : "bg-red-500";
+    const bgColor = iconBackgroundColors[item.name] || iconBackgroundColors.default;
 
     return (
         <div className="w-full md:w-auto">
-            <a href={item.link}>
-                <div className="card rounded-xl bg-white m-5 shadow shadow-black/40 hover:shadow-md hover:shadow-black/70 transition-transform duration-300 group dark:bg-slate-900 dark:text-white dark:border dark:border-gray-600">
-                    <figure className="relative flex justify-center items-center h-50 p-2">
-                        <img src={item.image} alt="Course Img" className="w-[50%] h-auto" />
-
-                    </figure>
-                    <div className={`card-body pt-4 px-6 ${figureBgClass} rounded-xl dark:from-slate-800`}>
-                        <h2 className="card-title text-2xl text-black dark:text-white">{item.name}</h2>
-                        <p className="text-gray-500 dark:text-gray-400 mb-8">{item.title}</p>
+            <a href={item.link} className="block group">
+                <div className="border-t bg-[#ffffff] shadow shadow-black/40 group-hover:shadow-md group-hover:shadow-black/70 rounded-2xl transition-colors dark:bg-slate-900 dark:text-white dark:border dark:border-gray-600">
+                    <div className='flex justify-between'>
+                        <div className={`w-[100px] h-[100px] m-6 mb-0 flex items-center border justify-center ${bgColor} rounded-full text-xl dark:bg-slate-700`}>
+                            <img src={item.image} alt="Course Img" className="w-[75%] h-auto" />
+                        </div>
+                        <div className="flex flex-col m-7 mb-0 justify-end space-y-2">
+                            {/* Show category only if it is 'Free' */}
+                            {item.category === "Free" && (
+                                <div className="badge rounded-lg px-6 py-4 text-white bg-green-500">
+                                    {item.category}
+                                </div>
+                            )}
+                            {/* Show price only if category is not 'Free' */}
+                            {item.category !== "Free" && (
+                                <div className="badge rounded-lg text-sm bg-red-500 text-white py-4 dark:bg-red-800">
+                                    Price: ${item.price}
+                                </div>
+                            )}
+                        </div>
                     </div>
-                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex justify-between w-full px-6">
-                        <div className="badge rounded-lg bg-gray-700 text-white py-3.5 dark:bg-slate-800">
-                            Price: ${item.price}
-                        </div>
-                        <div className={`badge rounded-lg py-3.5 text-white ${categoryBgClass}`}>
-                            {item.category}
-                        </div>
+                    <div className='bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] p-6 pt-1 rounded-2xl dark:from-slate-800'>
+                        <h2 className="mt-4 text-xl font-semibold text-black dark:text-white">{item.name}</h2>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-white">{item.title}</p>
+                        <button className="mt-4 px-4 py-2 border text-red-500 border-red-400 dark:border-white rounded-xl group-hover:shadow-lg group-hover:bg-red-500 group-hover:text-white group-hover:shadow-black/30 group-hover:border-red-500 transition-colors dark:text-white">
+                            {"Click to Open"} &rarr;
+                        </button>
                     </div>
                 </div>
             </a>

@@ -118,7 +118,7 @@ const CcontentFetch = () => {
 
     return (
         <>
-            <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-[#fef3f3] to-white text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+            <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-[#dfe4f5] to-[#f2f4fb] to-white text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                 <div className='flex flex-col space-y-4'>
                     <span>Basic Interview Questions – C Programing.</span>
                     <span className='text-sm'>Last Updated: August 15, 2024</span>
@@ -133,7 +133,7 @@ const CcontentFetch = () => {
             <section className="max-w-screen-2xl container mx-auto pb-12 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
                 <div className="mx-auto text-left">
-                    <div className="w-full p-0 sm:p-2 max-w-[850px] mx-auto bg-[rgb(255,255,255)] dark:bg-slate-900 dark:border-none mt-3">
+                    <div className="w-full p-0 sm:p-2 max-w-[850px] mx-auto dark:bg-slate-900 dark:border-none mt-3">
                         {loading ? (
                             <Skeleton1 />
                         ) : (

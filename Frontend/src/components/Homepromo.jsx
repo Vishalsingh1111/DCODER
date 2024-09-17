@@ -7,7 +7,7 @@ import avatar3 from '/avatar2.avif';
 const ContactSection = () => {
     return (
         <section className="py-20 dark:bg-slate-900 text-center mx-5 ">
-            <div className="container mx-auto p-8 lg:max-w-[73%] md:max-w-[80%] bg-gradient-to-t from-[#fef3f3]  to-white shadow rounded-xl dark:border-none rounded-xl dark:from-slate-800 dark:border-none">
+            <div className="container mx-auto p-8 lg:max-w-[73%] md:max-w-[80%] bg-gradient-to-t to-[#f2f4fb] from-[#ffffff] shadow rounded-xl dark:border-none rounded-xl dark:from-slate-800 dark:border-none">
                 <div className="flex justify-center mb-4">
 
                     <img
