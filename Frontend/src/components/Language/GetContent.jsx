@@ -1,35 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CodeSnippet from "../CodeSnippet/CodeSnippet";
 import { FaMicrophone, FaStop } from 'react-icons/fa';
 
 const GetContent = ({ item }) => {
     const [isCodeVisible, setIsCodeVisible] = useState(false);
     const [isSpeaking, setIsSpeaking] = useState(false);
+    const [synth] = useState(window.speechSynthesis);
+    const [utterance, setUtterance] = useState(null);
 
     const toggleCodeVisibility = () => {
         setIsCodeVisible(!isCodeVisible);
     };
 
+    useEffect(() => {
+        const stopSpeech = () => {
+            if (synth.speaking) {
+                synth.cancel();
+                setIsSpeaking(false);
+            }
+        };
+
+        // Cancel speech synthesis on component unmount
+        return () => {
+            stopSpeech();
+        };
+    }, [synth]);
+
+    useEffect(() => {
+        // Cancel speech when the page is refreshed or the tab is closed
+        const handleBeforeUnload = (event) => {
+            if (synth.speaking) {
+                synth.cancel();
+                setIsSpeaking(false);
+            }
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        // Cleanup the event listener on unmount
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, [synth]);
+
     // Function to speak the content using SpeechSynthesis API
     const speakContent = () => {
-        const speechSynthesis = window.speechSynthesis;
-        // If currently speaking, stop speaking
         if (isSpeaking) {
-            speechSynthesis.cancel();
+            synth.cancel();
             setIsSpeaking(false);
             return;
         }
 
         let textToSpeak = '';
-        // Filter out the tags and concatenate visible text
-        const visibleTextElements = ['header', 'text', 'statement', 'substatement1', 'statement2', 'substatement2', 'statement3', 'substatement3', 'statement4', 'substatement4', 'statement5', 'substatement5'];
+        const visibleTextElements = [
+            'header', 'text', 'statement', 'substatement1', 'statement2', 'substatement2',
+            'statement3', 'substatement3', 'statement4', 'substatement4', 'statement5', 'substatement5'
+        ];
         visibleTextElements.forEach((key) => {
             if (item[key]) {
-                const plainText = item[key].replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
+                const plainText = item[key].replace(/<\/?[^>]+(>|$)/g, "");
                 textToSpeak += plainText + " ";
             }
         });
-
         if (item.example) {
             textToSpeak += "Example: " + item.example.replace(/<\/?[^>]+(>|$)/g, "") + " ";
         }
@@ -38,16 +70,22 @@ const GetContent = ({ item }) => {
             textToSpeak += "Explanation: " + item.explanation.replace(/<\/?[^>]+(>|$)/g, "") + " ";
         }
 
-        // Set up the SpeechSynthesisUtterance object
-        const utterance = new SpeechSynthesisUtterance(textToSpeak);
-        utterance.rate = 0.8; // Speed of speech (adjust if needed)
+        const newUtterance = new SpeechSynthesisUtterance(textToSpeak);
+        newUtterance.rate = 1.5;
 
-        // Event listener to update speaking state
-        utterance.onstart = () => setIsSpeaking(true);
-        utterance.onend = () => setIsSpeaking(false);
+        // Set voice to Indian English if available
+        const availableVoices = synth.getVoices();
+        const indianVoice = availableVoices.find(voice => voice.lang.includes("en-IN"));
+        if (indianVoice) {
+            newUtterance.voice = indianVoice;
+        }
 
-        // Speak the content
-        speechSynthesis.speak(utterance);
+        newUtterance.onstart = () => setIsSpeaking(true);
+        newUtterance.onend = () => setIsSpeaking(false);
+
+        synth.cancel(); // Cancel any ongoing speech before starting new
+        synth.speak(newUtterance);
+        setUtterance(newUtterance);
     };
 
     const renderText = (text) => {
@@ -137,7 +175,7 @@ const GetContent = ({ item }) => {
                 </div>
                 <button
                     onClick={speakContent}
-                    className={`p-2 ${isSpeaking ? 'bg-red-500' : 'bg-blue-500'} text-white  rounded-full shadow-lg hover:shadow-blue-500/30 shadow-black/30`}
+                    className={`p-1 ${isSpeaking ? 'text-red-500' : 'text-blue-500'} border rounded-full`}
                 >
                     {isSpeaking ? <FaStop /> : <FaMicrophone />}
                 </button>
@@ -183,21 +221,10 @@ const GetContent = ({ item }) => {
             )}
             {item.explanation && (
                 <div className="mt-4">
-                    <div className="font-bold text-xl dark:text-white text-gray-500 mb-2">Explanation:</div>
-                    <ul className="list-disc ml-4 text-md text-gray-500 text-justify">
-                        {item.explanation.split('\n').map((line, index) => (
-                            <li key={index} className="py-1">{line.trim()}</li>
-                        ))}
-                    </ul>
+                    <div className="font-bold text-xl dark:text-white text-gray-600">Explanation:</div>
+                    <div className="py-2">{renderText(item.explanation)}</div>
                 </div>
             )}
-            {['statement5', 'substatement5'].map((key, index) => (
-                item[key] && (
-                    <p key={index} className="py-3 text-justify">
-                        {renderText(item[key])}
-                    </p>
-                )
-            ))}
         </div>
     );
 };
