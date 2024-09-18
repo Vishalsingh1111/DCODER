@@ -1,15 +1,60 @@
 import React, { useState } from "react";
 import CodeSnippet from "../CodeSnippet/CodeSnippet";
+import { FaMicrophone, FaStop } from 'react-icons/fa';
 
 const GetContent = ({ item }) => {
     const [isCodeVisible, setIsCodeVisible] = useState(false);
+    const [isSpeaking, setIsSpeaking] = useState(false);
 
     const toggleCodeVisibility = () => {
         setIsCodeVisible(!isCodeVisible);
     };
 
+    // Function to speak the content using SpeechSynthesis API
+    const speakContent = () => {
+        const speechSynthesis = window.speechSynthesis;
+        // If currently speaking, stop speaking
+        if (isSpeaking) {
+            speechSynthesis.cancel();
+            setIsSpeaking(false);
+            return;
+        }
+
+        let textToSpeak = '';
+        // Filter out the tags and concatenate visible text
+        const visibleTextElements = ['header', 'text', 'statement', 'substatement1', 'statement2', 'substatement2', 'statement3', 'substatement3', 'statement4', 'substatement4', 'statement5', 'substatement5'];
+        visibleTextElements.forEach((key) => {
+            if (item[key]) {
+                const plainText = item[key].replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML tags
+                textToSpeak += plainText + " ";
+            }
+        });
+
+        if (item.example) {
+            textToSpeak += "Example: " + item.example.replace(/<\/?[^>]+(>|$)/g, "") + " ";
+        }
+
+        if (item.explanation) {
+            textToSpeak += "Explanation: " + item.explanation.replace(/<\/?[^>]+(>|$)/g, "") + " ";
+        }
+
+        // Set up the SpeechSynthesisUtterance object
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        utterance.rate = 0.8; // Speed of speech (adjust if needed)
+
+        // Event listener to update speaking state
+        utterance.onstart = () => setIsSpeaking(true);
+        utterance.onend = () => setIsSpeaking(false);
+
+        // Speak the content
+        speechSynthesis.speak(utterance);
+    };
+
     const renderText = (text) => {
-        const parts = text.split(/(<h1>|<\/h1>|<h2>|<\/h2>|<br\s*\/?>|<bg>|<\/bg>|<li>|<\/li>|<b>|<\/b>|<m>|<\/m>)/g).filter(Boolean);
+        const parts = text
+            .split(/(<h1>|<\/h1>|<h2>|<\/h2>|<br\s*\/?>|<bg>|<\/bg>|<li>|<\/li>|<b>|<\/b>|<m>|<\/m>)/g)
+            .filter(Boolean);
+
         let isH1 = false;
         let isH2 = false;
         let isBg = false;
@@ -85,10 +130,19 @@ const GetContent = ({ item }) => {
 
     return (
         <div className="dark:bg-slate-900 dark:text-white text-gray-700 text-md">
-
-            <div className="text-md font-[500] mb-4">
-                {renderText(item.header)}
+            {/* Speak Button */}
+            <div className="flex justify-between items-center mb-4">
+                <div className="text-md font-[500]">
+                    {renderText(item.header)}
+                </div>
+                <button
+                    onClick={speakContent}
+                    className={`p-2 ${isSpeaking ? 'bg-red-500' : 'bg-blue-500'} text-white  rounded-full shadow-lg hover:shadow-blue-500/30 shadow-black/30`}
+                >
+                    {isSpeaking ? <FaStop /> : <FaMicrophone />}
+                </button>
             </div>
+
             <div className="text-[17px] leading-relaxed text-justify ">
                 {['text', 'statement', 'substatement1', 'statement2', 'substatement2', 'statement3', 'substatement3', 'statement4', 'substatement4'].map((key, index) => (
                     item[key] && (
