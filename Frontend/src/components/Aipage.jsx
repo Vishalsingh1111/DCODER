@@ -66,9 +66,9 @@ const Chat = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-32 dark:bg-none dark:text-white"> {/* Adjusted padding */}
+            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-20 dark:bg-none dark:text-white"> {/* Adjusted padding */}
                 <div className='w-full sm:w-[100px] md:w-full mb-5'>
-                    <img src="/robot.jpg" alt="AI Illustration" className="md:w-[10%] sm:w-[20px] rounded-full border-2 mx-auto" />
+                    <img src="/robot.jpg" alt="AI Illustration" className="w-[100px] rounded-full border-2  border-blue-500 mx-auto" />
                 </div>
                 <div className="mb-5 max-w-4xl text-left mx-auto space-y-3 ">
                     <h1 className="md:text-5xl text-xl font-semibold mb-2">
@@ -104,10 +104,10 @@ const Chat = () => {
                         Create a 12-week study plan for learning a new language
                     </button>
                 </div>
-                <div className='w-full max-w-4xl mx-auto pb-10 text-justify justify-start mt-32 rounded  dark-text-white rounded-xl'>
+                <div className='w-full max-w-4xl mx-auto mb-32 text-justify justify-start md:mt-10 mt-32 rounded  dark-text-white rounded-xl'>
                     {loading ? (
                         <div className="text-center text-2xl text-red-500">
-                            Getting Your Response Ready ....
+                            Getting Your Response Ready 😃
                         </div>
                     ) : (
                         <div ref={responseRef} dangerouslySetInnerHTML={{ __html: response }} />
@@ -116,7 +116,7 @@ const Chat = () => {
 
                 </div>
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white shadow-md border-t rounded-full flex items-center fixed bottom-20 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
+            <div className="w-full max-w-4xl p-4 bg-white shadow-md border-t rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
                 <input
                     type="text"
                     value={query}

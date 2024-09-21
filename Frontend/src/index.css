@@ -8,8 +8,8 @@ body {
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   /* background-color: rgb(243, 244, 246) */
-  /* background-color: rgb(255, 255, 255); */
-  background: #f2f4fb;
+  background-color: rgb(255, 255, 255);
+  /* background: #f2f4fb; */
 }
 
 .hide-scrollbar {

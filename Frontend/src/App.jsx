@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from '../src/Home/Home';
 import Languages from './Content/Languages';
 import Project from './Content/Project';
+import About from './components/Whatweoffer';
 import Sheet from './Content/Sheet';
 import LoginPage from './components/Login';
 import Forgetpassword from './components/Forgetpassword';
@@ -42,6 +43,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
+          <Route path="/About" element={<About />}></Route>
           <Route path='/Contactform' element={authUser ? <Contactform /> : <Navigate to="/Signup" />} />
           <Route path="/Languages" element={<Languages />}></Route>
           <Route path="/Project" element={<Project />}></Route>

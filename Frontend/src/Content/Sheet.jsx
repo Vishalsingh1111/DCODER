@@ -18,7 +18,7 @@ function Sheet() {
             <Breadcrumb />
 
             {view === 'Sheetpage' && (
-                <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-[#dfe4f5] to-[#f2f4fb] text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+                <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-gray-100 to-[#ffffff] text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                     <div className='flex flex-col space-y-4'>
                         <span>SDE SHEET Most Asked Problems.</span>
                         <span className='text-sm'>Last Updated: August 8, 2024</span>
@@ -33,7 +33,7 @@ function Sheet() {
             )}
 
             {view === 'CompanyWise' && (
-                <div className='flex flex-col sm:flex-row lg:flex-row justify-between bg-gradient-to-t from-[#dfe4f5] to-[#f2f4fb] text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+                <div className='flex flex-col sm:flex-row lg:flex-row justify-between bg-gradient-to-t from-gray-100 to-[#ffffff]  text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                     <div className='flex flex-col space-y-4'>
                         <span>SDE SHEET Based on Companies.</span>
                         <span className='text-sm'>Last Updated: August 18, 2024</span>

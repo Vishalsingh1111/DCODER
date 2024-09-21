@@ -2,12 +2,6 @@ import React from 'react';
 
 function Card({ item }) {
     const iconBackgroundColors = {
-        // "OOPS Notes": "bg-blue-100 text-blue-500 border-blue-300",
-        // "Python Notes": "bg-green-100 text-green-500 border-green-400",
-        // "DSA Notes": "bg-red-100 text-red-500 border-red-300",
-        // "DBMS Notes": "bg-purple-100 text-purple-500 border-purple-300",
-        // "C Notes": "bg-orange-100 text-orange-500 border-orange-300",
-        // "Java Notes": "bg-pink-100 text-pink-500 border-pink-300",
         default: "bg-gray-100"
     };
 
@@ -18,8 +12,8 @@ function Card({ item }) {
             <a href={item.link} className="block group">
                 <div className="border-t bg-[#ffffff] shadow shadow-black/40 group-hover:shadow-md group-hover:shadow-black/70 rounded-2xl transition-colors dark:bg-slate-900 dark:text-white dark:border dark:border-gray-600">
                     <div className='flex justify-between'>
-                        <div className={`w-[100px] h-[100px] m-6 mb-0 flex items-center border justify-center ${bgColor} rounded-full text-xl dark:bg-slate-700`}>
-                            <img src={item.image} alt="Course Img" className="w-[75%] h-auto" />
+                        <div className={`w-[100px] h-[100px] m-6 mb-0 flex items-center justify-center text-xl dark:bg-slate-700`}>
+                            <img src={item.image} alt="Course Img" className="w-[100%] h-auto" />
                         </div>
                         <div className="flex flex-col m-7 mb-0 justify-end space-y-2">
                             {/* Show category only if it is 'Free' */}
