@@ -119,7 +119,7 @@ const DbmsContentFetch = () => {
         <>
             <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-gray-100 to-[#ffffff]  text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                 <div className='flex flex-col space-y-4'>
-                    <span>SBasic Interview Questions – Database Management System (DBMS).</span>
+                    <span>Basic Interview Questions – Database Management System (DBMS).</span>
                     <span className='text-sm'>Last Updated: August 8, 2024</span>
                 </div>
                 <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
