@@ -10,9 +10,9 @@ function Card({ item }) {
     return (
         <div className="w-full md:w-auto">
             <a href={item.link} className="block group">
-                <div className="border-t bg-[#ffffff] shadow shadow-black/40 group-hover:shadow-md group-hover:shadow-black/70 rounded-2xl transition-colors dark:bg-slate-900 dark:text-white dark:border dark:border-gray-600">
+                <div className="bg-[#ffffff] border border-gray-300 group rounded-2xl transition-colors dark:bg-slate-900 dark:text-white dark:border dark:border-gray-600">
                     <div className='flex justify-between'>
-                        <div className={`w-[100px] h-[100px] m-6 mb-0 flex items-center justify-center text-xl dark:bg-slate-700`}>
+                        <div className={`w-[100px] h-[100px] m-6 mb-0 flex items-center justify-center rounded-full text-xl dark:bg-slate-700`}>
                             <img src={item.image} alt="Course Img" className="w-[100%] h-auto" />
                         </div>
                         <div className="flex flex-col m-7 mb-0 justify-end space-y-2">
@@ -30,7 +30,7 @@ function Card({ item }) {
                             )}
                         </div>
                     </div>
-                    <div className='bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] p-6 pt-1 rounded-2xl dark:from-slate-800'>
+                    <div className='bg-gradient-to-t from-gray-200 to-[#ffffff] p-6 pt-1 rounded-2xl dark:from-slate-800'>
                         <h2 className="mt-4 text-xl font-semibold text-black dark:text-white">{item.name}</h2>
                         <p className="mt-2 text-sm text-gray-600 dark:text-white">{item.title}</p>
                         <button className="mt-4 px-4 py-2 border text-red-500 border-red-400 dark:border-white rounded-xl group-hover:shadow-lg group-hover:bg-red-500 group-hover:text-white group-hover:shadow-black/30 group-hover:border-red-500 transition-colors dark:text-white">

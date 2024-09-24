@@ -274,11 +274,11 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="border-t bg-[#ffffff] shadow shadow-black/40 dark:border-gray-600 dark:border group hover:shadow-md hover:shadow-black/70 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
+                                    className="border-t bg-[#ffffff] flex flex-col min-h-[400px] flex-grow border border-gray-300 dark:border-gray-600 dark:border group hover:shadow hover:shadow-black/30 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
-                                    <img src={project.image1} alt="Project" className="w-full h-48 object-cover p-6 pb-0 rounded-t" />
-                                    <div className='bg-gradient-to-t to-[#f2f4fb] from-[#ffffff] p-6 pt-2 rounded-b-xl space-y-3 dark:from-slate-800 '>
+                                    <img src={project.image1} alt="Project" className="w-full object-cover p-6 pb-0 rounded-t" />
+                                    <div className='flex-grow bg-gradient-to-t from-gray-200 to-[#ffffff] p-6 pt-2 rounded-b-xl space-y-3 dark:from-slate-800 '>
                                         <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
                                         <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
                                         <p className='text-red-500'>Read More .. </p></div>

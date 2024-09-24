@@ -138,7 +138,7 @@ const CompanyMain = () => {
                         <button className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
                     </div>
 
-                    <div className="w-full p-0 sm:p-0 md:p-4 lg:p-4 max-w-full mx-auto bg-gray-100 dark:bg-slate-800 dark:border-none">
+                    <div className="w-full p-0 sm:p-0 md:p-4 lg:p-4 max-w-full mx-auto bg-[#ffffff] dark:bg-slate-800 dark:border-none">
                         {loading ? (
                             <Skeleton1 />
                         ) : (

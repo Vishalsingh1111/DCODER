@@ -76,8 +76,8 @@ const BlogDetail = () => {
             <Breadcrumb />
             <SearchForm />
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
-                <div className='flex flex-col lg:flex-row gap-10 '>
-                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                <div className='flex flex-col lg:flex-col gap-10 '>
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1030px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
@@ -115,7 +115,7 @@ const BlogDetail = () => {
                         </div>
                     </div>
 
-                    <div className='space-y-8 mt-5 mx-auto justify-center '>
+                    <div className=' lg:space-x-8 flex flex-col lg:flex-row mt-5 mx-auto justify-center'>
                         <iframe
                             width="320"
                             height="200"
@@ -123,7 +123,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
 
                         <iframe
@@ -133,7 +133,7 @@ const BlogDetail = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
                     </div>
                 </div>
@@ -147,10 +147,10 @@ const BlogDetail = () => {
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className="flex shadow border-t flex-col lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 shadow-black/40 group hover:shadow-md hover:shadow-black/70 rounded-xl dark:bg-slate-900 dark:border rounded-lg  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-20">
+                                    <div key={blogItem.id} className=" flex-col border border-white lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 dark:border rounded-lg  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
                                             <h3 className="text-xl font-[500] p-8 pb-0">{blogItem.header}</h3>
-                                            <div className='bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] p-8 pt-0 rounded-xl dark:from-slate-800'>
+                                            <div className=' p-8 pt-0 rounded-xl dark:from-slate-800'>
                                                 <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 100)}</p>
 
                                                 <p className='inline-block rounded-md text-red-500 mt-3 border p-2 border-red-600 group-hover:bg-red-500 group-hover:text-white transition duration-200'>
