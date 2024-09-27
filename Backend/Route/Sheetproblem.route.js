@@ -3,7 +3,7 @@ import express from "express";
 import { getSheetproblem, createSheetproblem, updateSheetproblem, deleteSheetproblem } from "../Controller/sheetproblem.controller.js"
 
 //SDE Problem
-import { getSDEproblem, createSDEProblem, updateSDEproblem, deleteSDEproblem } from "../Controller/SDEProblem.controller.js"
+import { getSDEProblem, createSDEProblem, updateSDEProblem, deleteSDEProblem } from "../Controller/SDEProblem.controller.js"
 
 const router = express.Router();
 
@@ -23,15 +23,15 @@ router.delete("/:id", deleteSheetproblem);
 //SDE PROBLEM
 
 //get all problem
-router.get('/', getSDEproblem);
+router.get('/', getSDEProblem);
 
 //POST create new problems
 router.post('/', createSDEProblem);
 
 // PUT update a note by ID
-router.put("/:id", updateSDEproblem);
+router.put("/:id", updateSDEProblem);
 
 // DELETE delete a note by ID
-router.delete("/:id", deleteSDEproblem);
+router.delete("/:id", deleteSDEProblem);
 
 export default router;
