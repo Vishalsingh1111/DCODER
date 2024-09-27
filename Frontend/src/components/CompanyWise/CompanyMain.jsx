@@ -35,7 +35,7 @@ const CompanyMain = () => {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const res = await axios.get(`${baseUrl}/sheetproblem`);
+                const res = await axios.get(`${baseUrl}/sdeproblem`);
                 const filteredData = res.data.filter(item => item.companies === activeSection);
                 const sortedData = filteredData.sort((a, b) => a.id - b.id);
                 setData(sortedData);
