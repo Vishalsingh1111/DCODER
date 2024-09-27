@@ -10,7 +10,8 @@ const UpdateNoteForm = ({ note, onUpdateSuccess, onClose }) => {
         Level: note.Level,
         link: note.link,
         topic: note.topic,
-        companies: note.companies
+        companies: note.companies,
+        contentFor: note.contentFor
     });
 
     const handleChange = (e) => {
@@ -24,7 +25,7 @@ const UpdateNoteForm = ({ note, onUpdateSuccess, onClose }) => {
     const handleSaveUpdate = async (e) => {
         e.preventDefault(); // Prevent form submission
         try {
-            await axios.put(`${baseUrl}/sheetproblem/${note._id}`, updatedNoteData);
+            await axios.put(`${baseUrl}/sdeproblem/${note._id}`, updatedNoteData);
             onUpdateSuccess(updatedNoteData); // Notify parent component of successful update
             console.log('Note updated successfully!');
         } catch (error) {
@@ -67,6 +68,10 @@ const UpdateNoteForm = ({ note, onUpdateSuccess, onClose }) => {
                             <tr>
                                 <td className="py-2 px-4 text-right font-bold text-gray-700">Companies:</td>
                                 <td><input type="text" name="companies" value={updatedNoteData.companies} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" /></td>
+                            </tr>
+                            <tr>
+                                <td className="py-2 px-4 text-right font-bold text-gray-700">Content For:</td>
+                                <td><input type="text" name="contentFor" value={updatedNoteData.contentFor} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" /></td>
                             </tr>
 
 

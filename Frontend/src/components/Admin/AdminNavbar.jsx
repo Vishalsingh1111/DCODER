@@ -3,8 +3,10 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Strisdesheetcard from './StriverSDESheet/Strisdesheetcard';
 import Strisheetproblemform from './StriverSDESheet/Strisheetproblemform';
+import SDEProblemform from './StriverSDESheet/SDEProblemform'
 import Strisdecardshowdata from './StriverSDESheet/Strisdecardshowdata';
 import Striproblemshowdata from './StriverSDESheet/Striproblemshowdata';
+import SDEProblemshowdata from './StriverSDESheet/SDEProblemshowdata';
 import Notecardform from './Languages/Notecardform';
 import Notecardshowdata from './Languages/Notecardshowdata';
 import Notecontentform from './Languages/Notecontentform';
@@ -168,7 +170,7 @@ const Sidebar = () => {
                                         onClick={() => handleContentChange('Uploadproblem')}
                                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                     >
-                                        Upload problem
+                                        Upload Problem
                                     </button>
                                 </li>
                                 <li>
@@ -176,7 +178,23 @@ const Sidebar = () => {
                                         onClick={() => handleContentChange('Manageproblem')}
                                         className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                                     >
-                                        Manage problem
+                                        Manage Problem
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={() => handleContentChange('Uploadsdeproblem')}
+                                        className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                    >
+                                        Upload SDE Problem
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        onClick={() => handleContentChange('Managesdeproblem')}
+                                        className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                                    >
+                                        Manage SDE Problem
                                     </button>
                                 </li>
                             </ul>
@@ -424,6 +442,8 @@ const Sidebar = () => {
                 {selectedContent === 'Strisdesheetcard' && <Strisdesheetcard />}
                 {selectedContent === 'Uploadproblem' && <Strisheetproblemform />}
                 {selectedContent === 'Manageproblem' && <Striproblemshowdata />}
+                {selectedContent === 'Uploadsdeproblem' && <SDEProblemform />}
+                {selectedContent === 'Managesdeproblem' && <SDEProblemshowdata />}
                 {selectedContent === 'Notecardform' && <Notecardform />}
                 {selectedContent === 'Notecardshowdata' && <Notecardshowdata />}
                 {selectedContent === 'Notecontentform' && <Notecontentform />}

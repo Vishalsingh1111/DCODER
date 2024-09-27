@@ -9,8 +9,9 @@ const FormElementInput = () => {
         Level: "",
         link: "",
         topic: "",
-        id: "",
-        companies: ""
+        companies: "",
+        contentFor: "",
+        id: ""
     });
 
     const [validationErrors, setValidationErrors] = useState({});
@@ -40,7 +41,7 @@ const FormElementInput = () => {
         }
 
         try {
-            await axios.post(`${baseUrl}/sheetproblem`, formData, {
+            await axios.post(`${baseUrl}/sdeproblem`, formData, {
                 headers: { "Content-Type": "application/json" }
             });
             alert("Content Uploaded Successfully!");
@@ -50,8 +51,9 @@ const FormElementInput = () => {
                 Level: "",
                 link: "",
                 topic: "",
-                id: "",
-                companies: ""
+                companies: "",
+                contentFor: "",
+                id: ""
             });
             setValidationErrors({});
         } catch (error) {
@@ -120,9 +122,19 @@ const FormElementInput = () => {
                             name="companies"
                             value={formData.companies}
                             onChange={handleChange}
-                            label="Companies"
+                            label="Companies name"
                             type="text"
                             error={validationErrors.companies}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput
+                            name="contentFor"
+                            value={formData.contentFor}
+                            onChange={handleChange}
+                            label="contentFor"
+                            type="text"
+                            error={validationErrors.contentFor}
                         />
                     </DefaultColumn>
                     <DefaultColumn>

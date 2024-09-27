@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Striproblemupdatebtncomp from './Striproblemupdatebtncomp';
+import Striproblemupdatebtncomp from './SDEProblemupdatebtncomp';
 import { baseUrl } from '../../../Baseurl';
 
 const NoteList = () => {
@@ -12,7 +12,7 @@ const NoteList = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get(`${baseUrl}/sheetproblem`);
+                const response = await axios.get(`${baseUrl}/sdeproblem`);
                 setNotes(response.data); // Assuming API response is an array of notes
             } catch (error) {
                 console.error('Error fetching notes:', error);
@@ -36,7 +36,7 @@ const NoteList = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`${baseUrl}/sheetproblem/${id}`);
+            await axios.delete(`${baseUrl}/sdeproblem/${id}`);
             setNotes(notes.filter(note => note._id !== id)); // Remove the deleted note from the local state
             console.log('Deleted note with id:', id);
         } catch (error) {
@@ -68,6 +68,7 @@ const NoteList = () => {
                                 <th className="border border-gray-300 px-4 py-2">Level</th>
                                 <th className="border border-gray-300 px-4 py-2">Link</th>
                                 <th className="border border-gray-300 px-4 py-2">Companies</th>
+                                <th className="border border-gray-300 px-4 py-2">ContentFor</th>
                                 <th className="border border-gray-300 px-4 py-2">Topic</th>
                                 <th className="border border-gray-300 px-4 py-2">Actions</th>
                             </tr>
@@ -81,6 +82,7 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.Level}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.link}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.companies}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.contentFor}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.topic}</td>
                                     <td className="border-t border-gray-300 px-4 py-2 flex">
                                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30  text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>
