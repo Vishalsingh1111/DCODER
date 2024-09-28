@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Sheetpage from '../components/Sriversdecomponents/Sheetpage';
 import CompanyWise from '../components/CompanyWise/CompanyMain';
 import Breadcrumb from '../components/Breadcrumb';
+import Searchbar from '../components/Searchbar';
 
 function Sheet() {
     const [view, setView] = useState('Sheetpage');
@@ -23,6 +24,9 @@ function Sheet() {
                         <span>SDE SHEET Most Asked Problems.</span>
                         <span className='text-sm'>Last Updated: August 8, 2024</span>
                     </div>
+                    <div className='lg:w-[580px] mr-2'>
+                        <Searchbar />
+                    </div>
                     <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
                         <a href="path-to-your-file.pdf" download>
                             <button className='bg-white text-sm text-red-500 border dark:bg-slate-900  border-red-500 px-5 py-3 rounded-xl'>Download PDF</button>
@@ -37,6 +41,9 @@ function Sheet() {
                     <div className='flex flex-col space-y-4'>
                         <span>SDE SHEET Based on Companies.</span>
                         <span className='text-sm'>Last Updated: August 18, 2024</span>
+                    </div>
+                    <div className='lg:w-[580px] mr-2'>
+                        <Searchbar />
                     </div>
                     <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
                         <a href="path-to-your-file.pdf" download>
@@ -60,17 +67,17 @@ function Sheet() {
                     >
                         {"Company Wise Sheet"} &rarr;
                     </button>
-                    <button
+                    {/* <button
                         className={`text-sm dark:text-white  bg-gray-700 text-white mb-3 rounded-xl dark:border-none text-black text-left px-3  py-3.5 shadow-lg hover:shadow-red-300/30 shadow-black/30 ${view === 'Top60FANG' ? 'bg-red-500 dark:text-red-500' : ''}`}
                         onClick={() => handleButtonClick('Top60FANG')}
                     >
                         {"Top-60 FANG"} &rarr;
-                    </button>
+                    </button> */}
                 </div>
                 <div className="lg:w-[80%]" style={{ marginLeft: '0px' }}>
                     {view === 'Sheetpage' && <Sheetpage />}
                     {view === 'CompanyWise' && <CompanyWise />}
-                    {view === 'Top60FANG' && <div>Top-60 FANG content here</div>}
+                    {/* {view === 'Top60FANG' && <div>Top-60 FANG content here</div>} */}
                 </div>
             </div>
             <Footer />

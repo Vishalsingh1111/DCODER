@@ -6,9 +6,10 @@ function SearchForm() {
     const [query, setQuery] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     const [results, setResults] = useState([]);
+    const [isSuggestionSelected, setIsSuggestionSelected] = useState(false); // Track if a suggestion is selected
 
     useEffect(() => {
-        if (query.length > 0) {
+        if (query.length > 0 && !isSuggestionSelected) {
             const fetchSuggestions = async () => {
                 try {
                     const response = await axios.get(`${baseUrl}/search/suggestions`, {
@@ -22,9 +23,9 @@ function SearchForm() {
 
             fetchSuggestions();
         } else {
-            setSuggestions([]);
+            setSuggestions([]); // Clear suggestions when query is empty or a suggestion is selected
         }
-    }, [query]);
+    }, [query, isSuggestionSelected]); // Add isSuggestionSelected to the dependency array
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -33,6 +34,7 @@ function SearchForm() {
                 params: { q: query },
             });
             setResults(response.data);
+            setIsSuggestionSelected(false); // Reset selection state on search
         } catch (error) {
             console.error('Error fetching search results:', error);
         }
@@ -40,20 +42,28 @@ function SearchForm() {
 
     const handleSuggestionClick = async (suggestion) => {
         setQuery(suggestion.header);
+        setIsSuggestionSelected(true); // Set the selection state
         try {
             const response = await axios.get(`${baseUrl}/search`, {
                 params: { q: suggestion.header },
             });
             setResults(response.data);
-            setSuggestions([]);
+            setSuggestions([]); // Clear suggestions after selection
         } catch (error) {
             console.error('Error fetching search results:', error);
         }
     };
 
+    const handleQueryChange = (e) => {
+        setQuery(e.target.value);
+        if (e.target.value.length === 0) {
+            setIsSuggestionSelected(false); // Reset selection if the query is cleared
+        }
+    };
+
     return (
-        <div className="relative flex flex-col items-center max-w-2xl mx-auto px-5 bg-transparent">
-            <form onSubmit={handleSearch} className="w-full flex items-center mb-5">
+        <div className="relative flex flex-col items-center max-w-2xl mx-auto bg-transparent">
+            <form onSubmit={handleSearch} className="w-full flex items-center my-3">
                 <label htmlFor="voice-search" className="sr-only">Search</label>
                 <div className="relative w-full">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -68,7 +78,7 @@ function SearchForm() {
                         className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-3 dark:bg-slate-800 dark:border-none dark:placeholder-white dark:text-white"
                         placeholder="Search your contents"
                         value={query}
-                        onChange={(e) => setQuery(e.target.value)}
+                        onChange={handleQueryChange} // Use the new change handler
                         required
                     />
                     <button type="submit" className="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -80,7 +90,7 @@ function SearchForm() {
             </form>
 
             <div className="w-full relative">
-                {suggestions.length > 0 && (
+                {query.length > 0 && !isSuggestionSelected && suggestions.length > 0 && ( // Check both query and selection state
                     <ul className="absolute w-full bg-white text-left shadow-md h-[350px] overflow-auto rounded-lg p-2 mb-4 dark:bg-slate-800 z-10">
                         {suggestions.map((suggestion) => (
                             <li
@@ -99,7 +109,7 @@ function SearchForm() {
                 <div className="w-full bg-[rgb(255,255,255)] shadow-md rounded-lg p-5 mt-2 dark:bg-slate-800">
                     {results.map((result) => (
                         <div key={result._id} className="bg-white shadow-md rounded-lg p-5 mb-4 dark:bg-slate-800">
-                            <h3 className="text-lg font-bold mb-2 dark:text-white">{result.header}</h3>
+                            <h3 className="text-sm font-bold mb-2 dark:text-white">{result.header}</h3>
                             <p className="text-sm text-gray-600 dark:text-gray-400">{result.text}</p>
                         </div>
                     ))}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 
-// Modal.setAppElement('#root');
+Modal.setAppElement('#root');  // Ensure accessibility
 
 const NoteModal = ({ isOpen, onRequestClose, noteKey }) => {
     const [note, setNote] = useState('');
@@ -17,7 +17,7 @@ const NoteModal = ({ isOpen, onRequestClose, noteKey }) => {
 
     const handleSave = () => {
         localStorage.setItem(`note-${noteKey}`, note);
-        onRequestClose();
+        onRequestClose();  // Close modal after saving
     };
 
     return (
@@ -25,7 +25,7 @@ const NoteModal = ({ isOpen, onRequestClose, noteKey }) => {
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             contentLabel="Note Modal"
-            className="bg-white rounded-lg shadow-lg p-4 w-1/2  min-h-[500px] m-4 sm:m-6 md:m-10 lg:m-20 dark:bg-slate-700 dark:text-white"
+            className="bg-white rounded-lg shadow-lg p-4 w-3/4  min-h-[500px] m-4 sm:m-6 md:m-10 lg:m-20 dark:bg-slate-700 dark:text-white"
             overlayClassName="fixed inset-0 bg-black bg-opacity-35 flex justify-center items-center">
             <div className="flex justify-between items-center py-2 mb-4 border-b">
                 <h2 className="text-xl font-bold">Save Notes</h2>
@@ -55,8 +55,8 @@ const NoteModal = ({ isOpen, onRequestClose, noteKey }) => {
                 </button>
             </div>
         </Modal>
-
     );
 };
 
 export default NoteModal;
+

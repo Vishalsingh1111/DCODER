@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { baseUrl } from "../../Baseurl";
+import notesvg from '../../../public/note.svg';
+import NoteModal from '../Sriversdecomponents/Keepnote';
 import Sheetheading from "../Sriversdecomponents/Sheetheading";
 import Skeleton1 from "../Skeleton";
 
 const CompanyMain = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [activeSection, setActiveSection] = useState("adobe");
+    const [activeSection, setActiveSection] = useState("Google");
     const [checkboxes, setCheckboxes] = useState({});
     const [starredProblems, setStarredProblems] = useState({});
     const [notesArray, setNotesArray] = useState({});
     const [selectedLevel, setSelectedLevel] = useState(null);
     const [filteredSheetProblems, setFilteredSheetProblems] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentNoteKey, setCurrentNoteKey] = useState('');
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [currentCompanies, setCurrentCompanies] = useState([]);
 
     // Load states from localStorage when the component mounts
     useEffect(() => {
@@ -36,7 +42,9 @@ const CompanyMain = () => {
         const getBlogs = async () => {
             try {
                 const res = await axios.get(`${baseUrl}/sdeproblem`);
-                const filteredData = res.data.filter(item => item.companies === activeSection);
+                const filteredData = res.data.filter(item =>
+                    item.companies.split(',').map(company => company.trim()).includes(activeSection)
+                );
                 const sortedData = filteredData.sort((a, b) => a.id - b.id);
                 setData(sortedData);
                 setFilteredSheetProblems(sortedData);
@@ -68,16 +76,6 @@ const CompanyMain = () => {
         }));
     };
 
-    const handleNoteClick = (problemName) => {
-        const note = prompt("Enter your note:");
-        if (note) {
-            setNotesArray(prev => ({
-                ...prev,
-                [problemName]: note,
-            }));
-        }
-    };
-
     const getLevelClass = (level) => {
         switch (level) {
             case "Easy":
@@ -89,6 +87,20 @@ const CompanyMain = () => {
             default:
                 return "bg-gray-500";
         }
+    };
+
+    const handleNoteClick = (key) => {
+        setCurrentNoteKey(key);
+        setIsModalOpen(true);
+    };
+
+    const handleShowClick = (companies) => {
+        setCurrentCompanies(companies.split(',').map(company => company.trim()));
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsDialogOpen(false);
     };
 
     const handleLevelClick = (level) => {
@@ -104,28 +116,62 @@ const CompanyMain = () => {
         }
     };
 
+    const openNoteModal = (noteKey) => {
+        setCurrentNoteKey(noteKey);
+        setIsModalOpen(true);
+    };
+
+    const companyButtons = [
+        "Google", "Microsoft", "Amazon", "Uber", "Tiger Analytics", "persistent systems",
+        "Facebook", "IMC", "Wealthfront", "Arista Networks", "MindTree", "FPT",
+        "zeta suite", "payu", "Bloomberg", "Cognizant", "Zoho", "Goldman Sachs",
+        "Wayfair", "Canonical", "Karat", "instacart", "Accenture", "Grab",
+        "Jane Street", "Quora", "Zopsmart", "Twitter", "Postmates", "Salesforce",
+        "Commvault", "Info Edge", "tiktok", "razorpay", "Pinterest", "Sprinklr",
+        "PhonePe", "Apple", "Deutsche Bank", "Walmart Global Tech", "Booking.com",
+        "Jeavio", "T System", "Cisco", "Expedia", "Optum", "ByteDance", "Citrix",
+        "TIAA", "Bolt", "Adobe", "MakeMyTrip", "Moengage", "Rakuten", "Netflix",
+        "eBay", "Capital One", "Honeywell", "Dropbox", "JPMorgan", "Docusign",
+        "tcs", "Softwire", "DoorDash", "HRT", "Virtu Financial", "Tesla", "Snapchat",
+        "AppDynamics", "Duolingo", "AllinCall", "edabit", "Robinhood", "LinkedIn",
+        "Flipkart", "Cashfree", "Toptal", "Dunzo", "APT Portfolio", "Pure Storage",
+        "Spotify", "Sumologic", "Oracle", "Twilio", "C3 IoT", "Morgan Stanley",
+        "JP Morgan", "peak6", "Indeed", "Mercari", "Arcesium", "IBM", "DJI",
+        "Rupeek", "Directi", "Yandex", "Netsuite", "Nuro", "Roblox", "DRW",
+        "American Express", "Yahoo", "Samsung", "VMware", "United Health Group",
+        "Yelp", "Sony", "OT", "Visa", "Qualtrics", "Akuna Capital", "Atlassian",
+        "Coursera", "Square", "DE Shaw", "Infosys", "Cruise Automation", "SAP",
+        "Two Sigma", "Airbnb", "Palantir Technologies", "Paypal", "ZScaler", "Rubrik",
+        "Intuit", "PayTM", "Nvidia", "Citadel", "ServiceNow", "Druva", "Nutanix",
+        "Lyft", "Asana", "Thumbtack", "Akamai", "MindTickle", "Qualcomm", "IIT Bombay",
+        "Hotstar", "HBO", "Zoom", "Swiggy", "Drawbridge", "Epic Systems", "TripleByte",
+        "Activision", "Athenahealth", "Mathworks", "Alibaba", "Valve", "IXL", "Opendoor",
+        "Works Applications", "Tencent", "Gilt Groupe", "Pocket Gems", "LiveRamp",
+        "Baidu", "Riot Games", "Leap Motion", "MAQ Software", "Affirm", "Redfin", "Hulu",
+        "Wish", "Twitch", "GoDaddy", "BlackRock", "Databricks", "Intel", "Shopee",
+        "Cohesity", "Alation", "Zenefits", "FactSet", "Box", "TuSimple", "Reddit",
+        "Zillow", "National Instruments", "Sapient", "Splunk", "Barclays", "Dataminr",
+        "Huawei", "Dell", "Zomato"
+    ];
+
     return (
         <>
-            <div className="w-full  pb-1 mb-4">
-
-                {/* Section Buttons */}
-                <div className="flex justify-center mb-4">
-                    <button
-                        className={`text-md px-2 py-1 ${activeSection === "adobe" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
-                        onClick={() => handleSectionChange("adobe")}
-                    >
-                        Adobe
-                    </button>
-                    <button
-                        className={`text-md ml-2 px-2 py-1 ${activeSection === "airbnb" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
-                        onClick={() => handleSectionChange("airbnb")}
-                    >
-                        Airbnb
-                    </button>
+            <div className="w-full pb-1 mb-4">
+                {/* Scrollable Horizontal Navbar */}
+                <div className="flex overflow-x-auto whitespace-nowrap mb-4 dark:bg-slate-900 dark:text-white bg-gray-100 py-3 px-2 rounded-lg mx-5">
+                    {companyButtons.map((company) => (
+                        <button
+                            key={company}
+                            className={`text-md mx-0.5 px-3 py-1 ${activeSection === company ? "text-white border  dark:text-white rounded-md bg-red-500 border-red-500" : "text-gray-900  dark:text-white  dark:border-white rounded-md border border-gray-900"}`}
+                            onClick={() => handleSectionChange(company)}
+                        >
+                            {company}
+                        </button>
+                    ))}
                 </div>
             </div>
-            <section className="max-w-screen-2xl container mx-auto py-8 md:px-5 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
+            <section className="max-w-screen-2xl container mx-auto py-8 md:px-5 px-4  overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
                 {/* Data Table */}
                 <div className="mx-auto text-left border dark:border-none dark:bg-slate-800 border-gray-200 rounded-xl">
@@ -142,8 +188,8 @@ const CompanyMain = () => {
                         {loading ? (
                             <Skeleton1 />
                         ) : (
-                            <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto '>
-                                <table className="table dark:bg-slate-900 dark:text-white dark:border ">
+                            <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto'>
+                                <table className="table dark:bg-slate-900 dark:text-white dark:border">
                                     <thead className='font-semibold text-gray-600 shadow dark:bg-slate-900 dark:text-white'>
                                         <Sheetheading />
                                     </thead>
@@ -166,7 +212,16 @@ const CompanyMain = () => {
                                                 </td>
                                                 <td className='border-r-2 border-gray-400 text-center'>Soon</td>
                                                 <td className='border-r-2 border-gray-400 border-l-2'>
-                                                    <button className="bg-blue-500 text-white rounded px-2 py-1 ml-2">Show</button>
+                                                    {item.companies ? (
+                                                        <button
+                                                            className="bg-blue-500 text-white rounded px-2 py-1 ml-2"
+                                                            onClick={() => handleShowClick(item.companies)}
+                                                        >
+                                                            Show
+                                                        </button>
+                                                    ) : (
+                                                        <span></span>
+                                                    )}
                                                 </td>
                                                 <td className='text-center'>
                                                     <a href={item.link} className="text-red-500 hover:underline">
@@ -175,18 +230,14 @@ const CompanyMain = () => {
                                                 </td>
                                                 <td className='border-l-2 border-gray-400 text-center'>
                                                     <img
-                                                        src={starredProblems[item.id] ? '/fill-star.svg' : '/empty-start.svg'}
-                                                        alt="Revision"
-                                                        className='cursor-pointer w-[26px] mx-auto'
-                                                        onClick={() => handleStarClick(item.id)}
-                                                    />
+                                                        src={starredProblems[item.id] ? '/fill-star.svg' : '/empty-start.svg'} alt="Revision" className='cursor-pointer w-[26px] mx-auto' onClick={() => handleStarClick(item.id)} />
                                                 </td>
                                                 <td className='border-l-2 border-gray-400'>
                                                     <img
-                                                        src={'/note.svg'}
+                                                        src={notesvg}
                                                         alt="Note"
                                                         className='cursor-pointer w-[26px] mx-auto'
-                                                        onClick={() => handleNoteClick(item.name)}
+                                                        onClick={() => openNoteModal(item.name)}
                                                     />
                                                 </td>
                                             </tr>
@@ -198,8 +249,48 @@ const CompanyMain = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Dialog for showing companies */}
+            {isDialogOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center"
+                    onClick={handleCloseDialog}
+                >
+                    <div
+                        className="bg-white rounded-lg p-6  w-[300px] sl:w-[350px] md:w-[450px] h-[350px] overflow-auto"
+                        onClick={(e) => e.stopPropagation()} >
+                        <div className='flex justify-between mb-5'>
+                            <p className='text-blue-600 text-xl ml-2'>Companies</p>
+                            <button
+                                className="bg-red-500 text-white rounded-full px-2.5 py-1 mt-[-14]"
+                                onClick={handleCloseDialog}
+                            >
+                                X
+                            </button>
+                        </div>
+
+                        <div>
+                            {currentCompanies.map((company, index) => (
+                                <div key={index} className="border border-gray-300 text-gray-500 text-sm rounded-lg text-sm p-1 px-2 m-1 inline-block">
+                                    {company.trim()}
+                                </div>
+                            ))}
+                        </div>
+
+                    </div>
+                </div>
+            )}
+
+
+            {isModalOpen && (
+                <NoteModal
+                    isOpen={isModalOpen}
+                    onRequestClose={() => setIsModalOpen(false)}
+                    noteKey={currentNoteKey}
+                />
+            )}
         </>
     );
 };
 
 export default CompanyMain;
+
