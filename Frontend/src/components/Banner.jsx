@@ -13,7 +13,7 @@ function Banner() {
                         <h1 className='text-4xl text-gray-800 dark:text-white lg:text-7xl pt-5 font-[600]'>Gear Up for{" "}<span className='text-red-600' >Success:</span> Your Ultimate Preparation Hub!</h1>
                         <p className='text-md'>Simplify complex concepts with our detailed programming notes and ace your interviews with expert-curated questions. Master DSA through comprehensive sheets and hands-on projects, ensuring we meet your learning needs.</p>
                     </div>
-                    <a href='#homecontentcard'><button className="border border-red-500 py-2 rounded-lg text-white mb-10 px-4 mt-6 group bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30">Get Started &rarr;</button></a>
+                    <a href='#homecontentcard'><button className="border border-red-500 py-2 rounded-md text-white mb-10 px-4 mt-6 group bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30">Get Started &rarr;</button></a>
                 </div>
 
                 <div className='w-full order-1 md:order-2 md:w-1/2 flex justify-center items-center '>

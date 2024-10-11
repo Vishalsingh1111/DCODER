@@ -75,7 +75,7 @@ function SearchForm() {
                     <input
                         type="text"
                         id="voice-search"
-                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-3 dark:bg-slate-800 dark:border-none dark:placeholder-white dark:text-white"
+                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md block w-full pl-10 p-3 dark:bg-slate-800 dark:border-none dark:placeholder-white dark:text-white"
                         placeholder="Search your contents"
                         value={query}
                         onChange={handleQueryChange} // Use the new change handler
@@ -108,8 +108,8 @@ function SearchForm() {
             {results.length > 0 && (
                 <div className="w-full bg-[rgb(255,255,255)] shadow-md rounded-lg p-5 mt-2 dark:bg-slate-800">
                     {results.map((result) => (
-                        <div key={result._id} className="bg-white shadow-md rounded-lg p-5 mb-4 dark:bg-slate-800">
-                            <h3 className="text-sm font-bold mb-2 dark:text-white">{result.header}</h3>
+                        <div key={result._id} className="bg-white shadow-sm rounded-lg p-5 mb-4 dark:bg-slate-800">
+                            <h3 className="text-sm  mb-2 dark:text-white">{result.header}</h3>
                             <p className="text-sm text-gray-600 dark:text-gray-400">{result.text}</p>
                         </div>
                     ))}

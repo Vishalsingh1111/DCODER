@@ -123,28 +123,28 @@ const CScontentfetch = () => {
 
     return (
         <>
-            <div className='flex flex-col sm:flex-row lg:flex-row justify-between  bg-gradient-to-t from-gray-100 to-[#ffffff]  text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+            <div className='flex flex-col sm:flex-row lg:flex-row justify-between text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
                 <div className='flex flex-col space-y-4'>
                     <span>Basic Interview Questions.</span>
                     <span className='text-sm'>Last Updated: August 8, 2024</span>
                 </div>
                 <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
                     <a href="path-to-your-file.pdf" download>
-                        <button className='bg-[#ffffff] text-sm dark:bg-slate-900 text-red-500 border border-red-500 px-4 py-3 rounded-xl'>Download PDF</button>
+                        <button className='bg-[#ffffff] text-sm dark:bg-slate-900 text-red-500 border border-red-500 px-4 py-3 rounded-md'>Download PDF</button>
                     </a>
                 </div>
             </div>
 
-            <section className="max-w-screen-2xl container mx-auto py-12 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
-                <div className="flex justify-center">
+            <section className="max-w-screen-2xl container mx-auto py-5 md:px-20 px-4 relative z-20 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
+                <div className="flex justify-center mb-8">
                     <button
-                        className={`text-lg p-2 ${activeSection === "os" ? "text-red-500 border-2 rounded-md  border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
+                        className={`text-md p-2 ${activeSection === "os" ? "text-red-500 border-2 rounded-md  border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
                         onClick={() => handleSectionChange("os")}
                     >
                         Operating System
                     </button>
                     <button
-                        className={`text-lg ml-4 p-2 ${activeSection === "cn" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
+                        className={`text-md ml-4 p-2 ${activeSection === "cn" ? "text-red-500 border-2 rounded-md border-red-500" : "text-gray-500 rounded-md border-2 border-gray-500"}`}
                         onClick={() => handleSectionChange("cn")}
                     >
                         Computer Network
@@ -154,7 +154,7 @@ const CScontentfetch = () => {
 
 
                 <div className="mx-auto text-left">
-                    <div className="w-full p-0 sm:p-5 md:p-8 lg:p-10 max-w-[930px] mx-auto dark:bg-slate-900 dark:border-none mt-3">
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[950px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                         {loading ? (
                             <Skeleton1 />
                         ) : (

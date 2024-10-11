@@ -71,7 +71,7 @@ const GetContent = ({ item }) => {
         }
 
         const newUtterance = new SpeechSynthesisUtterance(textToSpeak);
-        newUtterance.rate = 1.5;
+        newUtterance.rate = 1.2;
 
         // Set voice to Indian English if available
         const availableVoices = synth.getVoices();
@@ -167,7 +167,7 @@ const GetContent = ({ item }) => {
     };
 
     return (
-        <div className="dark:bg-slate-900 dark:text-white text-gray-700 text-md">
+        <div className="dark:bg-slate-900 dark:text-white text-gray-700 text-md ">
             {/* Speak Button */}
             <div className="flex justify-between items-center mb-4">
                 <div className="text-md font-[500]">
@@ -175,7 +175,7 @@ const GetContent = ({ item }) => {
                 </div>
                 <button
                     onClick={speakContent}
-                    className={`p-1 ${isSpeaking ? 'text-red-500' : 'text-blue-500'} border rounded-full`}
+                    className={`p-1 ${isSpeaking ? 'text-red-500' : 'text-gray-500'} border rounded-full`}
                 >
                     {isSpeaking ? <FaStop /> : <FaMicrophone />}
                 </button>

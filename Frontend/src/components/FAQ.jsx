@@ -63,12 +63,12 @@ const AccordionItem = ({ header, text }) => {
                 onClick={() => handleToggle()}
             >
                 <div className="w-full">
-                    <h4 className="mt-1 sm:text-md lg:text-xl text-black font-semibold text-dark dark:text-white">
+                    <h4 className="mt-1 sm:text-md lg:text-xl text-[#484B54] font-semibold text-dark dark:text-white">
                         {header}
                     </h4>
                 </div>
 
-                <div className=" flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-red-500 group-hover:shadow-lg group-hover:shadow-black/40 dark:bg-white/5">
+                <div className=" flex h-10 w-full max-w-[40px] items-center justify-center rounded-md bg-red-500 group-hover:shadow-lg group-hover:shadow-black/40 dark:bg-white/5">
                     <svg
                         className={`fill-white stroke-white duration-200 ease-in-out ${active ? "rotate-180" : ""
                             }`}
@@ -92,7 +92,7 @@ const AccordionItem = ({ header, text }) => {
                 className={` duration-200 ease-in-out ${active ? "block" : "hidden"
                     }`}
             >
-                <p className="py-3 text-md leading-relaxed text-gray-700  dark:text-white dark:text-dark-6">
+                <p className="py-3 text-md leading-relaxed text-[#484B54]  dark:text-white dark:text-dark-6">
                     {text}
                 </p>
             </div>

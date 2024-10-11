@@ -81,7 +81,7 @@ function Sheetproblems({ item }) {
                 </td>
                 <td className='border-r-2 border-gray-400 border-l-2'><span>{item.name}</span></td>
                 <td className='border-r-2 border-gray-400 text-left'>
-                    <span className={`${getLevelClass(item.Level)} text-white px-2 py-1 w-16 rounded-lg`}>{item.Level}</span>
+                    <span className={`${getLevelClass(item.Level)} text-white px-2 py-1 w-16 rounded-md`}>{item.Level}</span>
                 </td>
                 <td className='border-r-2 border-gray-400 text-center'><Link to={item.article}>Soon</Link></td>
                 <td className='border-r-2 border-gray-400 border-l-2'>
@@ -125,7 +125,7 @@ function Sheetproblems({ item }) {
                     onClick={handleCloseDialog}
                 >
                     <div
-                        className="bg-white rounded-lg p-6  w-[300px] sl:w-[350px] md:w-[450px] h-[350px] overflow-auto"
+                        className="bg-white rounded-md p-6  w-[300px] sl:w-[350px] md:w-[450px] h-[350px] overflow-auto"
                         onClick={(e) => e.stopPropagation()} >
                         <div className='flex justify-between mb-5'>
                             <p className='text-blue-600 text-xl ml-2'>Companies</p>
@@ -139,7 +139,7 @@ function Sheetproblems({ item }) {
 
                         <div>
                             {companiesArray.map((company, index) => (
-                                <div key={index} className="border border-gray-300 text-gray-500 text-sm rounded-lg text-sm p-1 px-2 m-1 inline-block">
+                                <div key={index} className="border border-gray-300 text-gray-500 text-sm rounded-md text-sm p-1 px-2 m-1 inline-block">
                                     {company.trim()}
                                 </div>
                             ))}

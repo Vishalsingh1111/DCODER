@@ -181,7 +181,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left ">
                             <button
                                 onClick={() => setShowHtmlCode(!showHtmlCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-3 px-4 rounded-md"
                             >
                                 {showHtmlCode ? "Hide Code" : "Show HTML Code"}
                             </button>
@@ -192,7 +192,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowCssCode(!showCssCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-3 px-4 rounded-md"
                             >
                                 {showCssCode ? "Hide Code" : "Show CSS Code"}
                             </button>
@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowJsCode(!showJsCode)}
-                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
+                                className="mb-2 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-3 px-4 rounded-md"
                             >
                                 {showJsCode ? "Hide Code" : "Show JavaScript Code"}
                             </button>
@@ -214,7 +214,7 @@ const ProjectDetail = () => {
                         <div className="my-5 mx-auto text-left">
                             <button
                                 onClick={() => setShowOtherCode(!showOtherCode)}
-                                className="mb-4 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"
+                                className="mb-4 text-sm bg-blue-500 text-white py-2 px-2 text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-3 px-4 rounded-md"
                             >
                                 {showOtherCode ? "Hide Code" : "Show Other Code"}
                             </button>
@@ -260,8 +260,8 @@ const ProjectDetail = () => {
                         )
                     ))}
                     <div className='mt-10 text-center flex justify-start space-x-5'>
-                        <Link to={item.link1} className='px-2 py-2 bg-red-500 text-sm text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg'>Click to Download from GitHub</Link>
-                        <Link to={item.link2} className='px-2 py-2 bg-green-500 text-sm text-white shadow-lg hover:shadow-green-500/30 shadow-black/30 py-2 px-4 rounded-lg'>Watch Live Project</Link>
+                        <Link to={item.link1} className='px-2 py-2 bg-red-500 text-sm text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-3 px-4 rounded-md'>Click to Download from GitHub</Link>
+                        <Link to={item.link2} className='px-2 py-2 bg-green-500 text-sm text-white shadow-lg hover:shadow-green-500/30 shadow-black/30 py-3 px-4 rounded-md'>Watch Live Project</Link>
                     </div>
                 </div>
 
@@ -274,11 +274,11 @@ const ProjectDetail = () => {
                             .map((project, index) => (
                                 <div
                                     key={index}
-                                    className="border-t bg-[#ffffff] flex flex-col min-h-[400px] flex-grow border border-gray-300 dark:border-gray-600 dark:border group hover:shadow hover:shadow-black/30 rounded-xl cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
+                                    className="border-t bg-[#ffffff] flex flex-col min-h-[400px] flex-grow border border-gray-300 dark:border-gray-600 dark:border group hover:shadow hover:shadow-black/30 rounded-md cursor-pointer hover:shadow-lg dark:bg-slate-900 dark:text-white"
                                     onClick={() => handleCardClick(project.id)}
                                 >
                                     <img src={project.image1} alt="Project" className="w-full object-cover p-6 pb-0 rounded-t" />
-                                    <div className='flex-grow bg-gradient-to-t from-gray-200 to-[#ffffff] p-6 pt-2 rounded-b-xl space-y-3 dark:from-slate-800 '>
+                                    <div className='flex-grow bg-gradient-to-t from-[[#ffffff]] to-[#ffffff] p-6 pt-2 rounded-b-md space-y-3 dark:from-slate-800 '>
                                         <h3 className="mt-2 text-xl">{truncateText(project.header, 40)}</h3>
                                         <p className="text-gray-600 dark:text-gray-400">{truncateText(project.text, 60)}</p>
                                         <p className='text-red-500'>Read More .. </p></div>

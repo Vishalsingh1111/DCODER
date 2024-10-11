@@ -40,7 +40,7 @@ const Navbar = () => {
             <li>
                 <details>
                     <summary>Content</summary>
-                    <ul className="bg-base-100 w-48 rounded-t-none p-2 dark:bg-slate-900 dark:text-white">
+                    <ul className="bg-base-100 w-48 rounded-t-none rounded-md p-2 dark:bg-slate-900 dark:text-white">
                         <li><a href='/Sheet'>DSA Sheet</a></li>
                         <li><a href='/Languages'>Rivision Notes</a></li>
                         <li><a href='/Project'>Project</a></li>
@@ -84,7 +84,7 @@ const Navbar = () => {
                     <TechAICard />
 
                     {!authUser && (
-                        <a href="/Login" className="bg-red-600 text-white px-3.5 py-1.5 text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 rounded-lg duration-300 cursor-pointer dark:bg-red-800">
+                        <a href="/Login" className="bg-red-600 text-white px-3.5 py-1.5 text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 rounded-md duration-300 cursor-pointer dark:bg-red-800">
                             Login
                         </a>
                     )}

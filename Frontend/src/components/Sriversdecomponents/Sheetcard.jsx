@@ -47,15 +47,15 @@ function Sheetcard({ item }) {
     return (
         <div className={`mx-2 md:mx-6 lg:mt-5 rounded-lg shadow-sm shadow-black/20 dark:bg-slate-900 dark:text-white`}>
             <div className="bg-gray-600 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
-            <div className={`flex rounded items-center dark:from-slate-800 justify-between py-2 lg:px-10 px-5 cursor-pointer bg-gradient-to-t from-gray-200 to-[#ffffff]`} onClick={toggleAccordion}>
+            <div className={`flex rounded items-center dark:from-slate-800 justify-between py-2 lg:px-10 px-5 cursor-pointer bg-gradient-to-t from-[#ffffff] to-[#ffffff]`} onClick={toggleAccordion}>
                 <div className="flex flex-col">
                     <h3 className="text-lg text-gray-800 dark:text-white">{item.name}</h3>
                 </div>
                 <div className='flex space-x-5'>
                     <div className='mt-2'>
-                        <span className="p-1 w-6 h-6 text-black rounded-lg border-2 border-gray-600 dark:bg-slate-700 dark:text-gray-300 px-3 py-1.5">{item.completedProblems}{item.Problems}</span>
+                        <span className="p-1 w-6 h-6 text-black rounded-md border-2 border-gray-600 dark:bg-slate-700 dark:text-gray-300 px-3 py-1.5">{item.completedProblems}{item.Problems}</span>
                     </div>
-                    <button className="p-1.5 border-2 bg-gray-600 border-gray-600 text-white rounded-lg dark:bg-slate-700 dark:text-gray-300">
+                    <button className="p-1.5 border-2 bg-gray-600 border-gray-600 text-white rounded-md dark:bg-slate-700 dark:text-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`w-6 h-6 transform transition-transform ${isOpen ? 'rotate-180' : ''}`}>
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -71,7 +71,7 @@ function Sheetcard({ item }) {
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
                         <button className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-red-500" onClick={() => handleLevelClick('Hard')}>Hard</button>
                     </div>
-                    <div className='lg:mx-4 mx-2 mt-3 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto'>
+                    <div className='lg:mx-4 mx-2 mt-3 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-lg overflow-auto'>
                         <table className="table bg-[rgb(255,255,255)] dark:bg-slate-900 dark:text-white dark:border">
                             <thead className='font-semibold text-gray-600 shadow dark:bg-slate-800 dark:text-white'>
                                 <Sheetheading />

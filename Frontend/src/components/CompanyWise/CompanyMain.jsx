@@ -158,11 +158,11 @@ const CompanyMain = () => {
         <>
             <div className="w-full pb-1 mb-4">
                 {/* Scrollable Horizontal Navbar */}
-                <div className="flex overflow-x-auto whitespace-nowrap mb-4 dark:bg-slate-900 dark:text-white bg-gray-100 py-3 px-2 rounded-lg mx-5">
+                <div className="flex overflow-x-auto whitespace-nowrap mb-4 dark:bg-slate-900 dark:text-white bg-[#ffffff] py-3 px-2 rounded-sm mx-5">
                     {companyButtons.map((company) => (
                         <button
                             key={company}
-                            className={`text-md mx-0.5 px-3 py-1 ${activeSection === company ? "text-white border  dark:text-white rounded-md bg-red-500 border-red-500" : "text-gray-900  dark:text-white  dark:border-white rounded-md border border-gray-900"}`}
+                            className={`text-md mx-0.5 px-3 py-1 ${activeSection === company ? "text-white border dark:text-white rounded-sm bg-red-500 border-red-500" : "text-gray-900  dark:text-white  dark:border-white rounded-sm border border-gray-900"}`}
                             onClick={() => handleSectionChange(company)}
                         >
                             {company}
@@ -174,10 +174,10 @@ const CompanyMain = () => {
             <section className="max-w-screen-2xl container mx-auto py-8 md:px-5 px-4  overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
                 {/* Data Table */}
-                <div className="mx-auto text-left border dark:border-none dark:bg-slate-800 border-gray-200 rounded-xl">
+                <div className="mx-auto text-left border dark:border-none dark:bg-slate-800 border-gray-200 rounded-lg">
 
                     {/* Level Buttons */}
-                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] dark:from-slate-800 rounded-t-lg'>
+                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] dark:from-slate-800 rounded-t-md'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
@@ -188,7 +188,7 @@ const CompanyMain = () => {
                         {loading ? (
                             <Skeleton1 />
                         ) : (
-                            <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-xl overflow-auto'>
+                            <div className='lg:mx-4 mx-0 dark:bg-slate-900 dark:text-white dark:border border-2 border-gray-400 rounded-lg overflow-auto'>
                                 <table className="table dark:bg-slate-900 dark:text-white dark:border">
                                     <thead className='font-semibold text-gray-600 shadow dark:bg-slate-900 dark:text-white'>
                                         <Sheetheading />

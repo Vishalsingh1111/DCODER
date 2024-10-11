@@ -135,6 +135,16 @@ const BlogDetail = () => {
                             title="YouTube Video"
                             className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
+
+                        <iframe
+                            width="320"
+                            height="200"
+                            src="https://www.youtube.com/embed/i2M87L2U028"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title="YouTube Video"
+                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                        ></iframe>
                     </div>
                 </div>
 
@@ -147,11 +157,11 @@ const BlogDetail = () => {
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(blogItem => (
-                                    <div key={blogItem.id} className=" flex-col border border-white lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 dark:border rounded-lg  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
+                                    <div key={blogItem.id} className=" flex-col border border-t md:shadow-sm md:shadow-black/30 lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 dark:border rounded-md  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
                                         <div className="flex-1 text-left" onClick={() => handleCardClick(blogItem.id)}>
-                                            <h3 className="text-xl font-[500] p-8 pb-0">{blogItem.header}</h3>
+                                            <h3 className="text-lg font-[500] p-8 pb-0">{blogItem.header}</h3>
                                             <div className=' p-8 pt-0 rounded-xl dark:from-slate-800'>
-                                                <p className="text-md text-gray-500 mt-2">{truncateText(blogItem.explanation, 100)}</p>
+                                                <p className="text-sm text-gray-700 dark:text-gray-200 mt-2">{truncateText(blogItem.explanation, 100)}</p>
 
                                                 <p className='inline-block rounded-md text-red-500 mt-3 border p-2 border-red-600 group-hover:bg-red-500 group-hover:text-white transition duration-200'>
                                                     Read more
