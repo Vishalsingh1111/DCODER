@@ -24,6 +24,7 @@ import Techblog from './components/TechBlogs/Techblog';
 import CSPage from './components/CSSubject/CSPage';
 import BlogDetail from './components/TechBlogs/Blogdetail';
 import ContestSol from './components/ContestSolution/ContestSolPage';
+import ContestSoldetail from './components/ContestSolution/Contestdetail';
 import Projectdetail from './components/Projects/Projectdetail';
 import Projectpage from './components/Projects/Projectpage';
 import DashBoard from './components/Admin/Dashboard';
@@ -69,6 +70,7 @@ const App = () => {
           <Route path='/detail/:id' element={<BlogDetail />}></Route>
           <Route path='/Projectpage' element={<Projectpage />}></Route>
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>
+          <Route path='/contestdetail/:id' element={<ContestSoldetail />}></Route>
           <Route path='/Dashboard' element={<DashBoard />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Ai' element={<Ai />} />
