@@ -66,11 +66,11 @@ const Chat = () => {
     return (
         <>
             <Navbar />
-            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen pt-20 dark:bg-none dark:text-white"> {/* Adjusted padding */}
+            <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 min-h-screen py-20 dark:bg-none dark:text-white"> {/* Adjusted padding */}
                 <div className='w-full sm:w-[100px] md:w-full mb-5'>
                     <img src="/robot.jpg" alt="AI Illustration" className="w-[100px] rounded-full border-2  border-blue-500 mx-auto" />
                 </div>
-                <div className="mb-5 max-w-4xl text-left mx-auto space-y-3 ">
+                <div className="mb-10 max-w-4xl text-left mx-auto space-y-3 ">
                     <h1 className="md:text-5xl text-xl font-semibold mb-2">
                         Hello, <span className="text-red-500">{authUser?.firstName || 'Guest'}</span>
                     </h1>
@@ -104,10 +104,10 @@ const Chat = () => {
                         Create a 12-week study plan for learning a new language
                     </button>
                 </div>
-                <div className='w-full max-w-4xl mx-auto mb-32 text-justify justify-start md:mt-10 mt-32 rounded  dark-text-white rounded-xl'>
+                <div className='w-full max-w-4xl mx-auto mb-12 text-justify justify-start md:mt-10 mt-12 rounded  dark-text-white rounded-xl'>
                     {loading ? (
                         <div className="text-center text-2xl text-red-500">
-                            Getting Your Response Ready 😃
+                            Getting Your Response Ready ...
                         </div>
                     ) : (
                         <div ref={responseRef} dangerouslySetInnerHTML={{ __html: response }} />
@@ -115,22 +115,25 @@ const Chat = () => {
                     )}
 
                 </div>
+
+                <div className="w-full max-w-4xl p-4 mx-auto bg-white shadow-md border-t rounded-full flex items-center dark:bg-slate-800 dark-text-white">
+                    <input
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Ask with TechAI"
+                        className="w-full px-5 p-1 border-none outline-none dark:bg-slate-800 dark-text-white "
+                    />
+                    {query && (
+                        <button onClick={() => handleQuery(query)}>
+                            <img className='w-[40%] h-[40%] mx-5' src='/icons8-send-button-60.png' alt="Send" />
+                        </button>
+                    )}
+                </div>
+
             </div>
-            <div className="w-full max-w-4xl p-4 bg-white shadow-md border-t rounded-full flex items-center fixed bottom-10 items-center left-1/2 transform -translate-x-1/2 dark:bg-slate-800 dark-text-white">
-                <input
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    placeholder="Ask with TechAI"
-                    className="w-full px-5 p-1 border-none outline-none dark:bg-slate-800 dark-text-white "
-                />
-                {query && (
-                    <button onClick={() => handleQuery(query)}>
-                        <img className='w-[40%] h-[40%] mx-5' src='/icons8-send-button-60.png' alt="Send" />
-                    </button>
-                )}
-            </div>
+
         </>
     );
 };
