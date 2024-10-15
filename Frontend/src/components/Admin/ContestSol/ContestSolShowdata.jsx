@@ -12,7 +12,7 @@ const NoteList = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get(`${baseUrl}/blog`);
+                const response = await axios.get(`${baseUrl}/contestsol`);
                 setNotes(response.data); // Assuming API response is an array of notes
             } catch (error) {
                 console.error('Error fetching notes:', error);
@@ -36,7 +36,7 @@ const NoteList = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:4001/contestsol/${id}`);
+            await axios.delete(`${baseUrl}/contestsol/${id}`);
             setNotes(notes.filter(note => note._id !== id)); // Remove the deleted note from the local state
             console.log('Deleted note with id:', id);
         } catch (error) {
