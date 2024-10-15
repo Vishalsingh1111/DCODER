@@ -14,7 +14,7 @@ const Contest = () => {
     useEffect(() => {
         const getContest = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/contestsol");
+                const res = await axios.get(`${baseUrl}/contestsol`);
                 const responseData = Array.isArray(res.data) ? res.data : [];
                 setData(responseData);
             } catch (error) {

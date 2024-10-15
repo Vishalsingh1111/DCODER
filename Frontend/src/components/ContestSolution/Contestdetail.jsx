@@ -25,7 +25,7 @@ const ContestDetail = () => {
     useEffect(() => {
         const getcontestData = async () => {
             try {
-                const res = await axios.get("http://localhost:4001/contestsol");
+                const res = await axios.get(`${baseUrl}/contestsol`);
                 const foundItem = res.data.find(item => item.id.toString() === id);
                 setItem(foundItem);
                 setItems(res.data);
