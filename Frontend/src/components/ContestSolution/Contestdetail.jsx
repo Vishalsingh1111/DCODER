@@ -25,7 +25,7 @@ const ContestDetail = () => {
     useEffect(() => {
         const getcontestData = async () => {
             try {
-                const res = await axios.get(`${baseUrl}/contestsol`);
+                const res = await axios.get("http://localhost:4001/contestsol");
                 const foundItem = res.data.find(item => item.id.toString() === id);
                 setItem(foundItem);
                 setItems(res.data);
@@ -53,7 +53,7 @@ const ContestDetail = () => {
     const increaseThumbsUp = () => setThumbsUpCount(thumbsUpCount + 1);
     const increaseThumbsDown = () => setThumbsDownCount(thumbsDownCount + 1);
 
-    const handleCardClick = (id) => navigate(`/detail/${id}`);
+    const handleCardClick = (id) => navigate(`/contestdetail/${id}`);
 
     const handleShowMore = () => {
         if (visibleCount + 5 >= items.length) {

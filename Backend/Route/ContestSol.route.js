@@ -1,19 +1,18 @@
 import express from "express";
-
 import { getContest, createContest, updateContest, deleteContest } from "../Controller/ContestSol.controller.js";
 
 const router = express.Router();
 
-//get all data
+// Get all contests
 router.get('/', getContest);
 
-//create new data
+// Create new contest
 router.post('/', createContest);
 
-// PUT update a note by ID
+// Update a contest by ID
 router.put("/:id", updateContest);
 
-// DELETE delete a note by ID
+// Delete a contest by ID
 router.delete("/:id", deleteContest);
 
 export default router;
