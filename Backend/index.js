@@ -13,6 +13,7 @@ import sheetproblemRoute from "./Route/Sheetproblem.route.js";
 import sdeproblemRoute from "./Route/SDEProblem.route.js";
 import projectRoute from "./Route/Project.route.js";
 import blogRoute from "./Route/Blog.route.js";
+import contestsolRoute from "./Route/ContestSol.route.js"
 import notecontentRoute from "./Route/NoteContent.route.js";
 import userRoute from "./Route/User.route.js";
 import contactRoute from "./Route/Contact.route.js";
@@ -67,6 +68,7 @@ app.use("/sheetproblem", sheetproblemRoute);
 app.use("/sdeproblem", sdeproblemRoute);
 app.use("/project", projectRoute);
 app.use("/blog", blogRoute);
+app.use("/contestsol", contestsolRoute);
 app.use("/notecontent", notecontentRoute);
 app.use("/user", userRoute);
 app.use("/contact", contactRoute);

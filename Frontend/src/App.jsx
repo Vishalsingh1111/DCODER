@@ -23,6 +23,7 @@ import C from './components/Language/C/C';
 import Techblog from './components/TechBlogs/Techblog';
 import CSPage from './components/CSSubject/CSPage';
 import BlogDetail from './components/TechBlogs/Blogdetail';
+import ContestSol from './components/ContestSolution/ContestSolPage';
 import Projectdetail from './components/Projects/Projectdetail';
 import Projectpage from './components/Projects/Projectpage';
 import DashBoard from './components/Admin/Dashboard';
@@ -45,7 +46,7 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/About" element={<About />}></Route>
-          <Route path='/Contactform' element={authUser ? <Contactform /> : <Navigate to="/Signup" />} />
+          <Route path='/Contactform' element={authUser ? <Contactform /> : <Navigate to="/Signup" />}></Route>
           <Route path="/Languages" element={<Languages />}></Route>
           <Route path="/Project" element={<Project />}></Route>
           <Route path="/Sheet" element={<Sheet />}></Route>
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/Forgetpassword" element={<Forgetpassword />}></Route>
           <Route path='/Pagenotfound' element={<Pagenotfound />}></Route>
           <Route path='/Technicalblog' element={<Technicalblog />}></Route>
+          <Route path='/ContestSolution' element={authUser ? <ContestSol /> : <Navigate to="/Signup" />}></Route>
           <Route path='/CSPage' element={<CSPage />}></Route>
           <Route path='/DSA' element={authUser ? <DSA /> : <Navigate to="/Signup" />}></Route>
           <Route path='/Python' element={<Python />}></Route>

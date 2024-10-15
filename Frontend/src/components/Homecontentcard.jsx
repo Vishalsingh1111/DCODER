@@ -38,11 +38,11 @@ const resources = [
         link: "/CSPage",
     },
     {
-        title: "New CP Sheet",
-        description: "Level up your coding game with our practice resources.",
+        title: "Contests Solution",
+        description: "Level up your coding with participating in Contests.",
         buttonText: "Try it free",
         icon: "fa-pencil-alt",
-        link: "/Pagenotfound",
+        link: "/ContestSolution",
     },
 ];
 
