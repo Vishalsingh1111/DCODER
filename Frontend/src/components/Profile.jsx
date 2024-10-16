@@ -26,7 +26,7 @@ function App() {
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                 <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md relative">
                     <button
-                        className="absolute px-2.5 py-1 rounded-full top-2 right-2 text-gray-500 hover:bg-red-700 text-white  bg-red-500"
+                        className="absolute px-3 py-1 rounded-full top-2 right-2 text-gray-500 hover:bg-red-700 text-white  bg-red-500"
                         onClick={onClose}
                     >
                         &times;
@@ -38,10 +38,10 @@ function App() {
                                 <img
                                     src={authUser.photo}
                                     alt="Profile"
-                                    className="w-24 h-24 object-cover rounded-full mr-4"
+                                    className='w-[50px] h-[50px] object-cover rounded-full mr-4'
                                 />
                             ) : (
-                                <div className="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center text-2xl mr-4">
+                                <div className="w-[50px] h-[50px] bg-gray-300 rounded-full flex items-center justify-center text-2xl mr-4">
                                     {authUser && authUser.firstName ? authUser.firstName.charAt(0).toUpperCase() : 'G'}
                                 </div>
                             )}
@@ -50,7 +50,7 @@ function App() {
                                 <p className="text-gray-600">{authUser?.email}</p>
                             </div>
                         </div>
-                        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                        <div className="p-4">
                             <p><strong>Google ID:</strong> {authUser?.googleId}</p>
                             <p><strong>First Name:</strong> {authUser?.firstName}</p>
                             <p><strong>Last Name:</strong> {authUser?.lastName}</p>

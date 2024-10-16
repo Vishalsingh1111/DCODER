@@ -35,24 +35,24 @@ const ContactForm = () => {
             <div className="py-16 px-8 ">
                 <Toaster />
                 <div className="max-w-screen-2xl container mx-auto md:px-20 px-4 mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:pt-20">
                         {/* Contact Info */}
                         <div>
-                            <h2 className="text-5xl font-semibold text-gray-800 mb-4 dark:text-white">Get In Touch</h2>
+                            <h2 className="md:text-6xl text-4xl font-semibold text-gray-800 mb-8 dark:text-white">Get In Touch</h2>
                             <p className="text-gray-600 mb-6 dark:text-white">
                                 If you have any query, You can contact us.
                             </p>
                             <ul className="space-y-4 text-gray-600">
                                 <li className="flex items-center space-x-3">
-                                    <span className="text-blue-500"><i className="fas fa-map-marker-alt"></i></span>
+                                    <span className="text-gray-900"><i className="fas fa-map-marker-alt"></i></span>
                                     <span className='dark:text-white'>Patna, Bihar, India</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
-                                    <span className="text-blue-500"><i className="fas fa-envelope"></i></span>
+                                    <span className="text-gray-900"><i className="fas fa-envelope"></i></span>
                                     <span className='dark:text-white'>dcoder@gmail.com</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
-                                    <span className="text-blue-500"><i className="fas fa-phone"></i></span>
+                                    <span className="text-gray-900"><i className="fas fa-phone"></i></span>
                                     <span className='dark:text-white'>+91 1020304050</span>
                                 </li>
                             </ul>
@@ -109,7 +109,7 @@ const ContactForm = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition "
+                                    className="w-full p-3 bg-red-600 text-white shadow-lg rounded hover:shadow-red-500/30 shadow-black/30 "
                                 >
                                     Send Message
                                 </button>

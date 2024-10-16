@@ -71,7 +71,7 @@ const App = () => {
           <Route path='/Projectpage' element={<Projectpage />}></Route>
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>
           <Route path='/contestdetail/:id' element={<ContestSoldetail />}></Route>
-          <Route path='/Dashboard' element={<DashBoard />} />
+          <Route path='/Dangerzone' element={authUser ? <DashBoard /> : <Navigate to="/Adminlogin" />}></Route>
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Ai' element={<Ai />} />
           <Route path="/results/:id" component={ResultDetailPage} />

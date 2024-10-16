@@ -44,6 +44,7 @@ const Navbar = () => {
                         <li><a href='/Sheet'>DSA Sheet</a></li>
                         <li><a href='/Languages'>Rivision Notes</a></li>
                         <li><a href='/Project'>Project</a></li>
+                        <li><a href='/ContestSolution'>Contest Solution</a></li>
                     </ul>
                 </details>
             </li>
@@ -91,18 +92,19 @@ const Navbar = () => {
                 </div>
 
 
+
                 <div>
                     {authUser ? (
-                        <div className='md:ml-2 lg:md:ml-10 ml-2 w-[50px]'>
+                        <div className='md:ml-2 lg:ml-10 ml-2 w-[42px] h-[42px]'>
                             <a href='/Profile'>
                                 {authUser.photo && authUser.photo !== "null" ? (
                                     <img
                                         src={authUser.photo}
                                         alt="Profile"
-                                        className='w-full h-full rounded-full'
+                                        className='w-[42px] h-[42px] rounded-full'
                                     />
                                 ) : (
-                                    <h1 className='text-black text-2xl text-center py-2 bg-gray-300 cursor-pointer rounded-full'>
+                                    <h1 className='text-white text-2xl text-center leading-[42px] w-[42px] h-[42px] bg-red-500 cursor-pointer rounded-full'>
                                         {authUser.firstName ? authUser.firstName.charAt(0).toUpperCase() : '0'}
                                     </h1>
                                 )}
@@ -110,6 +112,7 @@ const Navbar = () => {
                         </div>
                     ) : null}
                 </div>
+
             </div>
         </div>
     );

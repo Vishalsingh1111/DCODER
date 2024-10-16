@@ -46,7 +46,7 @@ const AdminloginPage = () => {
                 } else {
                     localStorage.removeItem('rememberedUser');
                 }
-                navigate('/Dashboard', { replace: true });
+                navigate('/Dangerzone', { replace: true });
                 setTimeout(() => {
                     localStorage.setItem('Users', JSON.stringify(res.data.user));
                     window.location.reload();
