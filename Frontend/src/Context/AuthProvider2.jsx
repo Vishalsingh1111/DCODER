@@ -26,4 +26,4 @@ export default function AuthProvider2({ children }) {
     );
 }
 
-export const useAuth = () => useContext(AdminAuthContext);
+export const useadminAuth = () => useContext(AdminAuthContext);

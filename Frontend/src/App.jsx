@@ -30,6 +30,7 @@ import Projectpage from './components/Projects/Projectpage';
 import DashBoard from './components/Admin/Dashboard';
 import Contactform from './Contacts/Contactform';
 import { useAuth } from './Context/AuthProvider';
+import { useadminAuth } from './Context/AuthProvider2';
 import Profile from './components/Profile';
 import Ai from './components/Aipage';
 import ResultDetailPage from './components/ResultDetailPage';
@@ -37,13 +38,13 @@ import ResultDetailPage from './components/ResultDetailPage';
 
 const App = () => {
   //auth user function 
-  // const [authUser, setAuthUser] = useAuth();
+  const [authUser, setAuthUser] = useAuth();
   // console.log(authUser);
 
   // auth user function
-  const [authUser] = useUserAuth();
+  // const [authUser] = useUserAuth();
   // auth admin function
-  const [authAdmin] = useAdminAuth();
+  const [authAdmin, setAuthAdmin] = useadminAuth();
 
 
 
