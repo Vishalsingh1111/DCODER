@@ -9,7 +9,7 @@ const AdminloginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    const [showPassword, setShowPassword] = useState(false); // State for showing/hiding password
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -41,16 +41,15 @@ const AdminloginPage = () => {
             const res = await axios.post(`${baseUrl}/admin/login`, userInfo);
             if (res.data) {
                 toast.success('Login Successfully');
+                // Store admin data in localStorage
+                localStorage.setItem('Admins', JSON.stringify(res.data.admin));
                 if (rememberMe) {
                     localStorage.setItem('rememberedUser', JSON.stringify(userInfo));
                 } else {
                     localStorage.removeItem('rememberedUser');
                 }
-                navigate('/Dangerzone', { replace: true });
-                setTimeout(() => {
-                    localStorage.setItem('Users', JSON.stringify(res.data.user));
-                    window.location.reload();
-                }, 1000);
+                navigate('/Dashboard', { replace: true });
+                window.location.reload();
             }
         } catch (err) {
             if (err.response) {
@@ -61,7 +60,7 @@ const AdminloginPage = () => {
     };
 
     const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword); // Toggle password visibility
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -71,7 +70,7 @@ const AdminloginPage = () => {
                 <h2 className="text-2xl font-semibold mb-6 text-center">Admin Login</h2>
                 <form onSubmit={handleLogin}>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="username">
+                        <label className="block text-gray-700 text-sm mb-2" htmlFor="username">
                             Username
                         </label>
                         <input
@@ -83,13 +82,13 @@ const AdminloginPage = () => {
                             required
                         />
                     </div>
-                    <div className="mb-4 relative"> {/* Relative positioning for the eye icon */}
-                        <label className="block text-gray-700 text-sm  mb-2" htmlFor="password">
+                    <div className="mb-4 relative">
+                        <label className="block text-gray-700 text-sm mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
                             id="password"
-                            type={showPassword ? 'text' : 'password'} // Toggle between text and password
+                            type={showPassword ? 'text' : 'password'}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -100,7 +99,7 @@ const AdminloginPage = () => {
                             onClick={togglePasswordVisibility}
                             className="absolute inset-y-0 right-0 pr-3 pt-7 flex items-center text-gray-700 cursor-pointer"
                         >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />} {/* Show eye or eye-slash icon based on visibility */}
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </button>
                     </div>
                     <div>
@@ -116,7 +115,7 @@ const AdminloginPage = () => {
                         </label>
                         <button
                             type="submit"
-                            className="w-full bg-blue-500 hover:bg-blue-700 text-white  mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="w-full bg-blue-500 hover:bg-blue-700 text-white mt-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Log In
                         </button>
@@ -124,7 +123,7 @@ const AdminloginPage = () => {
                 </form>
                 <div className="mt-4 flex justify-between">
                     <a
-                        className="inline-block align-baseline  text-sm text-red-500 hover:underline"
+                        className="inline-block align-baseline text-sm text-red-500 hover:underline"
                         href="/"
                         onClick={handleClose}
                     >
@@ -137,3 +136,4 @@ const AdminloginPage = () => {
 };
 
 export default AdminloginPage;
+

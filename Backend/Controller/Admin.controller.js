@@ -12,21 +12,22 @@ export const addnewadmin = async (req, res) => {
         const hashpassword = await bcryptjs.hash(password, 10);
 
         const createdadmin = new Admin({
-            username: username,
+            username,
             password: hashpassword,
         });
         await createdadmin.save();
         res.status(201).json({
-            message: "User Created Successfully", admin: {
+            message: "User Created Successfully",
+            admin: {
                 _id: createdadmin._id,
                 username: createdadmin.username,
             }
-        })
+        });
     } catch (error) {
         console.log("Error: " + error.message);
         res.status(500).json({ message: "Internal server error" });
     }
-}
+};
 
 // Login
 export const adminlogin = async (req, res) => {
@@ -43,7 +44,6 @@ export const adminlogin = async (req, res) => {
             admin: {
                 _id: admin._id,
                 username: admin.username,
-
             }
         });
     } catch (error) {
@@ -52,8 +52,7 @@ export const adminlogin = async (req, res) => {
     }
 };
 
-
-//get user deatils
+// Get user details
 export const admindetails = async (req, res) => {
     try {
         const admin = await Admin.find();
@@ -64,8 +63,7 @@ export const admindetails = async (req, res) => {
     }
 };
 
-
-//delete a user
+// Delete a user
 export const deleteAdmin = async (req, res) => {
     const { id } = req.params;
 
