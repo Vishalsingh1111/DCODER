@@ -17,7 +17,7 @@ export const addnewadmin = async (req, res) => {
         });
         await createdadmin.save();
         res.status(201).json({
-            message: "User Created Successfully", user: {
+            message: "User Created Successfully", admin: {
                 _id: createdadmin._id,
                 username: createdadmin.username,
                 password: createdadmin.password,
@@ -41,7 +41,7 @@ export const adminlogin = async (req, res) => {
 
         res.status(200).json({
             message: "Login Successful",
-            user: {
+            admin: {
                 _id: admin._id,
                 username: admin.username,
                 password: admin.password,
