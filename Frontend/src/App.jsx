@@ -39,11 +39,6 @@ import ResultDetailPage from './components/ResultDetailPage';
 const App = () => {
   //auth user function 
   const [authUser, setAuthUser] = useAuth();
-  // console.log(authUser);
-
-  // auth user function
-  // const [authUser] = useUserAuth();
-  // auth admin function
   const [authAdmin, setAuthAdmin] = useadminAuth();
 
 
@@ -79,7 +74,8 @@ const App = () => {
           <Route path='/Projectpage' element={<Projectpage />}></Route>
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>
           <Route path='/contestdetail/:id' element={<ContestSoldetail />}></Route>
-          <Route path='/Dangerzone' element={authAdmin ? <DashBoard /> : <Navigate to="/Adminlogin" />}></Route>
+          <Route path='/Dangerzone' element={<DashBoard />}></Route>
+          {/* <Route path='/Dangerzone' element={authAdmin ? <DashBoard /> : <Navigate to="/Adminlogin" />}></Route> */}
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Ai' element={<Ai />} />
           <Route path="/results/:id" component={ResultDetailPage} />
