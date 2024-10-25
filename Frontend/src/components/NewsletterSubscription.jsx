@@ -29,8 +29,8 @@ function NewsletterSection() {
 
     return (
         <section className="w-full lg:max-w-[81%] md:max-w-[85%] mx-auto">
-            <div className="mx-5 my-[70px] p-[50px] bg-[#ffffff] border rounded-lg dark:bg-slate-800 dark:border-none">
-                <div className="max-w-screen-md mx-auto text-center">
+            <div className="mx-5 my-[70px] p-[50px] bg-gradient-to-t from-[#ffffff] to-[#ffffff]  dark:from-slate-800 border rounded-md dark:bg-slate-900 dark:border-gray-600">
+                <div className="max-w-screen-md mx-auto text-center ">
                     <h2 className="mb-4 text-2xl font-semibold sm:text-3xl text-[#484B54] dark:text-white">
                         Sign up for our newsletter
                     </h2>

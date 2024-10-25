@@ -116,15 +116,7 @@ const ContestDetail = () => {
                     </div>
 
                     <div className=' lg:space-x-8 flex flex-col lg:flex-row mt-5 mx-auto justify-center'>
-                        <iframe
-                            width="320"
-                            height="200"
-                            src="https://www.youtube.com/embed/atMxH8EmR1I"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="YouTube Video"
-                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
-                        ></iframe>
+
 
                         <iframe
                             width="320"
@@ -136,15 +128,6 @@ const ContestDetail = () => {
                             className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
 
-                        <iframe
-                            width="320"
-                            height="200"
-                            src="https://www.youtube.com/embed/i2M87L2U028"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="YouTube Video"
-                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
-                        ></iframe>
                     </div>
                 </div>
 

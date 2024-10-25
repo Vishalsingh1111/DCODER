@@ -149,7 +149,7 @@ const GetContent = ({ item }) => {
                 return <br key={index} />;
             } else {
                 const content = (
-                    <span key={index} className={`${isH1 ? "text-gray-900 dark:text-white text-2xl mb-10" : isH2 ? "text-gray-700 dark:text-white text-xl" : ""} ${isBold ? "font-semibold dark:text-white text-gray-900 mr-1" : ""} ${isM ? "mt-8" : ""}`}>
+                    <span key={index} className={`${isH1 ? "text-gray-800 dark:text-white text-xl" : isH2 ? "text-gray-700 dark:text-white text-xl" : ""} ${isBold ? "font-semibold dark:text-white text-gray-900 mr-1" : ""} ${isM ? "mt-8" : ""}`}>
                         {part.trim()}
                     </span>
                 );
@@ -167,21 +167,21 @@ const GetContent = ({ item }) => {
     };
 
     return (
-        <div className="dark:bg-slate-900 dark:text-white text-gray-700 text-md ">
+        <div className="dark:bg-slate-800 dark:text-white text-gray-700">
             {/* Speak Button */}
             <div className="flex justify-between items-center mb-4">
-                <div className="text-md font-[500]">
+                <div className="font-[500]">
                     {renderText(item.header)}
                 </div>
                 <button
                     onClick={speakContent}
-                    className={`p-1 ${isSpeaking ? 'text-red-500' : 'text-gray-500'} border rounded-full`}
+                    className={`p-1 ${isSpeaking ? 'text-red-500' : 'text-blue-500'} border rounded-full`}
                 >
                     {isSpeaking ? <FaStop /> : <FaMicrophone />}
                 </button>
             </div>
 
-            <div className="text-[17px] leading-relaxed text-justify ">
+            <div className="text-[17px] leading-relaxed text-justify font-[400] ">
                 {['text', 'statement', 'substatement1', 'statement2', 'substatement2', 'statement3', 'substatement3', 'statement4', 'substatement4'].map((key, index) => (
                     item[key] && (
                         <p key={index} className="py-2">

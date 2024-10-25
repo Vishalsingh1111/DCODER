@@ -57,7 +57,7 @@ const AccordionItem = ({ header, text }) => {
         setActive(!active);
     };
     return (
-        <div className=" w-full border-b-2 dark:border-1 border-gray-300 px-4 py-3  dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-white">
+        <div className=" w-full border-b dark:border-1 border-gray-400 px-4 py-3  dark:text-white sm:p-8 lg:px-6 xl:px-8 dark:border-gray-600">
             <button
                 className={`faq-btn flex w-full text-left group hover`}
                 onClick={() => handleToggle()}
