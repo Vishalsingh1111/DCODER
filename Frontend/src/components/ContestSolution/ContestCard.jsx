@@ -11,7 +11,7 @@ const Contestcard = ({ item, onClick }) => {
 
         <div
             onClick={onClick}
-            className="relative  border-gray-300 group rounded-md bg-[url('./CF_Contest.png')] bg-cover bg-center min-h-[200px] m-5 flex flex-col w-full md:w-[350px] dark:border-gray-600 dark:border dark:bg-slate-900 dark:text-white cursor-pointer"
+            className="relative bg-black border-gray-300 group rounded-md bg-[url('./CF_Contest.png')] bg-cover bg-center min-h-[200px] m-5 flex flex-col w-full md:w-[350px] dark:border-gray-600 dark:border dark:bg-slate-900 dark:text-white cursor-pointer"
         >
             <div className="content flex flex-col absolute bottom-[20%] left-[10%]">
                 <h3 className="text-xl font-[600] text-[#20B2AA] dark:text-white p-5 pb-2">
