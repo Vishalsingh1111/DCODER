@@ -1,4 +1,5 @@
 import express from "express";
+
 import { getContest, createContest, updateContest, deleteContest } from "../Controller/ContestSol.controller.js";
 
 const router = express.Router();

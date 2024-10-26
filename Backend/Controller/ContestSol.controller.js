@@ -3,20 +3,19 @@ import Contest from "../Modal/ContestSol.modal.js";
 // Get all contests
 export const getContest = async (req, res) => {
     try {
-        const contests = await Contest.find(); // Renamed to 'contests'
+        const contests = await Contest.find();
         res.status(200).json(contests);
     } catch (error) {
-        console.log("Error", error);
-        res.status(500).json(error);
+        console.error("Error fetching contests:", error);
+        res.status(500).json({ error: "Error fetching contests" });
     }
 };
 
 // Create a new contest
 export const createContest = async (req, res) => {
     try {
-        const { id, header, code, image, explanation, category } = req.body;
+        const { header, code, image, explanation, category } = req.body;
         const newContest = new Contest({
-            id,
             header,
             code,
             explanation,
@@ -37,8 +36,8 @@ export const updateContest = async (req, res) => {
     const { header, code, explanation, image, category } = req.body;
 
     try {
-        const updatedContest = await Contest.findOneAndUpdate(
-            { id },  // Uses 'id' field from your schema, not MongoDB's '_id'
+        const updatedContest = await Contest.findByIdAndUpdate(
+            id,
             { header, code, explanation, image, category },
             { new: true }
         );
@@ -59,7 +58,7 @@ export const deleteContest = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const deletedContest = await Contest.findOneAndDelete({ id }); // Uses 'id' field
+        const deletedContest = await Contest.findByIdAndDelete(id);
 
         if (!deletedContest) {
             return res.status(404).json({ error: "Contest not found" });
