@@ -52,7 +52,7 @@ function Commentbox() {
     // Toggle between showing more and fewer comments
     const toggleShowMore = () => {
         setShowMore(!showMore);
-        setVisibleComments(showMore ? comments.length : 2);
+        setVisibleComments(showMore ? comments.length : 0);
     };
 
     return (

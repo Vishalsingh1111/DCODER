@@ -20,10 +20,10 @@ const ContestDetail = () => {
     const [thumbsUpCount, setThumbsUpCount] = useState(0);
     const [thumbsDownCount, setThumbsDownCount] = useState(0);
     const [visibleCount, setVisibleCount] = useState(4);
-    const [showCode, setShowCode] = useState(false);
+    const [showCodes, setShowCodes] = useState({ showCode1: false, showCode2: false, showCode3: false });
 
     useEffect(() => {
-        const getcontestData = async () => {
+        const getContestData = async () => {
             try {
                 const res = await axios.get(`${baseUrl}/contestsol`);
                 const foundItem = res.data.find(item => item.id.toString() === id);
@@ -35,7 +35,7 @@ const ContestDetail = () => {
                 setLoading(false);
             }
         };
-        getcontestData();
+        getContestData();
     }, [id]);
 
     if (loading) {
@@ -49,6 +49,10 @@ const ContestDetail = () => {
             </>
         );
     }
+
+    const toggleCode = (codeKey) => {
+        setShowCodes(prevState => ({ ...prevState, [codeKey]: !prevState[codeKey] }));
+    };
 
     const increaseThumbsUp = () => setThumbsUpCount(thumbsUpCount + 1);
     const increaseThumbsDown = () => setThumbsDownCount(thumbsDownCount + 1);
@@ -78,80 +82,88 @@ const ContestDetail = () => {
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-col gap-10 '>
                     <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1030px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+
+                        <div className="flex flex-col items-left bg-gray-200 p-5 mb-5 border-l-2 border-l-red-500">
+                            <h2 className="text-xl text-red-500 font-semibold item-left mb-2">Disclaimer !</h2>
+                            <p className="text-lg">Do it youself, This is for reference or learning don't copy & past. </p>
+                        </div>
+
+
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
 
+                        {/* Explanation 1 */}
                         {item.explanation && (
                             <div className="mt-4">
-                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <span className="text-xl dark:text-white font-semibold text-gray-600">Problem Statements:</span>
                                 <ul className="py-2 list-disc ml-4">
                                     {item.explanation.split('\n').map((line, index) => (
-                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                        <li className="py-1 text-lg" key={index}>{line.trim()}</li>
                                     ))}
                                 </ul>
                             </div>
                         )}
-
+                        {/* Code 1 */}
                         {item.code && (
                             <div className="my-5 mx-auto text-left">
                                 <button
-                                    onClick={() => setShowCode(!showCode)}
+                                    onClick={() => toggleCode('showCode1')}
                                     className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
                                 >
-                                    {showCode ? "Hide Code" : "Show Code"}
+                                    {showCodes.showCode1 ? "Hide Code" : "Show Code"}
                                 </button>
-                                {showCode && <CodeSnippet codeString={item.code} />}
+                                {showCodes.showCode1 && <CodeSnippet codeString={item.code} />}
                             </div>
                         )}
 
+                        {/* Explanation 2 */}
                         {item.explanation2 && (
                             <div className="mt-4">
-                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <span className="text-xl dark:text-white font-semibold text-gray-600">Problem Statement:</span>
                                 <ul className="py-2 list-disc ml-4">
-                                    {item.explanation.split('\n').map((line, index) => (
-                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                    {item.explanation2.split('\n').map((line, index) => (
+                                        <li className="py-1 text-lg" key={index}>{line.trim()}</li>
                                     ))}
                                 </ul>
                             </div>
                         )}
-
+                        {/* Code 2 */}
                         {item.code2 && (
                             <div className="my-5 mx-auto text-left">
                                 <button
-                                    onClick={() => setShowCode(!showCode)}
+                                    onClick={() => toggleCode('showCode2')}
                                     className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
                                 >
-                                    {showCode ? "Hide Code" : "Show Code"}
+                                    {showCodes.showCode2 ? "Hide Code" : "Show Code"}
                                 </button>
-                                {showCode && <CodeSnippet codeString={item.code} />}
+                                {showCodes.showCode2 && <CodeSnippet codeString={item.code2} />}
                             </div>
                         )}
 
+                        {/* Explanation 3 */}
                         {item.explanation3 && (
                             <div className="mt-4">
                                 <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
                                 <ul className="py-2 list-disc ml-4">
-                                    {item.explanation.split('\n').map((line, index) => (
+                                    {item.explanation3.split('\n').map((line, index) => (
                                         <li className="py-1 text-xl" key={index}>{line.trim()}</li>
                                     ))}
                                 </ul>
                             </div>
                         )}
-
+                        {/* Code 3 */}
                         {item.code3 && (
                             <div className="my-5 mx-auto text-left">
                                 <button
-                                    onClick={() => setShowCode(!showCode)}
+                                    onClick={() => toggleCode('showCode3')}
                                     className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
                                 >
-                                    {showCode ? "Hide Code" : "Show Code"}
+                                    {showCodes.showCode3 ? "Hide Code" : "Show Code"}
                                 </button>
-                                {showCode && <CodeSnippet codeString={item.code} />}
+                                {showCodes.showCode3 && <CodeSnippet codeString={item.code3} />}
                             </div>
                         )}
-
-
 
                         <div className="flex mt-4 items-center text-xl">
                             <button onClick={increaseThumbsUp} className="flex items-center text-gray-700 dark:text-gray-300 mr-4">
@@ -164,60 +176,54 @@ const ContestDetail = () => {
                     </div>
 
                     <div className=' lg:space-x-8 flex flex-col lg:flex-row mt-5 mx-auto justify-center'>
-
-
                         <iframe
                             width="320"
                             height="200"
-                            src="https://www.youtube.com/embed/i2M87L2U028"
+                            src={item.image}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             title="YouTube Video"
-                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
+                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow shadow-black/40 rounded-lg'
                         ></iframe>
-
                     </div>
                 </div>
 
                 <div className="pt-[80px] mx-auto max-w-full md:px-20 px-4 py-5">
                     <h1 className="text-red-500 mb-8 text-4xl font-semibold text-center">Recent Uploaded</h1>
-                    <div className="md:sticky md:top-20 ">
-                        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10 ">
+                    <div className="md:sticky md:top-20">
+                        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
                             {items
                                 .filter(contestItem => contestItem.id.toString() !== id)
                                 .sort((a, b) => new Date(b.date) - new Date(a.date))
                                 .slice(0, visibleCount)
                                 .map(contestItem => (
-                                    <div key={contestItem.id} className=" flex-col border border-t md:shadow-sm md:shadow-black/30 lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 dark:border rounded-md  cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
-                                        <div className="flex-1 text-left" onClick={() => handleCardClick(contestItem.id)}>
-                                            <h3 className="text-lg font-[500] p-8 pb-0">{contestItem.header}</h3>
-                                            <div className=' p-8 pt-0 rounded-xl dark:from-slate-800'>
-                                                <p className="text-sm text-gray-700 dark:text-gray-200 mt-2">{truncateText(contestItem.explanation, 100)}</p>
-
-                                                <p className='inline-block rounded-md text-red-500 mt-3 border p-2 border-red-600 group-hover:bg-red-500 group-hover:text-white transition duration-200'>
-                                                    Read more
-                                                </p></div>
+                                    <div key={contestItem.id} className="flex-col border border-t md:shadow-sm md:shadow-black/30 lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
+                                        <div className="flex w-full p-5">
+                                            <img src={contestItem.img} alt="" className="w-[80px] md:w-[200px] h-[80px] md:h-[120px] object-cover rounded-lg" />
+                                            <div className="ml-5">
+                                                <h2 onClick={() => handleCardClick(contestItem.id)} className="text-xl dark:text-white font-semibold mb-4 sm:mb-0 hover:text-blue-500 transition duration-300">
+                                                    {contestItem.header}
+                                                </h2>
+                                                <p className="text-gray-600 dark:text-gray-400">{truncateText(contestItem.description, 100)}</p>
+                                            </div>
                                         </div>
                                     </div>
-
-
                                 ))}
                         </div>
+                        {visibleCount < items.length && (
+                            <div className="text-center mt-8">
+                                <button onClick={handleShowMore} className="text-blue-500 hover:underline">Show More</button>
+                                {visibleCount === items.length && (
+                                    <button onClick={handleHide} className="text-blue-500 hover:underline">Hide</button>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
-            </div>
-            <div className="text-center mt-6">
-                {visibleCount < items.length ? (
-                    <button onClick={handleShowMore} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Show More</button>
-                ) : (
-                    <button onClick={handleHide} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Close</button>
-                )}
-            </div>
 
-            <div className="flex justify-center mt-4">
                 <Commentbox />
-            </div>
 
+            </div>
             <Footer />
         </>
     );
