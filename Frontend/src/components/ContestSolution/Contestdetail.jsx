@@ -82,6 +82,17 @@ const ContestDetail = () => {
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
 
+                        {item.explanation && (
+                            <div className="mt-4">
+                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <ul className="py-2 list-disc ml-4">
+                                    {item.explanation.split('\n').map((line, index) => (
+                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
                         {item.code && (
                             <div className="my-5 mx-auto text-left">
                                 <button
@@ -94,7 +105,7 @@ const ContestDetail = () => {
                             </div>
                         )}
 
-                        {item.explanation && (
+                        {item.explanation2 && (
                             <div className="mt-4">
                                 <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
                                 <ul className="py-2 list-disc ml-4">
@@ -104,6 +115,43 @@ const ContestDetail = () => {
                                 </ul>
                             </div>
                         )}
+
+                        {item.code2 && (
+                            <div className="my-5 mx-auto text-left">
+                                <button
+                                    onClick={() => setShowCode(!showCode)}
+                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                >
+                                    {showCode ? "Hide Code" : "Show Code"}
+                                </button>
+                                {showCode && <CodeSnippet codeString={item.code} />}
+                            </div>
+                        )}
+
+                        {item.explanation3 && (
+                            <div className="mt-4">
+                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <ul className="py-2 list-disc ml-4">
+                                    {item.explanation.split('\n').map((line, index) => (
+                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {item.code3 && (
+                            <div className="my-5 mx-auto text-left">
+                                <button
+                                    onClick={() => setShowCode(!showCode)}
+                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                >
+                                    {showCode ? "Hide Code" : "Show Code"}
+                                </button>
+                                {showCode && <CodeSnippet codeString={item.code} />}
+                            </div>
+                        )}
+
+
 
                         <div className="flex mt-4 items-center text-xl">
                             <button onClick={increaseThumbsUp} className="flex items-center text-gray-700 dark:text-gray-300 mr-4">

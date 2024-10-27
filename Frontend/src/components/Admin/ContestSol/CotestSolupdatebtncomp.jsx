@@ -8,6 +8,10 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
         header: note.header,
         code: note.code,
         explanation: note.explanation,
+        code2: note.code2,
+        explanation2: note.explanation2,
+        code3: note.code3,
+        explanation3: note.explanation3,
         category: note.category,
         image: note.image
     });
@@ -51,7 +55,7 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
                                             {key.replace(/([A-Z])/g, ' $1').toLowerCase()}:
                                         </td>
                                         <td className="border border-gray-300 px-4 py-2">
-                                            {key === 'code' || key === 'explanation' ? (
+                                            {key === 'code' || key === 'code2' || key === 'code3' || key === 'explanation2' || key === 'explanation3' || key === 'explanation' ? (
                                                 <textarea
                                                     name={key}
                                                     value={updatedNoteData[key]}
