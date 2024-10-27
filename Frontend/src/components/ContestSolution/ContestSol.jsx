@@ -32,20 +32,22 @@ const Contest = () => {
 
     return (
         <>
-            <Breadcrumb />
-            {loading ? (
-                <Skeleton1 />
-            ) : (
-                <div className="flex flex-wrap justify-center max-w-screen-2xl mx-auto md:px-20 px-4 py-5 pt-10">
-                    {data.length > 0 ? (
-                        data.map((item) => (
-                            <ContestCard key={item.id} item={item} onClick={() => handleCardClick(item.id.toString())} />
-                        ))
-                    ) : (
-                        <p>No contests found.</p>
-                    )}
-                </div>
-            )}
+            <div className="min-h-screen">
+                <Breadcrumb />
+                {loading ? (
+                    <Skeleton1 />
+                ) : (
+                    <div className="flex flex-wrap justify-center max-w-screen-2xl mx-auto md:px-20 px-4 py-5 pt-10">
+                        {data.length > 0 ? (
+                            data.map((item) => (
+                                <ContestCard key={item.id} item={item} onClick={() => handleCardClick(item.id.toString())} />
+                            ))
+                        ) : (
+                            <p>No contests found.</p>
+                        )}
+                    </div>
+                )}
+            </div>
         </>
     );
 };
