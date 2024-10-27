@@ -90,6 +90,7 @@
 
 // export default UpdateNotecontentForm;
 
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { baseUrl } from '../../../Baseurl';
@@ -98,15 +99,29 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
     const [updatedNoteData, setUpdatedNoteData] = useState({
         id: note.id,
         header: note.header,
-        code: note.code,
-        explanation: note.explanation,
         category: note.category,
-        image: note.image
+        image: note.image,
+        code1: note.code,
+        explanation1: note.explanation,
+        code2: note.code2,
+        explanation2: note.explanation2,
+        code3: note.code3,
+        explanation3: note.explanation3,
+        code4: note.code4,
+        explanation4: note.explanation4,
+        code5: note.code5,
+        explanation5: note.explanation5,
+        code6: note.code6,
+        explanation6: note.explanation6,
+        code7: note.code7,
+        explanation7: note.explanation7,
+        code8: note.code8,
+        explanation8: note.explanation8,
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setUpdatedNoteData((prevData) => ({
+        setUpdatedNoteData(prevData => ({
             ...prevData,
             [name]: value
         }));
@@ -116,7 +131,7 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
         e.preventDefault();
         try {
             await axios.put(`${baseUrl}/contestsol/${note._id}`, updatedNoteData);
-            onUpdateSuccess(updatedNoteData); // Trigger success callback with updated data
+            onUpdateSuccess(updatedNoteData);
             console.log('Note updated successfully!');
         } catch (error) {
             console.error('Error updating note:', error);
@@ -143,7 +158,7 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
                                             {key.replace(/([A-Z])/g, ' $1').toLowerCase()}:
                                         </td>
                                         <td className="border border-gray-300 px-4 py-2">
-                                            {['code', 'explanation'].includes(key) ? (
+                                            {key.startsWith('code') || key.startsWith('explanation') ? (
                                                 <textarea
                                                     name={key}
                                                     value={updatedNoteData[key]}
@@ -167,17 +182,10 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
                         </table>
                     </div>
                     <div className="flex justify-end mt-4">
-                        <button
-                            type="submit"
-                            className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white font-bold py-2 px-4 rounded mr-2 focus:outline-none focus:shadow-outline"
-                        >
+                        <button type="submit" className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white font-bold py-2 px-4 rounded mr-2 focus:outline-none focus:shadow-outline">
                             Save
                         </button>
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        >
+                        <button type="button" onClick={onClose} className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Cancel
                         </button>
                     </div>

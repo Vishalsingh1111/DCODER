@@ -122,6 +122,7 @@
 
 // export default NoteList;
 
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Techblogupdatebtncomp from './CotestSolupdatebtncomp';
@@ -129,16 +130,15 @@ import { baseUrl } from '../../../Baseurl';
 
 const NoteList = () => {
     const [notes, setNotes] = useState([]);
-    const [updatingNote, setUpdatingNote] = useState(null); // Note to be updated
-    const [isModalOpen, setIsModalOpen] = useState(false); // Update modal state
-    const [deleteNoteId, setDeleteNoteId] = useState(null); // ID of note to delete
+    const [updatingNote, setUpdatingNote] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [deleteNoteId, setDeleteNoteId] = useState(null);
 
-    // Fetch notes on component mount
     useEffect(() => {
         const fetchNotes = async () => {
             try {
                 const response = await axios.get(`${baseUrl}/contestsol`);
-                setNotes(response.data); // Update state with notes data
+                setNotes(response.data);
             } catch (error) {
                 console.error('Error fetching notes:', error);
             }
@@ -147,20 +147,17 @@ const NoteList = () => {
         fetchNotes();
     }, []);
 
-    // Open the update modal with the selected note
     const handleUpdate = (note) => {
         setUpdatingNote(note);
         setIsModalOpen(true);
     };
 
-    // Handle successful update
     const handleUpdateSuccess = (updatedNoteData) => {
         setNotes(notes.map(note => note._id === updatedNoteData._id ? updatedNoteData : note));
         setIsModalOpen(false);
         console.log('Note updated successfully!');
     };
 
-    // Delete a note by ID
     const handleDelete = async (id) => {
         try {
             await axios.delete(`${baseUrl}/contestsol/${id}`);
@@ -172,32 +169,44 @@ const NoteList = () => {
         setDeleteNoteId(null);
     };
 
-    // Open delete confirmation modal
     const openDeleteModal = (id) => {
         setDeleteNoteId(id);
     };
 
-    // Close the update modal
     const closeModal = () => {
         setIsModalOpen(false);
         setUpdatingNote(null);
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
             <h2 className="text-2xl font-bold mb-4">Available Contents</h2>
-            {notes.length > 0 ? (
+            {notes && notes.length > 0 ? (
                 <div className="overflow-x-auto">
                     <table className="table-auto border-collapse border border-gray-300 w-full">
                         <thead>
                             <tr className="bg-gray-100">
                                 <th className="border border-gray-300 px-4 py-2">ID</th>
                                 <th className="border border-gray-300 px-4 py-2">Header</th>
-                                <th className="border border-gray-300 px-4 py-2">Code</th>
-                                <th className="border border-gray-300 px-4 py-2">Explanation</th>
+                                <th className="border border-gray-300 px-4 py-2">Code </th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation </th>
+                                <th className="border border-gray-300 px-4 py-2">Code 2</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 2</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 3</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 3</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 4</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 4</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 5</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 5</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 6</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 6</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 7</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 7</th>
+                                <th className="border border-gray-300 px-4 py-2">Code 8</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation 8</th>
                                 <th className="border border-gray-300 px-4 py-2">Category</th>
                                 <th className="border border-gray-300 px-4 py-2">Image</th>
-                                <th className="border border-gray-300 px-4 py-2">Actions</th>
+                                <th className="border border-gray-300 px-4 py-2">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -207,21 +216,25 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.header}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.code}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code2}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation2}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code3}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation3}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code4}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation4}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code5}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation5}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code6}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation6}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code7}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation7}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code8}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation8}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.category}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.image}</td>
-                                    <td className="border border-gray-300 px-4 py-2 flex justify-center space-x-4">
-                                        <button
-                                            className="bg-gray-500 text-white font-bold py-1 px-2 rounded shadow-lg hover:shadow-gray-500/30"
-                                            onClick={() => handleUpdate(note)}
-                                        >
-                                            Update
-                                        </button>
-                                        <button
-                                            className="bg-red-500 text-white font-bold py-1 px-2 rounded shadow-lg hover:shadow-red-500/30"
-                                            onClick={() => openDeleteModal(note._id)}
-                                        >
-                                            Delete
-                                        </button>
+                                    <td className="border-t border-gray-300 px-4 py-2 flex">
+                                        <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white font-bold py-1 px-2 rounded mr-4" onClick={() => handleUpdate(note)}>Update</button>
+                                        <button className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white font-bold py-1 px-2 rounded" onClick={() => openDeleteModal(note._id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}
@@ -232,33 +245,21 @@ const NoteList = () => {
                 <p className="text-center mt-4">No notes found.</p>
             )}
 
-            {/* Modal for update */}
             {isModalOpen && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded shadow-lg">
+                    <div className="bg-white p-8 rounded shadow-lg flex flex-col">
                         <Techblogupdatebtncomp note={updatingNote} onUpdateSuccess={handleUpdateSuccess} onClose={closeModal} />
                     </div>
                 </div>
             )}
 
-            {/* Modal for delete confirmation */}
             {deleteNoteId && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded shadow-lg text-center">
-                        <p className="text-lg font-semibold mb-4">Are you sure you want to delete this note?</p>
-                        <div className="flex justify-around">
-                            <button
-                                className="bg-red-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:shadow-red-500/30"
-                                onClick={() => handleDelete(deleteNoteId)}
-                            >
-                                Delete
-                            </button>
-                            <button
-                                className="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded shadow-lg hover:shadow-gray-500/30"
-                                onClick={() => setDeleteNoteId(null)}
-                            >
-                                Cancel
-                            </button>
+                    <div className="bg-white p-8 rounded shadow-lg flex flex-col">
+                        <p className="text-lg font-semibold mb-4">Are you sure you want to delete?</p>
+                        <div className="flex justify-between">
+                            <button className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white font-bold py-2 px-4 rounded" onClick={() => handleDelete(deleteNoteId)}>Delete</button>
+                            <button className="bg-gray-300 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => setDeleteNoteId(null)}>Cancel</button>
                         </div>
                     </div>
                 </div>

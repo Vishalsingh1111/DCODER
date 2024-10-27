@@ -48,20 +48,6 @@
 //                 header: "",
 //                 code: "",
 //                 explanation: "",
-//                 code2: "",
-//                 explanation2: "",
-//                 code3: "",
-//                 explanation3: "",
-//                 code4: "",
-//                 explanation4: "",
-//                 code5: "",
-//                 explanation5: "",
-//                 code6: "",
-//                 explanation6: "",
-//                 code7: "",
-//                 explanation7: "",
-//                 code8: "",
-//                 explanation8: "",
 //                 image: "",
 //                 category: ""
 //             });
@@ -263,6 +249,7 @@
 
 // export default FormElementInput;
 
+
 import React, { useState } from "react";
 import axios from "axios";
 import { baseUrl } from "../../../Baseurl";
@@ -271,7 +258,22 @@ const FormElementInput = () => {
     const [formData, setFormData] = useState({
         id: "",
         header: "",
-        codes: [{ code: "", explanation: "" }], // Manage multiple code-explanation pairs
+        code: "",
+        explanation: "",
+        code2: "",
+        explanation2: "",
+        code3: "",
+        explanation3: "",
+        code4: "",
+        explanation4: "",
+        code5: "",
+        explanation5: "",
+        code6: "",
+        explanation6: "",
+        code7: "",
+        explanation7: "",
+        code8: "",
+        explanation8: "",
         image: "",
         category: ""
     });
@@ -283,25 +285,17 @@ const FormElementInput = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleCodeExplanationChange = (index, field, value) => {
-        const updatedCodes = formData.codes.map((pair, idx) =>
-            idx === index ? { ...pair, [field]: value } : pair
-        );
-        setFormData({ ...formData, codes: updatedCodes });
-    };
-
-    const addCodeExplanationPair = () => {
-        setFormData({
-            ...formData,
-            codes: [...formData.codes, { code: "", explanation: "" }]
-        });
-    };
-
     const validateForm = () => {
-        const requiredFields = ["id", "header", "codes", "image", "category"];
+        const requiredFields = [
+            "id", "header", "code", "image", "category",
+            "code2", "explanation2", "code3", "explanation3",
+            "code4", "explanation4", "code5", "explanation5",
+            "code6", "explanation6", "code7", "explanation7",
+            "code8", "explanation8"
+        ];
         let errors = {};
         for (let field of requiredFields) {
-            if (!formData[field] || (field === "codes" && !formData.codes[0].code)) {
+            if (!formData[field]) {
                 errors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
             }
         }
@@ -311,7 +305,10 @@ const FormElementInput = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!validateForm()) return;
+
+        if (!validateForm()) {
+            return;
+        }
 
         try {
             await axios.post(`${baseUrl}/contestsol`, formData, {
@@ -321,7 +318,22 @@ const FormElementInput = () => {
             setFormData({
                 id: "",
                 header: "",
-                codes: [{ code: "", explanation: "" }],
+                code: "",
+                explanation: "",
+                code2: "",
+                explanation2: "",
+                code3: "",
+                explanation3: "",
+                code4: "",
+                explanation4: "",
+                code5: "",
+                explanation5: "",
+                code6: "",
+                explanation6: "",
+                code7: "",
+                explanation7: "",
+                code8: "",
+                explanation8: "",
                 image: "",
                 category: ""
             });
@@ -340,81 +352,70 @@ const FormElementInput = () => {
             <div className="container mx-auto border-2 p-10 rounded-xl">
                 <form onSubmit={handleSubmit} className="flex flex-wrap -mx-4">
                     <DefaultColumn>
-                        <DefaultInput
-                            name="id"
-                            label="Enter Unique ID"
+                        <DefaultInput1
                             value={formData.id}
                             onChange={handleChange}
                             error={validationErrors.id}
                         />
                     </DefaultColumn>
                     <DefaultColumn>
-                        <DefaultInput
-                            name="header"
-                            label="Enter Header"
+                        <DefaultInput2
                             value={formData.header}
                             onChange={handleChange}
                             error={validationErrors.header}
                         />
                     </DefaultColumn>
                     <DefaultColumn>
-                        <DefaultInput
-                            name="category"
-                            label="Enter Category"
+                        <DefaultInput3
+                            value={formData.code}
+                            onChange={handleChange}
+                            error={validationErrors.code}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput4
+                            value={formData.explanation}
+                            onChange={handleChange}
+                            error={validationErrors.explanation}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput5
                             value={formData.category}
                             onChange={handleChange}
                             error={validationErrors.category}
                         />
                     </DefaultColumn>
+
                     <DefaultColumn>
-                        <DefaultInput
-                            name="image"
-                            label="Enter Image Link"
+                        <DefaultInput6
                             value={formData.image}
                             onChange={handleChange}
                             error={validationErrors.image}
                         />
                     </DefaultColumn>
 
-                    {formData.codes.map((pair, index) => (
-                        <React.Fragment key={index}>
-                            <DefaultColumn>
-                                <DefaultInput
-                                    name="code"
-                                    label={`Enter Code ${index + 1}`}
-                                    value={pair.code}
-                                    onChange={(e) =>
-                                        handleCodeExplanationChange(index, "code", e.target.value)
-                                    }
-                                    error={validationErrors[`code${index}`]}
+                    {Array.from({ length: 8 }, (_, index) => (
+                        <>
+                            <DefaultColumn key={`code${index + 2}`}>
+                                <DefaultInput3
+                                    value={formData[`code${index + 2}`]}
+                                    onChange={handleChange}
+                                    error={validationErrors[`code${index + 2}`]}
                                 />
                             </DefaultColumn>
-                            <DefaultColumn>
-                                <DefaultInput
-                                    name="explanation"
-                                    label={`Enter Explanation ${index + 1}`}
-                                    value={pair.explanation}
-                                    onChange={(e) =>
-                                        handleCodeExplanationChange(index, "explanation", e.target.value)
-                                    }
-                                    error={validationErrors[`explanation${index}`]}
+                            <DefaultColumn key={`explanation${index + 2}`}>
+                                <DefaultInput4
+                                    value={formData[`explanation${index + 2}`]}
+                                    onChange={handleChange}
+                                    error={validationErrors[`explanation${index + 2}`]}
                                 />
                             </DefaultColumn>
-                        </React.Fragment>
+                        </>
                     ))}
 
                     <div className="w-full px-4 text-center">
-                        <button
-                            type="button"
-                            onClick={addCodeExplanationPair}
-                            className="bg-blue-500 shadow-lg hover:shadow-blue-500/30 shadow-black/30 text-white py-2 px-5 rounded-md mb-4"
-                        >
-                            Add Code/Explanation Pair
-                        </button>
-                        <button
-                            type="submit"
-                            className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white py-3 px-10 rounded-md"
-                        >
+                        <button type="submit" className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white py-3 px-10 rounded-md">
                             Submit
                         </button>
                     </div>
@@ -424,28 +425,94 @@ const FormElementInput = () => {
     );
 };
 
+// DefaultColumn Component
 const DefaultColumn = ({ children }) => (
-    <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-        <div className="mb-8">{children}</div>
+    <div className="w-full md:w-1/2 px-4 mb-4">
+        {children}
     </div>
 );
 
-const DefaultInput = ({ name, label, value, onChange, error }) => (
-    <>
-        <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
-            {label}
-            <span className="text-red-500">*</span>
-        </label>
-        <textarea
-            name={name}
+// DefaultInput Components
+const DefaultInput1 = ({ value, onChange, error }) => (
+    <div>
+        <input
+            type="text"
+            name="id"
+            placeholder="Enter ID"
             value={value}
             onChange={onChange}
-            placeholder={label}
-            rows={4}
-            className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-red-500 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-900 resize-none ${error ? 'border-red-500' : ''}`}
+            className="w-full border p-2 rounded"
         />
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-    </>
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput2 = ({ value, onChange, error }) => (
+    <div>
+        <input
+            type="text"
+            name="header"
+            placeholder="Enter Header"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput3 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput4 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput5 = ({ value, onChange, error }) => (
+    <div>
+        <input
+            type="text"
+            name="category"
+            placeholder="Enter Category"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput6 = ({ value, onChange, error }) => (
+    <div>
+        <input
+            type="text"
+            name="image"
+            placeholder="Enter Image URL"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
 );
 
 export default FormElementInput;
