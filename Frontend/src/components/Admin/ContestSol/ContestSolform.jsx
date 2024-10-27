@@ -287,11 +287,7 @@ const FormElementInput = () => {
 
     const validateForm = () => {
         const requiredFields = [
-            "id", "header", "code", "image", "category",
-            "code2", "explanation2", "code3", "explanation3",
-            "code4", "explanation4", "code5", "explanation5",
-            "code6", "explanation6", "code7", "explanation7",
-            "code8", "explanation8"
+            "id", "header", "category",
         ];
         let errors = {};
         for (let field of requiredFields) {
@@ -395,24 +391,110 @@ const FormElementInput = () => {
                         />
                     </DefaultColumn>
 
-                    {Array.from({ length: 8 }, (_, index) => (
-                        <>
-                            <DefaultColumn key={`code${index + 2}`}>
-                                <DefaultInput3
-                                    value={formData[`code${index + 2}`]}
-                                    onChange={handleChange}
-                                    error={validationErrors[`code${index + 2}`]}
-                                />
-                            </DefaultColumn>
-                            <DefaultColumn key={`explanation${index + 2}`}>
-                                <DefaultInput4
-                                    value={formData[`explanation${index + 2}`]}
-                                    onChange={handleChange}
-                                    error={validationErrors[`explanation${index + 2}`]}
-                                />
-                            </DefaultColumn>
-                        </>
-                    ))}
+                    <DefaultColumn>
+                        <DefaultInput7
+                            value={formData.code2}
+                            onChange={handleChange}
+                            error={validationErrors.code2}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput8
+                            value={formData.explanation2}
+                            onChange={handleChange}
+                            error={validationErrors.explanation2}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput9
+                            value={formData.code3}
+                            onChange={handleChange}
+                            error={validationErrors.code3}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput10
+                            value={formData.explanation3}
+                            onChange={handleChange}
+                            error={validationErrors.explanation3}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput11
+                            value={formData.code4}
+                            onChange={handleChange}
+                            error={validationErrors.code4}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput12
+                            value={formData.explanation4}
+                            onChange={handleChange}
+                            error={validationErrors.explanation4}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput13
+                            value={formData.code5}
+                            onChange={handleChange}
+                            error={validationErrors.code5}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput14
+                            value={formData.explanation5}
+                            onChange={handleChange}
+                            error={validationErrors.explanation5}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput15
+                            value={formData.code6}
+                            onChange={handleChange}
+                            error={validationErrors.code6}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput16
+                            value={formData.explanation6}
+                            onChange={handleChange}
+                            error={validationErrors.explanation6}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput17
+                            value={formData.code7}
+                            onChange={handleChange}
+                            error={validationErrors.code7}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput18
+                            value={formData.explanation7}
+                            onChange={handleChange}
+                            error={validationErrors.explanation7}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput19
+                            value={formData.code8}
+                            onChange={handleChange}
+                            error={validationErrors.code8}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput20
+                            value={formData.explanation8}
+                            onChange={handleChange}
+                            error={validationErrors.explanation8}
+                        />
+                    </DefaultColumn>
 
                     <div className="w-full px-4 text-center">
                         <button type="submit" className="bg-red-500 shadow-lg hover:shadow-red-500/30 shadow-black/30 text-white py-3 px-10 rounded-md">
@@ -510,6 +592,188 @@ const DefaultInput6 = ({ value, onChange, error }) => (
             value={value}
             onChange={onChange}
             className="w-full border p-2 rounded"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput7 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code2"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput8 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation2"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput9 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code3"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput10 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation3"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput11 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code4"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput12 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation4"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput13 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code5"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput14 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation5"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput15 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code6"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput16 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation6"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput17 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code7"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput18 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation7"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput19 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="code8"
+            placeholder="Enter Code"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
+        />
+        {error && <p className="text-red-500">{error}</p>}
+    </div>
+);
+
+const DefaultInput20 = ({ value, onChange, error }) => (
+    <div>
+        <textarea
+            name="explanation8"
+            placeholder="Enter Explanation"
+            value={value}
+            onChange={onChange}
+            className="w-full border p-2 rounded h-24"
         />
         {error && <p className="text-red-500">{error}</p>}
     </div>
