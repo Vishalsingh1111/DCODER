@@ -85,8 +85,8 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.code2}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation2}</td>
-                                    <td className="border border-gray-300 px-4 py-2">{note.code2}</td>
-                                    <td className="border border-gray-300 px-4 py-2">{note.explanation2}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code3}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation3}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.category}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.image}</td>
 
