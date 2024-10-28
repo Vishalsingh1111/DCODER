@@ -14,18 +14,20 @@ export const getContest = async (req, res) => {
 // Create a new contest
 export const createContest = async (req, res) => {
     try {
-        const { header, code, image, explanation, code2,
-            explanation2,
-            code3,
-            explanation3, category } = req.body;
+        const { header, code, image, explanation,
+            // code2,
+            // explanation2,
+            // code3,
+            // explanation3,
+            category } = req.body;
         const newContest = new Contest({
             header,
             code,
             explanation,
-            code2,
-            explanation2,
-            code3,
-            explanation3,
+            // code2,
+            // explanation2,
+            // code3,
+            // explanation3,
             category,
             image,
         });
