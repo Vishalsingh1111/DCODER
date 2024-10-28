@@ -188,39 +188,6 @@ const ContestDetail = () => {
                     </div>
                 </div>
 
-                <div className="pt-[80px] mx-auto max-w-full md:px-20 px-4 py-5">
-                    <h1 className="text-red-500 mb-8 text-4xl font-semibold text-center">Recent Uploaded</h1>
-                    <div className="md:sticky md:top-20">
-                        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10">
-                            {items
-                                .filter(contestItem => contestItem.id.toString() !== id)
-                                .sort((a, b) => new Date(b.date) - new Date(a.date))
-                                .slice(0, visibleCount)
-                                .map(contestItem => (
-                                    <div key={contestItem.id} className="flex-col border border-t md:shadow-sm md:shadow-black/30 lg:flex-row items-center justify-between bg-[rgb(255,255,255)] dark:border-gray-600 group hover:border hover:border-gray-300 rounded-xl dark:bg-slate-900 cursor-pointer space-y-4 lg:space-y-0 lg:space-x-10">
-                                        <div className="flex w-full p-5">
-                                            <img src={contestItem.img} alt="" className="w-[80px] md:w-[200px] h-[80px] md:h-[120px] object-cover rounded-lg" />
-                                            <div className="ml-5">
-                                                <h2 onClick={() => handleCardClick(contestItem.id)} className="text-xl dark:text-white font-semibold mb-4 sm:mb-0 hover:text-blue-500 transition duration-300">
-                                                    {contestItem.header}
-                                                </h2>
-                                                <p className="text-gray-600 dark:text-gray-400">{truncateText(contestItem.description, 100)}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                        </div>
-                        {visibleCount < items.length && (
-                            <div className="text-center mt-8">
-                                <button onClick={handleShowMore} className="text-blue-500 hover:underline">Show More</button>
-                                {visibleCount === items.length && (
-                                    <button onClick={handleHide} className="text-blue-500 hover:underline">Hide</button>
-                                )}
-                            </div>
-                        )}
-                    </div>
-                </div>
-
                 <Commentbox />
 
             </div>
