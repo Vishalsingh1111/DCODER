@@ -142,24 +142,23 @@ const DbmsContentFetch = () => {
                     </div>
                 </div>
 
+
                 {/* Pagination Controls */}
-                <div className="flex justify-center mt-10">
+                <div className="mt-6 flex justify-center space-x-2">
                     <button
-                        className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                        className="px-4 py-2 rounded bg-gray-200 text-black disabled:opacity-50"
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
                     >
-                        {"<<"}
+                        Previous
                     </button>
-
                     {renderPageNumbers()}
-
                     <button
-                        className="px-4 py-2 mx-2 text-white bg-blue-500 rounded hover:bg-blue-700"
+                        className="px-4 py-2 rounded bg-gray-200 text-black disabled:opacity-50"
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
                     >
-                        {">>"}
+                        Next
                     </button>
                 </div>
             </section>

@@ -16,8 +16,8 @@ function Home() {
             <Navbar />
             <Banner />
             <Homecontentcard />
-            <NewsletterSubscription />
             <FAQ />
+            <NewsletterSubscription />
             <PageViewCounter pageId={pageId} />
             <Homepromo />
             <Footer />
