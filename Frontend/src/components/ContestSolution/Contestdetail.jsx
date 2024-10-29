@@ -83,9 +83,9 @@ const ContestDetail = () => {
                 <div className='flex flex-col lg:flex-col gap-10 '>
                     <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1030px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
 
-                        <div className="flex flex-col items-left bg-gray-200 p-5 mb-5 border-l-2 border-l-red-500">
+                        <div className="flex flex-col items-left bg-gray-200 p-5 mb-5 border-l-2 border-l-red-500 dark:bg-slate-800">
                             <h2 className="text-xl text-red-500 font-semibold item-left mb-2">Disclaimer !</h2>
-                            <p className="text-lg">Do it youself, This is for reference or learning don't copy & past. </p>
+                            <p className="text-lg">Do it youself, This is only for reference Don't Copy & Past. </p>
                         </div>
 
 
