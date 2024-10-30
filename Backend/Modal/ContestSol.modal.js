@@ -9,6 +9,10 @@ const ContestSchema = mongoose.Schema({
     explanation2: { type: String, required: false },
     code3: { type: String, required: false },
     explanation3: { type: String, required: false },
+    code4: { type: String, required: false },
+    explanation4: { type: String, required: false },
+    code5: { type: String, required: false },
+    explanation5: { type: String, required: false },
     image: { type: String, required: false },
     category: { type: String, required: true }
 });

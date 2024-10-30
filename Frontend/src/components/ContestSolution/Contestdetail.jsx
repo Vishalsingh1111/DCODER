@@ -20,7 +20,7 @@ const ContestDetail = () => {
     const [thumbsUpCount, setThumbsUpCount] = useState(0);
     const [thumbsDownCount, setThumbsDownCount] = useState(0);
     const [visibleCount, setVisibleCount] = useState(4);
-    const [showCodes, setShowCodes] = useState({ showCode1: false, showCode2: false, showCode3: false });
+    const [showCodes, setShowCodes] = useState({ showCode1: false, showCode2: false, showCode3: false, showCode4: false, showCode5: false });
 
     useEffect(() => {
         const getContestData = async () => {
@@ -162,6 +162,54 @@ const ContestDetail = () => {
                                     {showCodes.showCode3 ? "Hide Code" : "Show Code"}
                                 </button>
                                 {showCodes.showCode3 && <CodeSnippet codeString={item.code3} />}
+                            </div>
+                        )}
+
+                        {/* Explanation 4 */}
+                        {item.explanation4 && (
+                            <div className="mt-4">
+                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <ul className="py-2 list-disc ml-4">
+                                    {item.explanation4.split('\n').map((line, index) => (
+                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {/* Code 4 */}
+                        {item.code4 && (
+                            <div className="my-5 mx-auto text-left">
+                                <button
+                                    onClick={() => toggleCode('showCode4')}
+                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                >
+                                    {showCodes.showCode4 ? "Hide Code" : "Show Code"}
+                                </button>
+                                {showCodes.showCode4 && <CodeSnippet codeString={item.code4} />}
+                            </div>
+                        )}
+
+                        {/* Explanation 5 */}
+                        {item.explanation5 && (
+                            <div className="mt-4">
+                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
+                                <ul className="py-2 list-disc ml-4">
+                                    {item.explanation5.split('\n').map((line, index) => (
+                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {/* Code 5 */}
+                        {item.code5 && (
+                            <div className="my-5 mx-auto text-left">
+                                <button
+                                    onClick={() => toggleCode('showCode5')}
+                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                >
+                                    {showCodes.showCode5 ? "Hide Code" : "Show Code"}
+                                </button>
+                                {showCodes.showCode5 && <CodeSnippet codeString={item.code5} />}
                             </div>
                         )}
 

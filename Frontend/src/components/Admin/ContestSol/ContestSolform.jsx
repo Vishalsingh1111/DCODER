@@ -12,6 +12,10 @@ const FormElementInput = () => {
         explanation2: "",
         code3: "",
         explanation3: "",
+        code4: "",
+        explanation4: "",
+        code5: "",
+        explanation5: "",
         image: "",
         category: ""
     });
@@ -56,6 +60,10 @@ const FormElementInput = () => {
                 explanation2: "",
                 code3: "",
                 explanation3: "",
+                code4: "",
+                explanation4: "",
+                code5: "",
+                explanation5: "",
                 image: "",
                 category: ""
             });
@@ -144,6 +152,36 @@ const FormElementInput = () => {
                             value={formData.explanation3}
                             onChange={handleChange}
                             error={validationErrors.explanation3}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput11
+                            value={formData.code4}
+                            onChange={handleChange}
+                            error={validationErrors.code4}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput12
+                            value={formData.explanation4}
+                            onChange={handleChange}
+                            error={validationErrors.explanation4}
+                        />
+                    </DefaultColumn>
+
+                    <DefaultColumn>
+                        <DefaultInput13
+                            value={formData.code5}
+                            onChange={handleChange}
+                            error={validationErrors.code5}
+                        />
+                    </DefaultColumn>
+                    <DefaultColumn>
+                        <DefaultInput14
+                            value={formData.explanation5}
+                            onChange={handleChange}
+                            error={validationErrors.explanation5}
                         />
                     </DefaultColumn>
 
@@ -324,6 +362,85 @@ const DefaultInput10 = ({ value, onChange, error }) => {
     );
 };
 
+
+const DefaultInput11 = ({ value, onChange, error }) => {
+    return (
+        <>
+            <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Enter Code
+
+            </label>
+            <textarea
+                name="code4"
+                value={value}
+                onChange={onChange}
+                placeholder="Enter code"
+                rows={4}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-red-500 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-900 resize-none ${error ? 'border-red-500' : ''}`}
+            />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </>
+    );
+};
+
+const DefaultInput12 = ({ value, onChange, error }) => {
+    return (
+        <>
+            <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Enter Explanation
+            </label>
+            <textarea
+                name="explanation4"
+                value={value}
+                onChange={onChange}
+                placeholder="Enter explanation"
+                rows={4}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-red-500 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-900 resize-none ${error ? 'border-red-500' : ''}`}
+            />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </>
+    );
+};
+
+
+const DefaultInput13 = ({ value, onChange, error }) => {
+    return (
+        <>
+            <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Enter Code
+
+            </label>
+            <textarea
+                name="code5"
+                value={value}
+                onChange={onChange}
+                placeholder="Enter code"
+                rows={4}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-red-500 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-900 resize-none ${error ? 'border-red-500' : ''}`}
+            />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </>
+    );
+};
+
+const DefaultInput14 = ({ value, onChange, error }) => {
+    return (
+        <>
+            <label className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Enter Explanation
+            </label>
+            <textarea
+                name="explanation5"
+                value={value}
+                onChange={onChange}
+                placeholder="Enter explanation"
+                rows={4}
+                className={`w-full bg-white dark:bg-gray-700 rounded-md border border-gray-300 dark:border-gray-600 py-3 px-4 text-gray-700 dark:text-gray-300 outline-none transition duration-150 ease-in-out focus:border-red-500 dark:focus:border-red-400 focus:ring focus:ring-red-200 dark:focus:ring-red-900 resize-none ${error ? 'border-red-500' : ''}`}
+            />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+        </>
+    );
+};
 
 const DefaultInput5 = ({ value, onChange, error }) => {
     return (

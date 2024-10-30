@@ -70,6 +70,10 @@ const NoteList = () => {
                                 <th className="border border-gray-300 px-4 py-2">Explanation</th>
                                 <th className="border border-gray-300 px-4 py-2">Code</th>
                                 <th className="border border-gray-300 px-4 py-2">Explanation</th>
+                                <th className="border border-gray-300 px-4 py-2">Code</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation</th>
+                                <th className="border border-gray-300 px-4 py-2">Code</th>
+                                <th className="border border-gray-300 px-4 py-2">Explanation</th>
                                 <th className="border border-gray-300 px-4 py-2">Category</th>
                                 <th className="border border-gray-300 px-4 py-2">Video Link </th>
                                 <th className="border border-gray-300 px-4 py-2">Action</th>
@@ -87,6 +91,10 @@ const NoteList = () => {
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation2}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.code3}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.explanation3}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code4}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation4}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.code5}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{note.explanation5}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.category}</td>
                                     <td className="border border-gray-300 px-4 py-2">{note.image}</td>
 

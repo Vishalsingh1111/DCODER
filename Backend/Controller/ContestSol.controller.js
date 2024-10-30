@@ -19,6 +19,10 @@ export const createContest = async (req, res) => {
             explanation2,
             code3,
             explanation3,
+            code4,
+            explanation4,
+            code5,
+            explanation5,
             category } = req.body;
         const newContest = new Contest({
             id, header,
@@ -28,6 +32,10 @@ export const createContest = async (req, res) => {
             explanation2,
             code3,
             explanation3,
+            code4,
+            explanation4,
+            code5,
+            explanation5,
             category,
             image,
         });
@@ -45,7 +53,10 @@ export const updateContest = async (req, res) => {
     const { header, code, explanation, code2,
         explanation2,
         code3,
-        explanation3, image, category } = req.body;
+        explanation3, code4,
+        explanation4,
+        code5,
+        explanation5, image, category } = req.body;
 
     try {
         const updatedContest = await Contest.findByIdAndUpdate(
@@ -54,7 +65,10 @@ export const updateContest = async (req, res) => {
                 header, code, explanation, code2,
                 explanation2,
                 code3,
-                explanation3, image, category
+                explanation3, code4,
+                explanation4,
+                code5,
+                explanation5, image, category
             },
             { new: true }
         );
