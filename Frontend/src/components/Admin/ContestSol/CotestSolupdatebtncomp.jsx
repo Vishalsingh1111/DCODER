@@ -34,6 +34,7 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
             await axios.put(`${baseUrl}/contestsol/${note._id}`, updatedNoteData);
             onUpdateSuccess(updatedNoteData);
             console.log('Note updated successfully!');
+            window.location.reload();
         } catch (error) {
             console.error('Error updating note:', error);
         }

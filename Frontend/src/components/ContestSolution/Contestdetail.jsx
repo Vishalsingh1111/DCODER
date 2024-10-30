@@ -57,21 +57,28 @@ const ContestDetail = () => {
     const increaseThumbsUp = () => setThumbsUpCount(thumbsUpCount + 1);
     const increaseThumbsDown = () => setThumbsDownCount(thumbsDownCount + 1);
 
-    const handleCardClick = (id) => navigate(`/contestdetail/${id}`);
+    const renderText = (text) => {
+        const parts = text.split(/(<b>|<\/b>|<br\s*\/?>)/g).filter(Boolean);
 
-    const handleShowMore = () => {
-        if (visibleCount + 5 >= items.length) {
-            setVisibleCount(items.length);
-        } else {
-            setVisibleCount(visibleCount + 2);
-        }
-    };
+        let isBold = false;
 
-    const handleHide = () => setVisibleCount(4);
-
-    const truncateText = (text, maxLength) => {
-        if (text.length <= maxLength) return text;
-        return text.substring(0, maxLength) + '...';
+        return parts.map((part, index) => {
+            if (part === '<b>') {
+                isBold = true;
+                return null;
+            } else if (part === '</b>') {
+                isBold = false;
+                return null;
+            } else if (part.match(/<br\s*\/?>/)) {
+                return <br key={index} />;
+            } else {
+                return (
+                    <span key={index} className={isBold ? 'font-bold' : ''}>
+                        {part}
+                    </span>
+                );
+            }
+        });
     };
 
     return (
@@ -85,9 +92,8 @@ const ContestDetail = () => {
 
                         <div className="flex flex-col items-left bg-gray-200 p-5 mb-5 border-l-2 border-l-red-500 dark:bg-slate-900">
                             <h2 className="text-xl text-red-500 font-semibold item-left mb-2">Disclaimer !</h2>
-                            <p className="text-lg">Do it youself, This is only for reference Don't Copy & Past. </p>
+                            <p className="text-lg">Do it yourself, This is only for reference. Don't Copy & Paste.</p>
                         </div>
-
 
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
@@ -96,14 +102,15 @@ const ContestDetail = () => {
                         {/* Explanation 1 */}
                         {item.explanation && (
                             <div className="mt-4">
-                                <span className="text-xl dark:text-white font-semibold text-gray-600">Problem Statements:</span>
-                                <ul className="py-2 list-disc ml-4">
+                                <span className="text-xl dark:text-white mb-2 font-semibold text-gray-600">Problem Statements:1</span>
+                                <div className="ml-4 mt-2">
                                     {item.explanation.split('\n').map((line, index) => (
-                                        <li className="py-1 text-lg" key={index}>{line.trim()}</li>
+                                        <div key={index}>{renderText(line.trim())}</div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         )}
+
                         {/* Code 1 */}
                         {item.code && (
                             <div className="my-5 mx-auto text-left">
@@ -117,101 +124,33 @@ const ContestDetail = () => {
                             </div>
                         )}
 
-                        {/* Explanation 2 */}
-                        {item.explanation2 && (
-                            <div className="mt-4">
-                                <span className="text-xl dark:text-white font-semibold text-gray-600">Problem Statement:</span>
-                                <ul className="py-2 list-disc ml-4">
-                                    {item.explanation2.split('\n').map((line, index) => (
-                                        <li className="py-1 text-lg" key={index}>{line.trim()}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        {/* Code 2 */}
-                        {item.code2 && (
-                            <div className="my-5 mx-auto text-left">
-                                <button
-                                    onClick={() => toggleCode('showCode2')}
-                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                                >
-                                    {showCodes.showCode2 ? "Hide Code" : "Show Code"}
-                                </button>
-                                {showCodes.showCode2 && <CodeSnippet codeString={item.code2} />}
-                            </div>
-                        )}
+                        {/* Repeat similar structures for other explanations and codes */}
+                        {[2, 3, 4, 5].map((i) => (
+                            <>
+                                {item[`explanation${i}`] && (
+                                    <div className="mt-4" key={`explanation-${i}`}>
+                                        <span className="text-xl dark:text-white font-semibold text-gray-600">Problem Statement {i}:</span>
+                                        <div className="ml-4">
+                                            {item[`explanation${i}`].split('\n').map((line, index) => (
+                                                <div className="text-md" key={index}>{renderText(line.trim())}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
 
-                        {/* Explanation 3 */}
-                        {item.explanation3 && (
-                            <div className="mt-4">
-                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
-                                <ul className="py-2 list-disc ml-4">
-                                    {item.explanation3.split('\n').map((line, index) => (
-                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        {/* Code 3 */}
-                        {item.code3 && (
-                            <div className="my-5 mx-auto text-left">
-                                <button
-                                    onClick={() => toggleCode('showCode3')}
-                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                                >
-                                    {showCodes.showCode3 ? "Hide Code" : "Show Code"}
-                                </button>
-                                {showCodes.showCode3 && <CodeSnippet codeString={item.code3} />}
-                            </div>
-                        )}
-
-                        {/* Explanation 4 */}
-                        {item.explanation4 && (
-                            <div className="mt-4">
-                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
-                                <ul className="py-2 list-disc ml-4">
-                                    {item.explanation4.split('\n').map((line, index) => (
-                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        {/* Code 4 */}
-                        {item.code4 && (
-                            <div className="my-5 mx-auto text-left">
-                                <button
-                                    onClick={() => toggleCode('showCode4')}
-                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                                >
-                                    {showCodes.showCode4 ? "Hide Code" : "Show Code"}
-                                </button>
-                                {showCodes.showCode4 && <CodeSnippet codeString={item.code4} />}
-                            </div>
-                        )}
-
-                        {/* Explanation 5 */}
-                        {item.explanation5 && (
-                            <div className="mt-4">
-                                <span className="text-2xl dark:text-white font-semibold text-gray-600">Explanation:</span>
-                                <ul className="py-2 list-disc ml-4">
-                                    {item.explanation5.split('\n').map((line, index) => (
-                                        <li className="py-1 text-xl" key={index}>{line.trim()}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        {/* Code 5 */}
-                        {item.code5 && (
-                            <div className="my-5 mx-auto text-left">
-                                <button
-                                    onClick={() => toggleCode('showCode5')}
-                                    className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-                                >
-                                    {showCodes.showCode5 ? "Hide Code" : "Show Code"}
-                                </button>
-                                {showCodes.showCode5 && <CodeSnippet codeString={item.code5} />}
-                            </div>
-                        )}
+                                {item[`code${i}`] && (
+                                    <div className="my-5 mx-auto text-left" key={`code-${i}`}>
+                                        <button
+                                            onClick={() => toggleCode(`showCode${i}`)}
+                                            className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                                        >
+                                            {showCodes[`showCode${i}`] ? "Hide Code" : "Show Code"}
+                                        </button>
+                                        {showCodes[`showCode${i}`] && <CodeSnippet codeString={item[`code${i}`]} />}
+                                    </div>
+                                )}
+                            </>
+                        ))}
 
                         <div className="flex mt-4 items-center text-xl">
                             <button onClick={increaseThumbsUp} className="flex items-center text-gray-700 dark:text-gray-300 mr-4">
@@ -234,12 +173,11 @@ const ContestDetail = () => {
                             className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow shadow-black/40 rounded-lg'
                         ></iframe>
                     </div>
+
                 </div>
-
-
                 <Commentbox />
-
             </div>
+
             <Footer />
         </>
     );
