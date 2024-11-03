@@ -43,7 +43,7 @@ export const adminlogin = async (req, res) => {
             message: "Login Successful",
             admin: {
                 _id: admin._id,
-                username: admin.username,
+                // username: admin.username,
             }
         });
     } catch (error) {
