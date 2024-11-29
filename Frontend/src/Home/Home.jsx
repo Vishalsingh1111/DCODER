@@ -18,11 +18,10 @@ function Home() {
             <Navbar />
             <Banner />
             <Homecontentcard />
-            <FAQ />
-
             <HomeVideo />
             {/* <PageViewCounter pageId={pageId} /> */}
             <NewsletterSubscription />
+            <FAQ />
             <Homepromo />
             <Footer />
         </>
