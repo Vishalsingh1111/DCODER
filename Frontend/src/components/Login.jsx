@@ -66,7 +66,7 @@ const LoginPage = () => {
 
     const handleGoogleLogin = () => {
         window.location.href = `${baseUrl}/auth/google`;
-        toast.success('Login with google successfully');
+        toast.success('Logging with google');
 
     };
 

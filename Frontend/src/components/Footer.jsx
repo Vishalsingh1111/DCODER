@@ -4,9 +4,9 @@ import ScrollToTopButton from './Scrolltotop'
 function Footer() {
     return (
         <>
-            <div className='border-t border-gray-400 dark:border-gray-600 '>
+            <div className='border-t border-gray-400  bg-[#222831] dark:border-gray-600 '>
                 <ScrollToTopButton />
-                <footer className="footer footer-center p-10 text-base-content font-[600] rounded dark:bg-slate-900 dark:text-white">
+                <footer className="footer footer-center text-white p-10 text-base-content font-[600] rounded dark:bg-slate-900 dark:text-white">
                     <nav className="grid grid-flow-col gap-4">
                         <a href='/About' className="link link-hover">About us</a>
                         <a href='/Contact' className="link link-hover">Contact</a>
@@ -33,7 +33,7 @@ function Footer() {
                             </a>
                         </div>
                     </nav>
-                    <aside>
+                    <aside className='mt-10'>
                         <p>Copyright © 2024 - All right reserved by DCODER</p>
                     </aside>
                 </footer>

@@ -7,6 +7,8 @@ import FAQ from '../components/FAQ';
 import Homecontentcard from '../components/Homecontentcard';
 import Homepromo from '../components/Homepromo';
 import PageViewCounter from '../components/ViewerCount';
+import HomeVideo from '../components/HomeVideo';
+
 
 function Home() {
     const pageId = 'home-page'; // Unique ID for the home page
@@ -17,8 +19,10 @@ function Home() {
             <Banner />
             <Homecontentcard />
             <FAQ />
+
+            <HomeVideo />
+            {/* <PageViewCounter pageId={pageId} /> */}
             <NewsletterSubscription />
-            <PageViewCounter pageId={pageId} />
             <Homepromo />
             <Footer />
         </>
