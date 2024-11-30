@@ -34,6 +34,8 @@ import { useadminAuth } from './Context/AuthProvider2';
 import Profile from './components/Profile';
 import Ai from './components/Aipage';
 import ResultDetailPage from './components/ResultDetailPage';
+import NewUpdatedSheet from '../src/Content/Sheet';
+import CompanyWiseSheet from './components/CompanyWise/CompanyMain';
 
 
 const App = () => {
@@ -64,6 +66,8 @@ const App = () => {
           <Route path='/ContestSolution' element={authUser ? <ContestSol /> : <Navigate to="/Signup" />}></Route>
           <Route path='/CSPage' element={<CSPage />}></Route>
           <Route path='/DSA' element={authUser ? <DSA /> : <Navigate to="/Signup" />}></Route>
+          <Route path='/NewUpdatedSheet' element={<NewUpdatedSheet />}></Route>
+          <Route path='/CompanyWiseSheet' element={<CompanyWiseSheet />}></Route>
           <Route path='/Python' element={<Python />}></Route>
           <Route path='/Dbms' element={authUser ? <Dbms /> : <Navigate to="/Signup" />}></Route>
           <Route path='/Java' element={<Java />}></Route>

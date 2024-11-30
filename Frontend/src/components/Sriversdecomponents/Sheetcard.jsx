@@ -45,7 +45,7 @@ function Sheetcard({ item }) {
     };
 
     return (
-        <div className={`mx-2 md:mx-6 lg:mt-5 rounded-lg shadow-sm shadow-black/20 dark:bg-slate-900 dark:text-white`}>
+        <div className={`lg:mt-5 rounded-lg shadow-sm shadow-black/20 dark:bg-slate-900 dark:text-white`}>
             <div className="bg-gray-600 h-1 rounded-t-full" style={{ width: `${(item.completedProblems / item.Problems) * 100}%` }}></div>
             <div className={`flex rounded items-center dark:from-slate-800 justify-between py-2 lg:px-10 px-5 cursor-pointer bg-gradient-to-t from-[#ffffff] to-[#ffffff]`} onClick={toggleAccordion}>
                 <div className="flex flex-col">
@@ -65,7 +65,7 @@ function Sheetcard({ item }) {
 
             {isOpen && (
                 <div className={`w-full dark:bg-slate-800 dark:text-white dark:border-none sm:px-0 pb-5 md:px-4`}>
-                    <div className='lg:mt-[-58px] lg:ml-[30%] lg:absolute border-gray-400 lg:p-0 px-2 justify-center space-x-2'>
+                    <div className='lg:mt-[-58px] lg:ml-[30%] lg:absolute lg:p-0 px-2 justify-center space-x-2'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>

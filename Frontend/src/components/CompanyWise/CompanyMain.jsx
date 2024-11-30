@@ -5,6 +5,10 @@ import notesvg from '../../../public/note.svg';
 import NoteModal from '../Sriversdecomponents/Keepnote';
 import Sheetheading from "../Sriversdecomponents/Sheetheading";
 import Skeleton1 from "../Skeleton";
+import Searchbar from "../Searchbar";
+import Navbar from "../Navbar";
+import Breadcrumb from "../Breadcrumb";
+import Footer from "../Footer";
 
 const CompanyMain = () => {
     const [data, setData] = useState([]);
@@ -156,9 +160,28 @@ const CompanyMain = () => {
 
     return (
         <>
-            <div className="w-full pb-1 mb-4">
+            <Navbar />
+            <Breadcrumb />
+
+            <div className='flex flex-col sm:flex-row lg:flex-row justify-between text-2xl font-semibold dark:bg-slate-900 dark:text-white text-gray-700 mb-5 pt-5 pb-5 pl-5 lg:pl-20 dark:from-slate-800'>
+                <div className='flex flex-col space-y-4'>
+                    <span>SDE SHEET Based on Companies.</span>
+                    <span className='text-sm'>Last Updated: August 18, 2024</span>
+                </div>
+                <div className='lg:w-[580px] mr-2'>
+                    <Searchbar />
+                </div>
+                <div className='mt-4 sm:mt-0 lg:mt-4 sm:mr-20 lg:mr-20'>
+                    <a href="path-to-your-file.pdf" download>
+                        <button className='bg-white text-sm text-red-500 border dark:bg-slate-900 border-red-500 px-5 py-3 rounded-md'>Download PDF</button>
+                    </a>
+                </div>
+            </div>
+
+
+            <div className="w-full mx-auto md:px-20 pb-1 mb-4">
                 {/* Scrollable Horizontal Navbar */}
-                <div className="flex overflow-x-auto whitespace-nowrap mb-4 dark:bg-slate-900 dark:text-white bg-[#ffffff] py-3 px-2 rounded-sm mx-5">
+                <div className="flex overflow-x-auto whitespace-nowrap mb-4 dark:bg-slate-900 dark:text-white  py-3 px-2 rounded-sm ">
                     {companyButtons.map((company) => (
                         <button
                             key={company}
@@ -171,13 +194,13 @@ const CompanyMain = () => {
                 </div>
             </div>
 
-            <section className="max-w-screen-2xl container mx-auto py-8 md:px-5 px-4  overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
+            <section className="max-w-screen-2xl container mx-auto md:px-20 px-4 overflow-hidden dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
 
                 {/* Data Table */}
-                <div className="mx-auto text-left border dark:border-none dark:bg-slate-800 border-gray-200 rounded-lg">
+                <div className="mx-auto text-left border-2 border-gray-400 dark:border-none dark:bg-slate-800 border-gray-200 rounded-lg">
 
                     {/* Level Buttons */}
-                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gradient-to-t from-[#f2f4fb] to-[#ffffff] dark:from-slate-800 rounded-t-md'>
+                    <div className='flex px-2 justify-center space-x-2 py-3 bg-gradient-to-t from-[#f5f4fb] to-[#ffffff] dark:from-slate-800 rounded-t-md'>
                         <button className="bg-gray-500 shadow-lg hover:shadow-gray-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-gray-500" onClick={() => handleLevelClick('Random')}>Random</button>
                         <button className="bg-green-500 shadow-lg hover:shadow-green-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-green-500" onClick={() => handleLevelClick('Easy')}>Easy</button>
                         <button className="bg-yellow-500 shadow-lg hover:shadow-yellow-500/30 shadow-black/30 text-white dark:bg-slate-800 dark:text-white px-2 py-1 border-2 rounded-lg border-yellow-500" onClick={() => handleLevelClick('Medium')}>Medium</button>
@@ -288,6 +311,7 @@ const CompanyMain = () => {
                     noteKey={currentNoteKey}
                 />
             )}
+            <Footer />
         </>
     );
 };

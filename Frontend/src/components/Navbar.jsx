@@ -36,21 +36,31 @@ const Navbar = () => {
 
     const navItems = (
         <>
-            <li><a href='/'>Home</a></li>
+            <li><a href='/'>HOME</a></li>
             <li>
                 <details>
-                    <summary>Content</summary>
-                    <ul className="bg-base-100 w-48 rounded-t-none rounded-md p-2 dark:bg-slate-900 dark:text-white">
-                        <li><a href='/Sheet'>DSA Sheet</a></li>
-                        <li><a href='/Languages'>Rivision Notes</a></li>
-                        <li><a href='/Project'>Project</a></li>
-                        <li><a href='/ContestSolution'>Contest Solution</a></li>
+                    <summary>DSA SHEET</summary>
+                    <ul className="bg-base-100 w-[200px] rounded-t-none rounded-md py-5 dark:bg-slate-900 dark:text-white">
+                        <li><a href='/NewUpdatedSheet'>NEW UPDATED SHEET</a></li>
+                        <li><a href='/CompanyWiseSheet'>COMPANY WISE SHEET</a></li>
+
                     </ul>
                 </details>
             </li>
-            <li><a href='/CSPage'>CS Fundamental</a></li>
-            <li><a href='/Technicalblog'>Tech Blogs</a></li>
-            <li><a href='/Contact'>Contact</a></li>
+
+            <li><a href='/CSPage'>CS FUNDAMENTAL</a></li>
+            <li><a href='/Languages'>RIVISION NOTE</a></li>
+            <li>
+                <details>
+                    <summary>MORE</summary>
+                    <ul className="bg-base-100 w-48 rounded-t-none rounded-md p-2 dark:bg-slate-900 dark:text-white">
+                        <li><a href='/Technicalblog'>TECH BLOG</a></li>
+                        <li><a href='/Project'>PROJECT IDEAS</a></li>
+                        <li><a href='/ContestSolution'>CONTEST SOLUTION</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li><a href='/Contact'>CONTACT</a></li>
         </>
     );
 

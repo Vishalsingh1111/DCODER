@@ -30,7 +30,7 @@ function Sheetpage() {
     };
 
     return (
-        <div className='max-w-screen-2xl container mx-auto lg:mb-10 sm:mb-3 dark:bg-slate-900 dark:text-white'>
+        <div className='max-w-screen-2xl container mx-auto md:px-20 mb-10 lg:mb-10 sm:mb-3 dark:bg-slate-900 dark:text-white'>
             <div className='flex justify-center'>
                 <div className="w-full max-w-full mx-auto dark:bg-slate-900 dark:border-none rounded-lg">
                     {loading ? (
