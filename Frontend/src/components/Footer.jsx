@@ -8,10 +8,10 @@ function Footer() {
                 <ScrollToTopButton />
                 <footer className="footer footer-center text-white p-10 text-base-content font-[600] rounded dark:bg-slate-900 dark:text-white">
                     <nav className="grid grid-flow-col gap-4">
-                        <a href='/About' className="link link-hover">About us</a>
-                        <a href='/Contact' className="link link-hover">Contact</a>
-                        <a href='/Sheet' className="link link-hover">SDE Sheet</a>
-                        <a href='/CSPage' className="link link-hover">CS Fundamental</a>
+                        <a href='/About' className="link link-hover">ABOUT US</a>
+                        <a href='/Contact' className="link link-hover">CONTACT</a>
+                        <a href='/Sheet' className="link link-hover">SDE SHEET</a>
+                        <a href='/CSPage' className="link link-hover">CS FUNDAMENTAL</a>
                     </nav>
                     <nav>
                         <div className="grid grid-flow-col gap-4">
