@@ -28,8 +28,8 @@ function NewsletterSection() {
     };
 
     return (
-        <section className="w-full lg:max-w-[90%] md:max-w-[85%] mx-auto">
-            <div className="mx-5 my-[80px] p-[50px] bg-gradient-to-t dark:from-slate-800 bg-[#ffffff] shadow rounded-lg dark:bg-slate-900 dark:border-gray-600">
+        <section className="w-full lg:max-w-[80%] md:max-w-[85%] mx-auto">
+            <div className="mx-5 my-[80px] p-[50px] bg-gradient-to-t dark:from-slate-800 bg-[#ffffff] shadow rounded-lg border dark:bg-slate-900 dark:border-gray-600">
                 <div className="max-w-screen-md mx-auto text-center ">
                     <h2 className="mb-4 text-2xl font-semibold sm:text-3xl text-[#484B54] dark:text-white">
                         Sign up for our newsletter

@@ -8,6 +8,7 @@ import Homecontentcard from '../components/Homecontentcard';
 import Homepromo from '../components/Homepromo';
 import PageViewCounter from '../components/ViewerCount';
 import HomeVideo from '../components/HomeVideo';
+import HomeCorousel from '../components/HomeCorousel'
 
 
 function Home() {
@@ -20,7 +21,9 @@ function Home() {
             <Homecontentcard />
             <HomeVideo />
             {/* <PageViewCounter pageId={pageId} /> */}
-            <NewsletterSubscription />
+
+            <HomeCorousel />
+            {/* <NewsletterSubscription /> */}
             <FAQ />
             <Homepromo />
             <Footer />

@@ -29,7 +29,7 @@ function HomeVideo() {
 
     return (
         <>
-            <div className="mt-10 lg:mt-20 px-4">
+            <div className="mt-10 lg:mt-20 px-4 mb-20">
                 <div className="pb-10 text-center">
                     <h1
                         className="font-semibold dark:text-white text-4xl pb-2"
@@ -44,7 +44,16 @@ function HomeVideo() {
 
                 <div className="lg:space-x-8 flex flex-col sm:mx-4 mx-auto justify-center items-center">
                     {loading ? (
-                        <p className="text-gray-500 dark:text-gray-400"><Skeleton1 /></p>
+                        <iframe
+                            width="100%"
+                            height="auto"
+                            src="https://www.youtube.com/embed/i2M87L2U028"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title="YouTube Project Tutorial"
+                            aria-label="YouTube Project Tutorial Video"
+                            className="w-full lg:w-[600px] h-[240px] lg:h-[380px] p-5 lg:p-8 mb-5 dark:bg-slate-800 dark:border-gray-600 bg-white dark:border shadow shadow-black/40 rounded-lg"
+                        ></iframe>
                     ) : item ? (
                         <iframe
                             width="100%"
