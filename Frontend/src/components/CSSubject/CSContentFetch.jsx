@@ -137,7 +137,7 @@ const CScontentfetch = () => {
                     <span className='text-sm'>Last Updated: August 8, 2024</span>
                 </div>
 
-                <div className="flex justify-center items-center mb-4 w-[250px] md:w-[500px] md:mt-0 mt-5">
+                <div className="flex justify-center items-center mb-4 w-full md:w-[500px] md:mt-0 mt-5">
                     <div className="relative w-full" ref={dropdownRef}>
                         <button
                             className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-3 bg-white dark:bg-slate-900 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-700"
@@ -187,11 +187,12 @@ const CScontentfetch = () => {
                     </div>
                 </div>
 
-                <div className='mt-4 sm:mt-0'>
+                <div className='mt-4 sm:mt-0 ml-5'>
                     <a href="path-to-your-file.pdf" download>
                         <button className='bg-white text-sm dark:bg-slate-900 text-red-500 border border-red-500 px-4 py-3 rounded-md'>Download PDF</button>
                     </a>
                 </div>
+
             </div>
 
             <section className="max-w-screen-2xl container mx-auto py-5 md:px-10 px-4  dark:bg-slate-900 dark:text-white lg:pb-[90px] lg:pt-[10px] text-center">
