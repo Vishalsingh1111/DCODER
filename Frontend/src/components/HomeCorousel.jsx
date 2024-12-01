@@ -55,7 +55,7 @@ export default function App() {
                     Get all features which are available on this website for users
                 </p>
             </div>
-            <div className="mx-auto max-w-[1200px] mt-10 bg-gray-300 md:px-20 py-5 dark:bg-slate-900 ">
+            <div className="mx-auto max-w-[1200px] mt-10 bg-white md:px-20 py-5 dark:bg-slate-900 ">
                 <div className="mx-auto max-w-screen-lg md:px-20 flex items-center justify-center ">
                     <Carousel />
                 </div>

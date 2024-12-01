@@ -15,7 +15,7 @@ const Techblog = () => {
         const getBlogs = async () => {
             try {
                 const res = await axios.get(`${baseUrl}/blog`);
-                const filteredData = res.data.filter(item => item.category === "dsaeasyprob");
+                const filteredData = res.data.filter(item => item.category === "dsa");
                 setData(filteredData);
                 setLoading(false);
             } catch (error) {

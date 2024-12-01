@@ -36,6 +36,7 @@ import Ai from './components/Aipage';
 import ResultDetailPage from './components/ResultDetailPage';
 import NewUpdatedSheet from '../src/Content/Sheet';
 import CompanyWiseSheet from './components/CompanyWise/CompanyMain';
+import Contributeblog from './components/TechBlogs/UserContribution';
 
 
 const App = () => {
@@ -74,6 +75,7 @@ const App = () => {
           <Route path='/Cpp' element={<Cpp />}></Route>
           <Route path='/C' element={<C />}></Route>
           <Route path='/techblog' element={<Techblog />}></Route>
+          <Route path='/Contibuteblog' element={<Contributeblog />}></Route>
           <Route path='/detail/:id' element={<BlogDetail />}></Route>
           <Route path='/Projectpage' element={<Projectpage />}></Route>
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>

@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import CodeSnippet from "../CodeSnippet/CodeSnippet";
-import Commentbox from '../Commentbox';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import Breadcrumb from '../Breadcrumb';
@@ -135,16 +134,6 @@ const BlogDetail = () => {
                             title="YouTube Video"
                             className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
                         ></iframe>
-
-                        <iframe
-                            width="320"
-                            height="200"
-                            src="https://www.youtube.com/embed/i2M87L2U028"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title="YouTube Video"
-                            className='p-5 mb-5 dark:bg-slate-800 dark:border-none bg-[rgb(255,255,255)] border-t shadow  shadow-black/40 rounded-lg'
-                        ></iframe>
                     </div>
                 </div>
 
@@ -179,12 +168,12 @@ const BlogDetail = () => {
                 {visibleCount < items.length ? (
                     <button onClick={handleShowMore} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Show More</button>
                 ) : (
-                    <button onClick={handleHide} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Close</button>
+                    <button onClick={handleHide} className="bg-gray-700 text-lg text-white shadow-lg hover:shadow-gray-500/30 shadow-black/30 py-2 px-4 rounded-lg">Close</button>
                 )}
             </div>
 
-            <div className="flex justify-center mt-4">
-                <Commentbox />
+            <div className="flex justify-center my-10">
+                <button className="bg-blue-500 text-lg text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"><a href='/Contibuteblog'>Contribute a Blog</a></button>
             </div>
 
             <Footer />

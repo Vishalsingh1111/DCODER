@@ -33,7 +33,7 @@ function Footer() {
                 <aside>
                     <img src='./logo.png' className='md:text-center md:mx-auto w-[40%] border-2 border-white rounded-full' alt="Logo" />
                     <div>
-                        <h1 className='text-red-500 text-xl font-semibold md:text-center'>DCODER</h1>
+                        <h1 className='text-red-500 text-xl font-semibold md:text-center' style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '900' }}><a href='/'>DCODER</a></h1>
                         <p className='text-md'>Interview Preparation Website</p>
                     </div>
                 </aside>
@@ -61,11 +61,11 @@ function Footer() {
                             <div className="join">
                                 <input
                                     type="email"
-                                    placeholder="username@site.com"
+                                    placeholder="username@gmail.com"
                                     {...register('email', { required: true })}
                                     className="input input-bordered join-item"
                                 />
-                                <button type="submit" className="btn bg-red-500 text-white join-item">
+                                <button type="submit" className="btn bg-red-700 text-white join-item hover:bg-red-800">
                                     Subscribe
                                 </button>
                             </div>
