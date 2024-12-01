@@ -8,6 +8,10 @@ const UpdateNotecontentForm = ({ note, onUpdateSuccess, onClose }) => {
         header: note.header,
         code: note.code,
         explanation: note.explanation,
+        code2: note.code2,
+        explanation2: note.explanation2,
+        code3: note.code3,
+        explanation3: note.explanation3,
         category: note.category,
         image: note.image
     });

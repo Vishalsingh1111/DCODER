@@ -12,12 +12,16 @@ export const getBlog = async (req, res) => {
 
 export const createBlog = async (req, res) => {
     try {
-        const { id, header, code, image, explanation, category } = req.body;
+        const { id, header, code, image, code2, explanation2, code3, explanation3, explanation, category } = req.body;
         const newBlog = new Blog({
             id,
             header,
             code,
             explanation,
+            code2,
+            explanation2,
+            code3,
+            explanation3,
             category,
             image,
         });
@@ -32,12 +36,12 @@ export const createBlog = async (req, res) => {
 // Update a note by ID
 export const updateBlog = async (req, res) => {
     const { id } = req.params;
-    const { header, code, explanation, image, category } = req.body;
+    const { header, code, explanation, code2, explanation2, code3, explanation3, image, category } = req.body;
 
     try {
         const updatedBlog = await Blog.findByIdAndUpdate(
             id,
-            { header, code, explanation, image, category },
+            { header, code, explanation, code2, explanation2, code3, explanation3, image, category },
             { new: true }
         );
 
