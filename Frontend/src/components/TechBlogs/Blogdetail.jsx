@@ -19,7 +19,7 @@ const BlogDetail = () => {
     const [thumbsUpCount, setThumbsUpCount] = useState(0);
     const [thumbsDownCount, setThumbsDownCount] = useState(0);
     const [visibleCount, setVisibleCount] = useState(4);
-    const [showCode, setShowCode] = useState(false);
+    const [showCode, setShowCode] = useState(true);
 
     useEffect(() => {
         const getBlogData = async () => {
@@ -74,6 +74,10 @@ const BlogDetail = () => {
             <Navbar />
             <Breadcrumb />
             <SearchForm />
+            <div className="flex justify-center my-2 md:fixed top-[120px] right-5">
+                <button className="bg-blue-500 text-lg text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"><a href='/Contibuteblog'>Contribute Blog</a></button>
+            </div>
+
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-col gap-10 '>
                     <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1030px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
@@ -139,7 +143,7 @@ const BlogDetail = () => {
 
                 <div className="pt-[80px] mx-auto max-w-full md:px-20 px-4 py-5">
                     <h1 className="text-red-500 mb-8 text-4xl font-semibold text-center">Recent Uploaded</h1>
-                    <div className="md:sticky md:top-20 ">
+                    <div className=" md:top-20 ">
                         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10 ">
                             {items
                                 .filter(blogItem => blogItem.id.toString() !== id)
@@ -164,16 +168,12 @@ const BlogDetail = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center mt-6">
+            <div className="text-center my-6">
                 {visibleCount < items.length ? (
                     <button onClick={handleShowMore} className="bg-red-500 text-lg text-white shadow-lg hover:shadow-red-500/30 shadow-black/30 py-2 px-4 rounded-lg">Show More</button>
                 ) : (
                     <button onClick={handleHide} className="bg-gray-700 text-lg text-white shadow-lg hover:shadow-gray-500/30 shadow-black/30 py-2 px-4 rounded-lg">Close</button>
                 )}
-            </div>
-
-            <div className="flex justify-center my-10">
-                <button className="bg-blue-500 text-lg text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"><a href='/Contibuteblog'>Contribute a Blog</a></button>
             </div>
 
             <Footer />

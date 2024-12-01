@@ -52,24 +52,6 @@ export const updateBlog = async (req, res) => {
     }
 };
 
-// // Delete a note by ID
-// export const deleteBlog = async (req, res) => {
-//     const { id } = req.params;
-
-//     try {
-//         const deletedBlog = await Blog.findByIdAndDelete(id);
-
-//         if (!deletedBlog) {
-//             return res.status(404).json({ error: "Note not found" });
-//         }
-
-//         res.status(200).json({ message: "Deleted successfully" });
-//     } catch (error) {
-//         console.error("Error deleting note:", error);
-//         res.status(500).json({ error: "Error deleting note" });
-//     }
-// };
-
 export const deleteBlog = async (req, res) => {
     const { id } = req.params;
 
