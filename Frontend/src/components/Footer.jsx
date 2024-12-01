@@ -63,9 +63,9 @@ function Footer() {
                                     type="email"
                                     placeholder="username@gmail.com"
                                     {...register('email', { required: true })}
-                                    className="input input-bordered join-item"
+                                    className="input input-bordered join-item bg-transparent border border-gray-500"
                                 />
-                                <button type="submit" className="btn bg-red-700 text-white join-item hover:bg-red-800">
+                                <button type="submit" className="btn bg-red-700 text-white join-item hover:bg-red-800 border-gray-300">
                                     Subscribe
                                 </button>
                             </div>

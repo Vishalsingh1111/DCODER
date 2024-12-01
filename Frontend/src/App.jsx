@@ -75,7 +75,7 @@ const App = () => {
           <Route path='/Cpp' element={<Cpp />}></Route>
           <Route path='/C' element={<C />}></Route>
           <Route path='/techblog' element={<Techblog />}></Route>
-          <Route path='/Contibuteblog' element={<Contributeblog />}></Route>
+          <Route path='/Contibuteblog' element={authUser ? <Contributeblog /> : <Navigate to="/Signup" />}></Route>
           <Route path='/detail/:id' element={<BlogDetail />}></Route>
           <Route path='/Projectpage' element={<Projectpage />}></Route>
           <Route path='/projectdetail/:id' element={<Projectdetail />}></Route>

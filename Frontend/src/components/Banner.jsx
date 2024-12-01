@@ -5,7 +5,7 @@ import SearchForm from './Searchbar'
 function Banner() {
     return (
         <>
-            <div className='pt-[80px]'><SearchForm /></div>
+            <div className='pt-[80px] mx-4'><SearchForm /></div>
 
             <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row mb-5 dark:bg-slate-900 dark:text-white' >
                 <div className='w-full order-2 md:order-1 md:w-1/2 md:mt-10'>

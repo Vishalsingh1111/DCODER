@@ -7,10 +7,8 @@
 body {
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
-  /* background-color: rgb(243, 244, 246) */
   background-color: #F6F7FC;
   color: #484B54;
-  /* background: #f2f4fb; */
 }
 
 .hide-scrollbar {
@@ -24,5 +22,4 @@ body {
 
 .h-screen-minus-5 {
   height: calc(100vh - 2.25rem);
-  /* 1.25rem is the equivalent of Tailwind's mb-5 */
 }

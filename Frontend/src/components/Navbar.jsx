@@ -81,7 +81,7 @@ const Navbar = () => {
                     <a href='/' className="text-xl text-red-500 cursor-pointer" style={{ fontFamily: '"Quicksand", sans-serif', fontWeight: '900' }}>DCODER</a>
                 </div>
                 <div className="navbar-center hidden lg:flex space-x-4">
-                    <ul className="menu menu-horizontal px-1 text-md">
+                    <ul className="menu menu-horizontal text-md">
                         {navItems}
                     </ul>
                 </div>

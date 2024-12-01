@@ -74,13 +74,13 @@ const BlogDetail = () => {
             <Navbar />
             <Breadcrumb />
             <SearchForm />
-            <div className="flex justify-center my-2 md:fixed top-[120px] right-5">
-                <button className="bg-blue-500 text-lg text-white shadow-lg hover:shadow-blue-500/30 shadow-black/30 py-2 px-4 rounded-lg"><a href='/Contibuteblog'>Contribute Blog</a></button>
+            <div className="flex justify-center my-2 md:fixed top-[120px] right-10">
+                <button className="bg-green-500 text-lg text-white shadow-lg hover:shadow-green-500/30 shadow-black/30 py-2 px-4 rounded-xl"><a href='/Contibuteblog'>Contribute <br />a Blog</a></button>
             </div>
 
             <div className="pt-[50px] mx-auto max-w-screen-2xl md:px-20 px-4 py-5">
                 <div className='flex flex-col lg:flex-col gap-10 '>
-                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1030px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
+                    <div className="w-full p-3 sm:p-5 md:p-8 lg:p-10 max-w-[1000px] mx-auto border-t md:shadow-sm md:shadow-black/30  rounded-xl bg-[rgb(255,255,255)] dark:bg-slate-800 dark:border-none mt-3">
                         <div className="flex flex-col sm:flex-row items-center justify-between">
                             <h2 className="text-2xl font-semibold mb-4 sm:mb-0">{item.header}</h2>
                         </div>
@@ -141,7 +141,7 @@ const BlogDetail = () => {
                     </div>
                 </div>
 
-                <div className="pt-[80px] mx-auto max-w-full md:px-20 px-4 py-5">
+                <div className="pt-[80px] mx-auto max-w-full md:px-32 px-4 py-5">
                     <h1 className="text-red-500 mb-8 text-4xl font-semibold text-center">Recent Uploaded</h1>
                     <div className=" md:top-20 ">
                         <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-10 ">
