@@ -23,7 +23,7 @@ const Carousel = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-[180px] sm:h-[180px] md:h-full overflow-hidden m-10 rounded">
+        <div className="relative w-full h-[180px] sm:h-[180px] md:h-full overflow-hidden border ">
             <div
                 className="flex transition-transform duration-500"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -31,7 +31,7 @@ const Carousel = () => {
                 {images.map((image, index) => (
                     <div
                         key={index}
-                        className="min-w-full h-[180px] sm:h-[180px] md:h-[470px] bg-cover bg-center"
+                        className="min-w-full h-[180px] sm:h-[180px] md:h-[510px] bg-cover bg-center"
                         style={{ backgroundImage: `url(${image})` }}
                     ></div>
                 ))}
@@ -55,8 +55,8 @@ export default function App() {
                     Get all features which are available on this website for users
                 </p>
             </div>
-            <div className="mx-auto max-w-[1200px] mt-10 bg-white md:px-20 py-5 dark:bg-slate-900 ">
-                <div className="mx-auto max-w-screen-lg md:px-20 flex items-center justify-center ">
+            <div className="mx-5 md:mx-auto max-w-[1020px] mt-10 bg-white py-5 md:py-[60px] dark:bg-slate-800 dark:border-gray-600 bg-white dark:border shadow shadow-black/40 rounded-lg ">
+                <div className="mx-auto max-w-screen-lg px-5 md:px-20 flex items-center justify-center ">
                     <Carousel />
                 </div>
             </div>
