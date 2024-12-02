@@ -20,9 +20,7 @@ const notecontentSchema = mongoose.Schema({
     category: { type: String, required: true },
     image: { type: String, required: false },
     figtitle: { type: String, required: false }
-},
-    { timestamps: true }
-);
+});
 
 const NoteContent = mongoose.model("NoteContent", notecontentSchema);
 export default NoteContent;
