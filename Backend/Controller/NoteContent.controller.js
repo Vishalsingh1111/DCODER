@@ -1,12 +1,21 @@
 import NoteContent from "../Modal/NoteContent.modal.js";
 
+// export const getnoteContent = async (req, res) => {
+//     try {
+//         const notecontent = await NoteContent.find();
+//         res.status(200).json(notecontent);
+//     } catch (error) {
+//         console.log("Error", error);
+//         res.status(500).json(error);
+//     }
+// };
 export const getnoteContent = async (req, res) => {
     try {
-        const notecontent = await NoteContent.find();
+        const notecontent = await NoteContent.find().sort({ updatedAt: -1 }); // Sort by most recent update
         res.status(200).json(notecontent);
     } catch (error) {
-        console.log("Error", error);
-        res.status(500).json(error);
+        console.error("Error fetching note content:", error);
+        res.status(500).json({ error: "Failed to fetch content" });
     }
 };
 
